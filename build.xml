@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="blancoDbCommon" default="build" basedir=".">
 	<!-- blancoAnt(0.2.1)により自動生成されました。 (2011/02/07) -->
-	<property name="version" value="0.2.3" />
+	<property name="version" value="2.0.0" />
 
 	<property name="project" value="blancoDbCommon" />
 	<property name="project.lower" value="blancodbcommon" />
