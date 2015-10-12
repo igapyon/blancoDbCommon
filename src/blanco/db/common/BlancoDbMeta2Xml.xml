@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- blancoCalcParser define file for blancoWsdl -->
+<blanco version="0.1.0">
+  <target name="blancoCalcParser">
+    <blancocalcparser>
+      <propertyblock name="blancodb-common" waitY="1">
+        <startstring>SQL Definition / General Info</startstring>
+        <startstring>SQL定義・共通</startstring>
+        <propertykey name="name" waitX="2">
+          <value>SQL ID</value>
+          <value>SQL定義ID</value>
+        </propertykey>
+        <propertykey name="package" waitX="2">
+          <value>Package</value>
+          <value>パッケージ</value>
+        </propertykey>
+        <propertykey name="description" waitX="2">
+          <value>Description</value>
+          <value>説明</value>
+        </propertykey>
+        <propertykey name="query-type" waitX="2">
+          <value>SQL Type</value>
+          <value>SQLタイプ</value>
+        </propertykey>
+        <propertykey name="single" waitX="2">
+          <value>Row Affected</value>
+          <value>期待する処理件数</value>
+        </propertykey>
+        <propertykey name="scroll" waitX="2">
+          <value>Cursor Type</value>
+          <value>スクロール属性</value>
+          <value>カーソル属性</value>
+        </propertykey>
+        <propertykey name="updatable" waitX="2">
+          <value>Updatable</value>
+          <value>更新可能属性</value>
+        </propertykey>
+        <propertykey name="dynamic-sql" waitX="2">
+          <value>Dynamic SQL</value>
+          <value>動的SQL</value>
+        </propertykey>
+        <propertykey name="use-bean-parameter" waitX="2">
+          <value>Use Bean Parameter</value>
+          <value>パラメータのBean化</value>
+        </propertykey>
+        <propertykey name="statementTimeout" waitX="2">
+          <value>Timeout</value>
+          <value>タイムアウト</value>
+        </propertykey>
+
+        <valuemapping>
+          <result>true</result>
+          <source>TRUE</source>
+          <source>○</source>
+          <source>あり</source>
+        </valuemapping>
+        <valuemapping>
+          <result>false</result>
+          <source>FALSE</source>
+          <source>なし</source>
+        </valuemapping>
+        <valuemapping>
+          <result>true</result>
+          <source>use</source>
+          <source>使用する</source>
+        </valuemapping>
+        <valuemapping>
+          <result>false</result>
+          <source>not use</source>
+          <source>使用しない</source>
+        </valuemapping>
+        <valuemapping>
+          <result>true</result>
+          <source>yes</source>
+          <source>する</source>
+        </valuemapping>
+        <valuemapping>
+          <result>false</result>
+          <source>no</source>
+          <source>しない</source>
+        </valuemapping>
+        <valuemapping>
+          <result>iterator</result>
+          <source>query</source>
+          <source>検索型</source>
+        </valuemapping>
+        <valuemapping>
+          <result>invoker</result>
+          <source>update</source>
+          <source>実行型</source>
+        </valuemapping>
+        <valuemapping>
+          <result>caller</result>
+          <source>call</source>
+          <source>呼出型</source>
+        </valuemapping>
+        <valuemapping>
+          <result>true</result>
+          <source>exactly one</source>
+          <source>必ず１件処理</source>
+        </valuemapping>
+        <valuemapping>
+          <result>false</result>
+          <source>zero to many</source>
+          <source>複数件(0を含む)</source>
+        </valuemapping>
+        <valuemapping>
+          <result>forward_only</result>
+          <source>FORWARD_ONLY</source>
+        </valuemapping>
+        <valuemapping>
+          <result>insensitive</result>
+          <source>INSENSITIVE</source>
+        </valuemapping>
+        <valuemapping>
+          <result>sensitive</result>
+          <source>SENSITIVE</source>
+        </valuemapping>
+      </propertyblock>
+
+      <tableblock name="blancodb-inparameters" waitY="1" titleheight="2" rowname="inparameter">
+        <startstring>SQL Definition / Input Parameter</startstring>
+        <startstring>SQL定義・入力パラメータ</startstring>
+
+        <tablecolumn name="no">
+          <value>No.</value>
+        </tablecolumn>
+        <tablecolumn name="name">
+          <value>Parameter ID</value>
+          <value>パラメータID</value>
+        </tablecolumn>
+        <tablecolumn name="type">
+          <value>Data Type</value>
+          <value>タイプ</value>
+        </tablecolumn>
+        <tablecolumn name="nullable">
+          <value>nullable</value>
+          <value>NULL許容</value>
+        </tablecolumn>
+        <tablecolumn name="description">
+          <value>Parameter Name</value>
+          <value>パラメータ名</value>
+        </tablecolumn>
+        <tablecolumn name="samplevalue">
+          <value>Sample Value</value>
+          <value>参考値</value>
+        </tablecolumn>
+      </tableblock>
+
+      <tableblock name="blancodb-outparameters" waitY="1" titleheight="2" rowname="outparameter">
+        <startstring>SQL Definition / Output Parameter</startstring>
+        <startstring>SQL定義・出力パラメータ</startstring>
+
+        <tablecolumn name="no">
+          <value>No.</value>
+        </tablecolumn>
+        <tablecolumn name="name">
+          <value>Parameter ID</value>
+          <value>パラメータID</value>
+        </tablecolumn>
+        <tablecolumn name="type">
+          <value>Data Type</value>
+          <value>タイプ</value>
+        </tablecolumn>
+        <tablecolumn name="nullable">
+          <value>nullable</value>
+          <value>NULL許容</value>
+        </tablecolumn>
+        <tablecolumn name="description">
+          <value>Parameter Name</value>
+          <value>パラメータ名</value>
+        </tablecolumn>
+      </tableblock>
+
+      <tableblock name="blancodb-detail" waitY="1" titleheight="1">
+        <startstring>SQL Definition / Detailed Description</startstring>
+        <startstring>SQL定義・詳細説明</startstring>
+
+        <tablecolumn name="detail-line">
+          <value>SQL Definition / Detailed Description</value>
+          <value>SQL定義・詳細説明</value>
+        </tablecolumn>
+      </tableblock>
+
+      <tableblock name="blancodb-query" waitY="3" titleheight="1">
+        <startstring>SQL Definition / SQL Statement</startstring>
+        <startstring>SQL定義・SQL文</startstring>
+
+        <tablecolumn name="query-line">
+          <value>SQL Definition / SQL Statement</value>
+          <value>SQL定義・SQL文</value>
+        </tablecolumn>
+      </tableblock>
+
+    </blancocalcparser>
+  </target>
+</blanco>
