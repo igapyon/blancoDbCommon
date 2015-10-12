@@ -1,5 +1,5 @@
 /**
- * ‚±‚ÌƒNƒ‰ƒX‚Í•Êƒvƒƒ_ƒNƒg‰»‚³‚ê‚é—\’èB
+ * ã“ã®ã‚¯ãƒ©ã‚¹ã¯åˆ¥ãƒ—ãƒ­ãƒ€ã‚¯ãƒˆåŒ–ã•ã‚Œã‚‹äºˆå®šã€‚
  */
 package blanco.db.common;
 
@@ -32,35 +32,35 @@ import blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure;
 import blanco.dbmetadata.valueobject.BlancoDbMetaDataTableStructure;
 
 /**
- * ƒŠƒŒ[ƒVƒ‡ƒiƒ‹ƒf[ƒ^ƒx[ƒX‚©‚ç“¾‚ç‚ê‚é•\î•ñ‚ğ‚à‚Æ‚ÉA’Pˆê•\ƒAƒNƒZƒT‚Ì‚½‚ß‚ÌXML’†ŠÔƒtƒ@ƒCƒ‹‚ğ¶¬‚µ‚Ü‚·B
+ * ãƒªãƒ¬ãƒ¼ã‚·ãƒ§ãƒŠãƒ«ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‹ã‚‰å¾—ã‚‰ã‚Œã‚‹è¡¨æƒ…å ±ã‚’ã‚‚ã¨ã«ã€å˜ä¸€è¡¨ã‚¢ã‚¯ã‚»ã‚µã®ãŸã‚ã®XMLä¸­é–“ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ç”Ÿæˆã—ã¾ã™ã€‚
  * 
- * ƒŠƒŒ[ƒVƒ‡ƒiƒ‹ƒf[ƒ^ƒx[ƒX‚©‚çƒƒ^î•ñ‚ğæ‚èo‚·ˆ—‚»‚Ì‚à‚Ì‚ÍA‚±‚ÌƒNƒ‰ƒX‚Å‚Í‚È‚­A•Ê‚Ìƒvƒƒ_ƒNƒg blancoDbMetaData‚ª’S‚¢‚Ü‚·B
+ * ãƒªãƒ¬ãƒ¼ã‚·ãƒ§ãƒŠãƒ«ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‹ã‚‰ãƒ¡ã‚¿æƒ…å ±ã‚’å–ã‚Šå‡ºã™å‡¦ç†ãã®ã‚‚ã®ã¯ã€ã“ã®ã‚¯ãƒ©ã‚¹ã§ã¯ãªãã€åˆ¥ã®ãƒ—ãƒ­ãƒ€ã‚¯ãƒˆ blancoDbMetaDataãŒæ‹…ã„ã¾ã™ã€‚
  */
 public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
     /**
-     * ’Pˆê•\‚ÌƒNƒ‰ƒX‚É•t‚¯‚ç‚ê‚éƒvƒŒƒtƒBƒbƒNƒXB
+     * å˜ä¸€è¡¨ã®ã‚¯ãƒ©ã‚¹ã«ä»˜ã‘ã‚‰ã‚Œã‚‹ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ã€‚
      */
     public static final String CLASS_PREFIX = "Simple";
 
     /**
-     * ŠeíƒŠƒ\[ƒXƒoƒ“ƒhƒ‹B
+     * å„ç¨®ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ«ã€‚
      */
     private final BlancoDbCommonResourceBundle fBundle = new BlancoDbCommonResourceBundle();
 
     /**
-     * blancoDb‚ÉŠÖ‚·‚éİ’èî•ñB
+     * blancoDbã«é–¢ã™ã‚‹è¨­å®šæƒ…å ±ã€‚
      */
     private BlancoDbSetting fDbSetting = null;
 
     /**
-     * ©“®¶¬‚µ‚½SQL•¶‚ğƒtƒH[ƒ}ƒbƒg‚·‚é‚©‚Ç‚¤‚©B
+     * è‡ªå‹•ç”Ÿæˆã—ãŸSQLæ–‡ã‚’ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã™ã‚‹ã‹ã©ã†ã‹ã€‚
      * 
-     * 2006.12.01“_‚Å‚ÍƒfƒtƒHƒ‹ƒg‚Í false‚Æ‚µ‚Ü‚·B
+     * 2006.12.01æ™‚ç‚¹ã§ã¯ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ falseã¨ã—ã¾ã™ã€‚
      */
     private boolean fFormatSql = false;
 
     /**
-     * ©“®¶¬‚µ‚½SQL•¶‚ğƒtƒH[ƒ}ƒbƒg‚·‚é‚©‚Ç‚¤‚©B
+     * è‡ªå‹•ç”Ÿæˆã—ãŸSQLæ–‡ã‚’ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã™ã‚‹ã‹ã©ã†ã‹ã€‚
      * 
      * @param argFormatSql
      */
@@ -69,14 +69,14 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
     }
 
     /**
-     * ƒŠƒŒ[ƒVƒ‡ƒiƒ‹ƒf[ƒ^ƒx[ƒX‚©‚ç“¾‚ç‚ê‚é•\î•ñ‚ğ‚à‚Æ‚ÉA’Pˆê•\ƒAƒNƒZƒT‚Ì‚½‚ß‚ÌXML’†ŠÔƒtƒ@ƒCƒ‹‚ğ¶¬‚µ‚Ü‚·B
+     * ãƒªãƒ¬ãƒ¼ã‚·ãƒ§ãƒŠãƒ«ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‹ã‚‰å¾—ã‚‰ã‚Œã‚‹è¡¨æƒ…å ±ã‚’ã‚‚ã¨ã«ã€å˜ä¸€è¡¨ã‚¢ã‚¯ã‚»ã‚µã®ãŸã‚ã®XMLä¸­é–“ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ç”Ÿæˆã—ã¾ã™ã€‚
      * 
-     * ƒŠƒŒ[ƒVƒ‡ƒiƒ‹ƒf[ƒ^ƒx[ƒX‚©‚çƒƒ^î•ñ‚ğæ‚èo‚·ˆ—‚»‚Ì‚à‚Ì‚ÍA‚±‚ÌƒNƒ‰ƒX‚Å‚Í‚È‚­A•Ê‚Ìƒvƒƒ_ƒNƒg blancoDbMetaData‚ª’S‚¢‚Ü‚·B
+     * ãƒªãƒ¬ãƒ¼ã‚·ãƒ§ãƒŠãƒ«ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‹ã‚‰ãƒ¡ã‚¿æƒ…å ±ã‚’å–ã‚Šå‡ºã™å‡¦ç†ãã®ã‚‚ã®ã¯ã€ã“ã®ã‚¯ãƒ©ã‚¹ã§ã¯ãªãã€åˆ¥ã®ãƒ—ãƒ­ãƒ€ã‚¯ãƒˆ blancoDbMetaDataãŒæ‹…ã„ã¾ã™ã€‚
      * 
      * @param connDef
-     *            ƒf[ƒ^ƒx[ƒXÚ‘±î•ñB
+     *            ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹æ¥ç¶šæƒ…å ±ã€‚
      * @param blancoSqlDirectory
-     *            o—ÍæƒfƒBƒŒƒNƒgƒŠB
+     *            å‡ºåŠ›å…ˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã€‚
      * @throws SQLException
      * @throws SAXException
      * @throws IOException
@@ -86,7 +86,7 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
     public void process(final BlancoDbSetting dbSetting,
             final File blancoSqlDirectory) throws SQLException {
         System.out.println(BlancoDbCommonConstants.PRODUCT_NAME + " ("
-                + BlancoDbCommonConstants.VERSION + ") ’Pˆê•\ƒAƒNƒZƒTSQL©“®¶¬: ŠJn.");
+                + BlancoDbCommonConstants.VERSION + ") å˜ä¸€è¡¨ã‚¢ã‚¯ã‚»ã‚µSQLè‡ªå‹•ç”Ÿæˆ: é–‹å§‹.");
         fDbSetting = dbSetting;
         Connection conn = null;
         try {
@@ -104,12 +104,12 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
         } finally {
             BlancoDbUtil.close(conn);
             conn = null;
-            System.out.println("’Pˆê•\ƒAƒNƒZƒTSQL©“®¶¬: I—¹.");
+            System.out.println("å˜ä¸€è¡¨ã‚¢ã‚¯ã‚»ã‚µSQLè‡ªå‹•ç”Ÿæˆ: çµ‚äº†.");
         }
     }
 
     /**
-     * •\‚Ì’PˆÊ‚ÅûW‚³‚ê‚½î•ñ‚ğXMLƒtƒ@ƒCƒ‹‚É‘‚«o‚µ‚Ü‚·B
+     * è¡¨ã®å˜ä½ã§åé›†ã•ã‚ŒãŸæƒ…å ±ã‚’XMLãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãå‡ºã—ã¾ã™ã€‚
      * 
      * @param dbInfoCollector
      * @param listTables
@@ -129,19 +129,19 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
             }
 
             try {
-                System.out.println("•\[" + table.getName() + "]‚ğˆ—‚µ‚Ü‚·");
+                System.out.println("è¡¨[" + table.getName() + "]ã‚’å‡¦ç†ã—ã¾ã™");
                 processEveryTable(listTables, table, resultSqlInfo);
             } catch (StringIndexOutOfBoundsException ex) {
-                System.out.println("•\[" + table.getName()
-                        + "]‚Ìˆ—‚Ì‰ß’ö‚Å—áŠO‚ª”­¶‚µ‚Ü‚µ‚½: " + ex.toString());
+                System.out.println("è¡¨[" + table.getName()
+                        + "]ã®å‡¦ç†ã®éç¨‹ã§ä¾‹å¤–ãŒç™ºç”Ÿã—ã¾ã—ãŸ: " + ex.toString());
                 ex.printStackTrace();
 
-                // —áŠO”­¶‚É‚ÍAd•û‚ª–³‚¢‚Ì‚Å Ÿ‚Ì•\‚ğˆ—‚µ‚Ü‚·B
+                // ä¾‹å¤–ç™ºç”Ÿæ™‚ã«ã¯ã€ä»•æ–¹ãŒç„¡ã„ã®ã§ æ¬¡ã®è¡¨ã‚’å‡¦ç†ã—ã¾ã™ã€‚
                 conn.rollback();
                 continue;
             }
 
-            // •\‚Ì’PˆÊ‚ÅSQLî•ñ‚ğXMLƒtƒ@ƒCƒ‹‚Éo—Í‚µ‚Ü‚·B
+            // è¡¨ã®å˜ä½ã§SQLæƒ…å ±ã‚’XMLãƒ•ã‚¡ã‚¤ãƒ«ã«å‡ºåŠ›ã—ã¾ã™ã€‚
             BlancoDbXmlSerializer.serialize(resultSqlInfo,
                     new File(outputDirectoryName + "/SimpleTable"
                             + BlancoNameAdjuster.toClassName(table.getName())
@@ -150,7 +150,7 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
     }
 
     /**
-     * ‚¨‚Ì‚¨‚Ì‚Ì•\‚ğo—Íˆ—‚µ‚Ü‚·B
+     * ãŠã®ãŠã®ã®è¡¨ã‚’å‡ºåŠ›å‡¦ç†ã—ã¾ã™ã€‚
      * 
      * @param service
      * @param collector
@@ -167,12 +167,12 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
             throws SQLException {
         generateSelect(listTables, table, resultSqlInfo);
 
-        // XV‰Â”\ƒJ[ƒ\ƒ‹‚ª—˜—p‰Â”\‚©‚Ç‚¤‚©‚Íƒƒ\ƒbƒh“à‚Å”»’f‚µ‚Ü‚·B
+        // æ›´æ–°å¯èƒ½ã‚«ãƒ¼ã‚½ãƒ«ãŒåˆ©ç”¨å¯èƒ½ã‹ã©ã†ã‹ã¯ãƒ¡ã‚½ãƒƒãƒ‰å†…ã§åˆ¤æ–­ã—ã¾ã™ã€‚
         generateSelectUpdatable(listTables, table, resultSqlInfo);
 
         generateSelectColumn(listTables, table, resultSqlInfo);
 
-        // 2005.11.11 SelectAllƒƒ\ƒbƒh‚Í•œŠˆ‚µ‚Ü‚µ‚½B
+        // 2005.11.11 SelectAllãƒ¡ã‚½ãƒƒãƒ‰ã¯å¾©æ´»ã—ã¾ã—ãŸã€‚
         generateSelectAll(listTables, table, resultSqlInfo);
 
         generateInsert(listTables, table, resultSqlInfo, false);
@@ -184,7 +184,7 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
     }
 
     /**
-     * •\–¼‚Ì‚İ‚É‚Â‚¢‚ÄA‚Ü‚¸‚ÍƒNƒ‰ƒX–¼‚É•ÏŠ·‚µ‚Ü‚·B
+     * è¡¨åã®ã¿ã«ã¤ã„ã¦ã€ã¾ãšã¯ã‚¯ãƒ©ã‚¹åã«å¤‰æ›ã—ã¾ã™ã€‚
      * 
      * @param table
      * @return
@@ -194,7 +194,7 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
     }
 
     /**
-     * ˆês‚ğŒŸõ‚·‚éƒAƒNƒZƒT‚ğ¶¬‚µ‚Ü‚·B
+     * ä¸€è¡Œã‚’æ¤œç´¢ã™ã‚‹ã‚¢ã‚¯ã‚»ã‚µã‚’ç”Ÿæˆã—ã¾ã™ã€‚
      * 
      * @param collector
      * @param metadata
@@ -228,7 +228,7 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
                     .getColumns().get(indexCol);
 
             if (isSkipTypeForSimpleTable(columnStructure)) {
-                // ’Pˆê•\‚Æ‚µ‚Ä‚ÍƒXƒLƒbƒv‚·‚×‚«Œ^‚Å‚·B
+                // å˜ä¸€è¡¨ã¨ã—ã¦ã¯ã‚¹ã‚­ãƒƒãƒ—ã™ã¹ãå‹ã§ã™ã€‚
                 continue;
             }
 
@@ -241,7 +241,7 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
         }
 
         if (isFirstColumn) {
-            // ‚Ğ‚Æ‚Â‚à—ñ‚ªˆ—‚³‚ê‚Ü‚¹‚ñ‚Å‚µ‚½Bˆ—’†’f‚µ‚Ü‚·B
+            // ã²ã¨ã¤ã‚‚åˆ—ãŒå‡¦ç†ã•ã‚Œã¾ã›ã‚“ã§ã—ãŸã€‚å‡¦ç†ä¸­æ–­ã—ã¾ã™ã€‚
             return;
         }
 
@@ -253,8 +253,8 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
                     .getColumns().get(indexCol);
             if (BlancoDbUtil.isPrimaryKey(table, columnStructure)) {
                 if (isSkipTypeForSimpleTable(columnStructure)) {
-                    // ’Pˆê•\‚Æ‚µ‚Ä‚ÍƒXƒLƒbƒv‚·‚×‚«Œ^‚Å‚·B
-                    // ƒoƒCƒiƒŠ‚âƒŠ[ƒ_‚ÍƒL[‚Æ‚µ‚Ä‚Í—˜—p‚Å‚«‚Ü‚¹‚ñB
+                    // å˜ä¸€è¡¨ã¨ã—ã¦ã¯ã‚¹ã‚­ãƒƒãƒ—ã™ã¹ãå‹ã§ã™ã€‚
+                    // ãƒã‚¤ãƒŠãƒªã‚„ãƒªãƒ¼ãƒ€ã¯ã‚­ãƒ¼ã¨ã—ã¦ã¯åˆ©ç”¨ã§ãã¾ã›ã‚“ã€‚
                     continue;
                 }
 
@@ -283,9 +283,9 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
         }
 
         if (isFirstPrimaryKey) {
-            // ƒvƒ‰ƒCƒ}ƒŠ[ƒL[‚ªˆêŒ‚àˆ—‚³‚ê‚Ä‚¢‚È‚¢Û‚É‚ÍA
-            // WHERE‚ªì¬‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB
-            // ˆ—‘±s‚ÍŠëŒ¯‚Æ”»’f‚µAˆ—’†’f‚µ‚Ü‚·B
+            // ãƒ—ãƒ©ã‚¤ãƒãƒªãƒ¼ã‚­ãƒ¼ãŒä¸€ä»¶ã‚‚å‡¦ç†ã•ã‚Œã¦ã„ãªã„éš›ã«ã¯ã€
+            // WHEREãŒä½œæˆã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚
+            // å‡¦ç†ç¶šè¡Œã¯å±é™ºã¨åˆ¤æ–­ã—ã€å‡¦ç†ä¸­æ–­ã—ã¾ã™ã€‚
             return;
         }
 
@@ -294,17 +294,17 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
             try {
                 sqlInfo.setQuery(getSqlFormatter().format(sqlInfo.getQuery()));
             } catch (BlancoSqlFormatterException e) {
-                // ‚µ‚©‚½‚ª‚È‚¢‚Ì‚ÅA‚»‚Ì‚Ü‚Üi‚İ‚Ü‚·B
+                // ã—ã‹ãŸãŒãªã„ã®ã§ã€ãã®ã¾ã¾é€²ã¿ã¾ã™ã€‚
                 e.printStackTrace();
             }
         }
 
-        // ÅŒã‚ÌÅŒã‚Åƒ‹[ƒgƒm[ƒh‚É’Ç‰Á‚µ‚Ü‚·B
+        // æœ€å¾Œã®æœ€å¾Œã§ãƒ«ãƒ¼ãƒˆãƒãƒ¼ãƒ‰ã«è¿½åŠ ã—ã¾ã™ã€‚
         resultSqlInfo.add(sqlInfo);
     }
 
     /**
-     * XV‰Â”\‚ÈŒŸõ‚ğ¶¬‚µ‚Ü‚·B
+     * æ›´æ–°å¯èƒ½ãªæ¤œç´¢ã‚’ç”Ÿæˆã—ã¾ã™ã€‚
      * 
      * @param collector
      * @param metadata
@@ -324,10 +324,10 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
         case BlancoDbDriverNameStringGroup.SQLSERVER_2005:
         case BlancoDbDriverNameStringGroup.ORACLE:
         case BlancoDbDriverNameStringGroup.POSTGRESQL:
-            // blancoDb‚Æ‚µ‚ÄXV‰Â”\‚ÈŒŸõ‚É‘Î‰‚µ‚Ä‚¢‚éƒf[ƒ^ƒx[ƒX‚Å‚·Bˆ—‰Â”\‚Å‚·B
+            // blancoDbã¨ã—ã¦æ›´æ–°å¯èƒ½ãªæ¤œç´¢ã«å¯¾å¿œã—ã¦ã„ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã§ã™ã€‚å‡¦ç†å¯èƒ½ã§ã™ã€‚
             break;
         default:
-            // ˆ—‚Å‚«‚Ü‚¹‚ñB
+            // å‡¦ç†ã§ãã¾ã›ã‚“ã€‚
             return;
         }
 
@@ -349,10 +349,10 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
         for (int indexCol = 0; indexCol < table.getColumns().size(); indexCol++) {
             final BlancoDbMetaDataColumnStructure columnStructure = table
                     .getColumns().get(indexCol);
-            // XV‰Â”\‚Å“®‚©‚·‚½‚ß‚ÉA‘S—ñ‚ğæ“¾‚µ‚Ä‚¢‚Ü‚·B
+            // æ›´æ–°å¯èƒ½ã§å‹•ã‹ã™ãŸã‚ã«ã€å…¨åˆ—ã‚’å–å¾—ã—ã¦ã„ã¾ã™ã€‚
 
             if (isSkipTypeForSimpleTable(columnStructure)) {
-                // ’Pˆê•\‚Æ‚µ‚Ä‚ÍƒXƒLƒbƒv‚·‚×‚«Œ^‚Å‚·B
+                // å˜ä¸€è¡¨ã¨ã—ã¦ã¯ã‚¹ã‚­ãƒƒãƒ—ã™ã¹ãå‹ã§ã™ã€‚
                 continue;
             }
 
@@ -365,7 +365,7 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
         }
 
         if (isFirstColumn) {
-            // ‚Ğ‚Æ‚Â‚à—ñ‚ªˆ—‚³‚ê‚Ü‚¹‚ñ‚Å‚µ‚½Bˆ—’†’f‚µ‚Ü‚·B
+            // ã²ã¨ã¤ã‚‚åˆ—ãŒå‡¦ç†ã•ã‚Œã¾ã›ã‚“ã§ã—ãŸã€‚å‡¦ç†ä¸­æ–­ã—ã¾ã™ã€‚
             return;
         }
 
@@ -384,8 +384,8 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
                     .getColumns().get(indexCol);
             if (BlancoDbUtil.isPrimaryKey(table, columnStructure)) {
                 if (isSkipTypeForSimpleTable(columnStructure)) {
-                    // ’Pˆê•\‚Æ‚µ‚Ä‚ÍƒXƒLƒbƒv‚·‚×‚«Œ^‚Å‚·B
-                    // ƒoƒCƒiƒŠ‚ÍŒŸõƒL[‚É—˜—p‚Å‚«‚Ü‚¹‚ñB
+                    // å˜ä¸€è¡¨ã¨ã—ã¦ã¯ã‚¹ã‚­ãƒƒãƒ—ã™ã¹ãå‹ã§ã™ã€‚
+                    // ãƒã‚¤ãƒŠãƒªã¯æ¤œç´¢ã‚­ãƒ¼ã«åˆ©ç”¨ã§ãã¾ã›ã‚“ã€‚
                     continue;
                 }
 
@@ -414,9 +414,9 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
         }
 
         if (isFirstPrimaryKey) {
-            // ƒvƒ‰ƒCƒ}ƒŠ[ƒL[‚ªˆêŒ‚àˆ—‚³‚ê‚Ä‚¢‚È‚¢Û‚É‚ÍA
-            // WHERE‚ªì¬‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB
-            // ˆ—‘±s‚ÍŠëŒ¯‚Æ”»’f‚µAˆ—’†’f‚µ‚Ü‚·B
+            // ãƒ—ãƒ©ã‚¤ãƒãƒªãƒ¼ã‚­ãƒ¼ãŒä¸€ä»¶ã‚‚å‡¦ç†ã•ã‚Œã¦ã„ãªã„éš›ã«ã¯ã€
+            // WHEREãŒä½œæˆã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚
+            // å‡¦ç†ç¶šè¡Œã¯å±é™ºã¨åˆ¤æ–­ã—ã€å‡¦ç†ä¸­æ–­ã—ã¾ã™ã€‚
             return;
         }
 
@@ -432,19 +432,19 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
             try {
                 sqlInfo.setQuery(getSqlFormatter().format(sqlInfo.getQuery()));
             } catch (BlancoSqlFormatterException e) {
-                // ‚µ‚©‚½‚ª‚È‚¢‚Ì‚ÅA‚»‚Ì‚Ü‚Üi‚İ‚Ü‚·B
+                // ã—ã‹ãŸãŒãªã„ã®ã§ã€ãã®ã¾ã¾é€²ã¿ã¾ã™ã€‚
                 e.printStackTrace();
             }
         }
 
-        // ÅŒã‚ÌÅŒã‚Åƒ‹[ƒgƒm[ƒh‚É’Ç‰Á‚µ‚Ü‚·B
+        // æœ€å¾Œã®æœ€å¾Œã§ãƒ«ãƒ¼ãƒˆãƒãƒ¼ãƒ‰ã«è¿½åŠ ã—ã¾ã™ã€‚
         resultSqlInfo.add(sqlInfo);
     }
 
     /**
-     * InputStream‚¨‚æ‚ÑReader‚Éƒ}ƒbƒv‚³‚ê‚éŒ^‚É‚Â‚¢‚ÄAŒÂ•Ê‚ÉIterator‚ğ¶¬‚µ‚Ü‚·B
+     * InputStreamãŠã‚ˆã³Readerã«ãƒãƒƒãƒ—ã•ã‚Œã‚‹å‹ã«ã¤ã„ã¦ã€å€‹åˆ¥ã«Iteratorã‚’ç”Ÿæˆã—ã¾ã™ã€‚
      * 
-     * ‚±‚ÌIteratorˆÈŠO‚Å‚Í InputStream‚¨‚æ‚ÑReader‚Éƒ}ƒbƒv‚³‚ê‚éŒ^‚Í€–Ú‚âğŒ‚Æ‚µ‚Ä‚Í¶¬‚ªƒXƒLƒbƒv‚³‚ê‚Ü‚·B
+     * ã“ã®Iteratorä»¥å¤–ã§ã¯ InputStreamãŠã‚ˆã³Readerã«ãƒãƒƒãƒ—ã•ã‚Œã‚‹å‹ã¯é …ç›®ã‚„æ¡ä»¶ã¨ã—ã¦ã¯ç”ŸæˆãŒã‚¹ã‚­ãƒƒãƒ—ã•ã‚Œã¾ã™ã€‚
      * 
      * @param collector
      * @param metadata
@@ -464,8 +464,8 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
                     .getColumns().get(indexCol);
 
             if (isSkipTypeForSimpleTable(columnStructure) == false) {
-                // ‚±‚±‚Å‚ÍƒoƒCƒiƒŠ‚¨‚æ‚ÑƒŠ[ƒ_u‚Ì‚İv‚ğˆ—‚µ‚Ü‚·B
-                // ¦‘¼‚Ì‰ÓŠ‚Æ”»’èğŒ‚ª”½“]‚µ‚Ä‚¢‚é“_‚É’–Ú‚µ‚Ä‚­‚¾‚³‚¢B
+                // ã“ã“ã§ã¯ãƒã‚¤ãƒŠãƒªãŠã‚ˆã³ãƒªãƒ¼ãƒ€ã€Œã®ã¿ã€ã‚’å‡¦ç†ã—ã¾ã™ã€‚
+                // â€»ä»–ã®ç®‡æ‰€ã¨åˆ¤å®šæ¡ä»¶ãŒåè»¢ã—ã¦ã„ã‚‹ç‚¹ã«æ³¨ç›®ã—ã¦ãã ã•ã„ã€‚
                 continue;
             }
 
@@ -477,11 +477,11 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
             sqlInfo.setName(name);
             sqlInfo.setType(BlancoDbSqlInfoTypeStringGroup.ITERATOR);
 
-            // BINARY‚¨‚æ‚ÑASCIISTREAM‚Ì—ñ‚Ö‚ÌƒAƒNƒZƒT‚ğ‚Ps§–ñ•t‚Åo—Í‚·‚é‚©‚Ç‚¤‚©B
-            // SQL Server 2000‚É‚¨‚¢‚Ä‚ÍA‚Ps§–ñ•t‚Å¶¬‚ğs‚¤‚ÆA‚Ps§–ñ‚ÌgetSingleRowƒƒ\ƒbƒh“à‚Ì
-            // next() { next() ‚Ì2“xŒÄ‚Ño‚µ‚ğs‚Á‚½“_‚ÅAˆê“x–Ú‚ÌŒŸõŒ‹‰Ê‚Ì
-            // ƒXƒgƒŠ[ƒ€‚ª•Â‚¶‚Ä‚µ‚Ü‚¤‚±‚Æ‚ª’m‚ç‚ê‚Ä‚¢‚Ü‚·B
-            // ‚±‚Ì‚æ‚¤‚È”wŒi‚©‚çAƒfƒtƒHƒ‹ƒg‚Í false ‚Å‚ ‚é ”ñ‚Ps§–ñ‚Æ‚µ‚½‚¢‚Å‚·B
+            // BINARYãŠã‚ˆã³ASCIISTREAMã®åˆ—ã¸ã®ã‚¢ã‚¯ã‚»ã‚µã‚’ï¼‘è¡Œåˆ¶ç´„ä»˜ã§å‡ºåŠ›ã™ã‚‹ã‹ã©ã†ã‹ã€‚
+            // SQL Server 2000ã«ãŠã„ã¦ã¯ã€ï¼‘è¡Œåˆ¶ç´„ä»˜ã§ç”Ÿæˆã‚’è¡Œã†ã¨ã€ï¼‘è¡Œåˆ¶ç´„ã®getSingleRowãƒ¡ã‚½ãƒƒãƒ‰å†…ã®
+            // next() ï¼‹ next() ã®2åº¦å‘¼ã³å‡ºã—ã‚’è¡Œã£ãŸæ™‚ç‚¹ã§ã€ä¸€åº¦ç›®ã®æ¤œç´¢çµæœã®
+            // ã‚¹ãƒˆãƒªãƒ¼ãƒ ãŒé–‰ã˜ã¦ã—ã¾ã†ã“ã¨ãŒçŸ¥ã‚‰ã‚Œã¦ã„ã¾ã™ã€‚
+            // ã“ã®ã‚ˆã†ãªèƒŒæ™¯ã‹ã‚‰ã€ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ false ã§ã‚ã‚‹ éï¼‘è¡Œåˆ¶ç´„ã¨ã—ãŸã„ã§ã™ã€‚
             sqlInfo.setSingle(fBundle.getSimpleColBinaryAsciiSelectSinglerow()
                     .equals("true"));
             sqlInfo.setScroll(new BlancoDbSqlInfoScrollStringGroup()
@@ -500,7 +500,7 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
                         .getColumns().get(indexPrimaryKey);
 
                 if (isSkipTypeForSimpleTable(columnPrimaryKey)) {
-                    // ğŒ‚Æ‚µ‚Ä‚ÍƒXƒLƒbƒv‚·‚×‚«Œ^‚Å‚·B
+                    // æ¡ä»¶ã¨ã—ã¦ã¯ã‚¹ã‚­ãƒƒãƒ—ã™ã¹ãå‹ã§ã™ã€‚
                     continue;
                 }
 
@@ -532,9 +532,9 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
             }
 
             if (isFirstPrimaryKey) {
-                // ƒvƒ‰ƒCƒ}ƒŠ[ƒL[‚ªˆêŒ‚àˆ—‚³‚ê‚Ä‚¢‚È‚¢Û‚É‚ÍA
-                // WHERE‚ªì¬‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB
-                // ˆ—‘±s‚ÍŠëŒ¯‚Æ”»’f‚µAˆ—’†’f‚µ‚Ü‚·B
+                // ãƒ—ãƒ©ã‚¤ãƒãƒªãƒ¼ã‚­ãƒ¼ãŒä¸€ä»¶ã‚‚å‡¦ç†ã•ã‚Œã¦ã„ãªã„éš›ã«ã¯ã€
+                // WHEREãŒä½œæˆã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚
+                // å‡¦ç†ç¶šè¡Œã¯å±é™ºã¨åˆ¤æ–­ã—ã€å‡¦ç†ä¸­æ–­ã—ã¾ã™ã€‚
                 return;
             }
 
@@ -544,18 +544,18 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
                     sqlInfo.setQuery(getSqlFormatter().format(
                             sqlInfo.getQuery()));
                 } catch (BlancoSqlFormatterException e) {
-                    // ‚µ‚©‚½‚ª‚È‚¢‚Ì‚ÅA‚»‚Ì‚Ü‚Üi‚İ‚Ü‚·B
+                    // ã—ã‹ãŸãŒãªã„ã®ã§ã€ãã®ã¾ã¾é€²ã¿ã¾ã™ã€‚
                     e.printStackTrace();
                 }
             }
 
-            // ÅŒã‚ÌÅŒã‚Åƒ‹[ƒgƒm[ƒh‚É’Ç‰Á‚µ‚Ü‚·B
+            // æœ€å¾Œã®æœ€å¾Œã§ãƒ«ãƒ¼ãƒˆãƒãƒ¼ãƒ‰ã«è¿½åŠ ã—ã¾ã™ã€‚
             resultSqlInfo.add(sqlInfo);
         }
     }
 
     /**
-     * ‘S€–Ú‚ğŒŸõ‚·‚éIterator‚ğ¶¬‚µ‚Ü‚·B
+     * å…¨é …ç›®ã‚’æ¤œç´¢ã™ã‚‹Iteratorã‚’ç”Ÿæˆã—ã¾ã™ã€‚
      * 
      * @param collector
      * @param metadata
@@ -590,7 +590,7 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
                     .getColumns().get(indexCol);
 
             if (isSkipTypeForSimpleTable(columnStructure)) {
-                // ’Pˆê•\‚Æ‚µ‚Ä‚ÍƒXƒLƒbƒv‚·‚×‚«Œ^‚Å‚·B
+                // å˜ä¸€è¡¨ã¨ã—ã¦ã¯ã‚¹ã‚­ãƒƒãƒ—ã™ã¹ãå‹ã§ã™ã€‚
                 continue;
             }
 
@@ -604,7 +604,7 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
         }
 
         if (isFirstColumn) {
-            // ‚Ğ‚Æ‚Â‚à—ñ‚ªˆ—‚³‚ê‚Ü‚¹‚ñ‚Å‚µ‚½Bˆ—’†’f‚µ‚Ü‚·B
+            // ã²ã¨ã¤ã‚‚åˆ—ãŒå‡¦ç†ã•ã‚Œã¾ã›ã‚“ã§ã—ãŸã€‚å‡¦ç†ä¸­æ–­ã—ã¾ã™ã€‚
             return;
         }
 
@@ -616,7 +616,7 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
                     .getColumns().get(indexCol);
 
             if (isSkipTypeForSimpleTable(columnStructure)) {
-                // ’Pˆê•\‚Æ‚µ‚Ä‚ÍƒXƒLƒbƒv‚·‚×‚«Œ^‚Å‚·B
+                // å˜ä¸€è¡¨ã¨ã—ã¦ã¯ã‚¹ã‚­ãƒƒãƒ—ã™ã¹ãå‹ã§ã™ã€‚
                 continue;
             }
 
@@ -632,9 +632,9 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
         }
 
         if (isFirstPrimaryKey) {
-            // ƒvƒ‰ƒCƒ}ƒŠ[ƒL[‚ªˆêŒ‚àˆ—‚³‚ê‚Ä‚¢‚È‚¢Û‚É‚ÍA
-            // WHERE‚ªì¬‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB
-            // ˆ—‘±s‚ÍŠëŒ¯‚Æ”»’f‚µAˆ—’†’f‚µ‚Ü‚·B
+            // ãƒ—ãƒ©ã‚¤ãƒãƒªãƒ¼ã‚­ãƒ¼ãŒä¸€ä»¶ã‚‚å‡¦ç†ã•ã‚Œã¦ã„ãªã„éš›ã«ã¯ã€
+            // WHEREãŒä½œæˆã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚
+            // å‡¦ç†ç¶šè¡Œã¯å±é™ºã¨åˆ¤æ–­ã—ã€å‡¦ç†ä¸­æ–­ã—ã¾ã™ã€‚
             return;
         }
 
@@ -643,17 +643,17 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
             try {
                 sqlInfo.setQuery(getSqlFormatter().format(sqlInfo.getQuery()));
             } catch (BlancoSqlFormatterException e) {
-                // ‚µ‚©‚½‚ª‚È‚¢‚Ì‚ÅA‚»‚Ì‚Ü‚Üi‚İ‚Ü‚·B
+                // ã—ã‹ãŸãŒãªã„ã®ã§ã€ãã®ã¾ã¾é€²ã¿ã¾ã™ã€‚
                 e.printStackTrace();
             }
         }
 
-        // ÅŒã‚ÌÅŒã‚Åƒ‹[ƒgƒm[ƒh‚É’Ç‰Á‚µ‚Ü‚·B
+        // æœ€å¾Œã®æœ€å¾Œã§ãƒ«ãƒ¼ãƒˆãƒãƒ¼ãƒ‰ã«è¿½åŠ ã—ã¾ã™ã€‚
         resultSqlInfo.add(sqlInfo);
     }
 
     /**
-     * ‘}“ü‚ğs‚¤Invoker‚ğ¶¬‚µ‚Ü‚·B
+     * æŒ¿å…¥ã‚’è¡Œã†Invokerã‚’ç”Ÿæˆã—ã¾ã™ã€‚
      * 
      * @param collector
      * @param metadata
@@ -694,7 +694,7 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
             }
 
             if (isSkipTypeForSimpleTable(columnStructure)) {
-                // ’Pˆê•\‚Æ‚µ‚Ä‚ÍƒXƒLƒbƒv‚·‚×‚«Œ^‚Å‚·B
+                // å˜ä¸€è¡¨ã¨ã—ã¦ã¯ã‚¹ã‚­ãƒƒãƒ—ã™ã¹ãå‹ã§ã™ã€‚
                 continue;
             }
 
@@ -707,8 +707,8 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
         }
 
         if (isFirstColumn) {
-            // ‚Ğ‚Æ‚Â‚à—ñ‚ªˆ—‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB
-            // ‚±‚Ì‘g‚İ‡‚í‚¹‚Í¶¬‚ğƒXƒLƒbƒv‚µ‚Ü‚·B
+            // ã²ã¨ã¤ã‚‚åˆ—ãŒå‡¦ç†ã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚
+            // ã“ã®çµ„ã¿åˆã‚ã›ã¯ç”Ÿæˆã‚’ã‚¹ã‚­ãƒƒãƒ—ã—ã¾ã™ã€‚
             return;
         }
 
@@ -726,7 +726,7 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
             }
 
             if (isSkipTypeForSimpleTable(columnStructure)) {
-                // ’Pˆê•\‚Æ‚µ‚Ä‚ÍƒXƒLƒbƒv‚·‚×‚«Œ^‚Å‚·B
+                // å˜ä¸€è¡¨ã¨ã—ã¦ã¯ã‚¹ã‚­ãƒƒãƒ—ã™ã¹ãå‹ã§ã™ã€‚
                 continue;
             }
 
@@ -754,9 +754,9 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
         sql.append(")");
 
         if (isFirstPrimaryKey) {
-            // ƒvƒ‰ƒCƒ}ƒŠ[ƒL[‚ªˆêŒ‚àˆ—‚³‚ê‚Ä‚¢‚È‚¢Û‚É‚ÍA
-            // WHERE‚ªì¬‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB
-            // ˆ—‘±s‚ÍŠëŒ¯‚Æ”»’f‚µAˆ—’†’f‚µ‚Ü‚·B
+            // ãƒ—ãƒ©ã‚¤ãƒãƒªãƒ¼ã‚­ãƒ¼ãŒä¸€ä»¶ã‚‚å‡¦ç†ã•ã‚Œã¦ã„ãªã„éš›ã«ã¯ã€
+            // WHEREãŒä½œæˆã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚
+            // å‡¦ç†ç¶šè¡Œã¯å±é™ºã¨åˆ¤æ–­ã—ã€å‡¦ç†ä¸­æ–­ã—ã¾ã™ã€‚
             return;
         }
 
@@ -765,19 +765,19 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
             try {
                 sqlInfo.setQuery(getSqlFormatter().format(sqlInfo.getQuery()));
             } catch (BlancoSqlFormatterException e) {
-                // ‚µ‚©‚½‚ª‚È‚¢‚Ì‚ÅA‚»‚Ì‚Ü‚Üi‚İ‚Ü‚·B
+                // ã—ã‹ãŸãŒãªã„ã®ã§ã€ãã®ã¾ã¾é€²ã¿ã¾ã™ã€‚
                 e.printStackTrace();
             }
         }
 
         if (isIgnoreNullable == false || isNullableColumnExist) {
-            // NULL‹–—e—ñ‚ªˆ—‚³‚ê‚½ê‡‚É‚Ì‚İXML‚É’Ç‰Á‚µ‚Ü‚·B
+            // NULLè¨±å®¹åˆ—ãŒå‡¦ç†ã•ã‚ŒãŸå ´åˆã«ã®ã¿XMLã«è¿½åŠ ã—ã¾ã™ã€‚
             resultSqlInfo.add(sqlInfo);
         }
     }
 
     /**
-     * XV‚ğs‚¤Invoker‚ğ¶¬‚µ‚Ü‚·B
+     * æ›´æ–°ã‚’è¡Œã†Invokerã‚’ç”Ÿæˆã—ã¾ã™ã€‚
      * 
      * @param collector
      * @param metadata
@@ -812,7 +812,7 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
             }
 
             if (isSkipTypeForSimpleTable(columnStructure)) {
-                // ’Pˆê•\‚Æ‚µ‚Ä‚ÍƒXƒLƒbƒv‚·‚×‚«Œ^‚Å‚·B
+                // å˜ä¸€è¡¨ã¨ã—ã¦ã¯ã‚¹ã‚­ãƒƒãƒ—ã™ã¹ãå‹ã§ã™ã€‚
                 continue;
             }
 
@@ -840,8 +840,8 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
         }
 
         if (isFirstColumn) {
-            // ‚Ğ‚Æ‚Â‚à—ñ‚ªˆ—‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB
-            // ‚±‚Ì‘g‚İ‡‚í‚¹‚Í¶¬‚ğƒXƒLƒbƒv‚µ‚Ü‚·B
+            // ã²ã¨ã¤ã‚‚åˆ—ãŒå‡¦ç†ã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚
+            // ã“ã®çµ„ã¿åˆã‚ã›ã¯ç”Ÿæˆã‚’ã‚¹ã‚­ãƒƒãƒ—ã—ã¾ã™ã€‚
             return;
         }
 
@@ -856,7 +856,7 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
             }
 
             if (isSkipTypeForSimpleTable(columnStructure)) {
-                // ’Pˆê•\‚Æ‚µ‚Ä‚ÍƒXƒLƒbƒv‚·‚×‚«Œ^‚Å‚·B
+                // å˜ä¸€è¡¨ã¨ã—ã¦ã¯ã‚¹ã‚­ãƒƒãƒ—ã™ã¹ãå‹ã§ã™ã€‚
                 continue;
             }
 
@@ -877,9 +877,9 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
         }
 
         if (isFirstPrimaryKey) {
-            // ƒvƒ‰ƒCƒ}ƒŠ[ƒL[‚ªˆêŒ‚àˆ—‚³‚ê‚Ä‚¢‚È‚¢Û‚É‚ÍA
-            // WHERE‚ªì¬‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB
-            // ˆ—‘±s‚ÍŠëŒ¯‚Æ”»’f‚µAˆ—’†’f‚µ‚Ü‚·B
+            // ãƒ—ãƒ©ã‚¤ãƒãƒªãƒ¼ã‚­ãƒ¼ãŒä¸€ä»¶ã‚‚å‡¦ç†ã•ã‚Œã¦ã„ãªã„éš›ã«ã¯ã€
+            // WHEREãŒä½œæˆã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚
+            // å‡¦ç†ç¶šè¡Œã¯å±é™ºã¨åˆ¤æ–­ã—ã€å‡¦ç†ä¸­æ–­ã—ã¾ã™ã€‚
             return;
         }
 
@@ -888,17 +888,17 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
             try {
                 sqlInfo.setQuery(getSqlFormatter().format(sqlInfo.getQuery()));
             } catch (BlancoSqlFormatterException e) {
-                // ‚µ‚©‚½‚ª‚È‚¢‚Ì‚ÅA‚»‚Ì‚Ü‚Üi‚İ‚Ü‚·B
+                // ã—ã‹ãŸãŒãªã„ã®ã§ã€ãã®ã¾ã¾é€²ã¿ã¾ã™ã€‚
                 e.printStackTrace();
             }
         }
 
-        // ÅŒã‚ÌÅŒã‚Åƒ‹[ƒgƒm[ƒh‚É’Ç‰Á‚µ‚Ü‚·B
+        // æœ€å¾Œã®æœ€å¾Œã§ãƒ«ãƒ¼ãƒˆãƒãƒ¼ãƒ‰ã«è¿½åŠ ã—ã¾ã™ã€‚
         resultSqlInfo.add(sqlInfo);
     }
 
     /**
-     * íœ‚ğs‚¤Invoker‚ğ¶¬‚µ‚Ü‚·B
+     * å‰Šé™¤ã‚’è¡Œã†Invokerã‚’ç”Ÿæˆã—ã¾ã™ã€‚
      * 
      * @param collector
      * @param metadata
@@ -933,7 +933,7 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
             }
 
             if (isSkipTypeForSimpleTable(columnStructure)) {
-                // ’Pˆê•\‚Æ‚µ‚Ä‚ÍƒXƒLƒbƒv‚·‚×‚«Œ^‚Å‚·B
+                // å˜ä¸€è¡¨ã¨ã—ã¦ã¯ã‚¹ã‚­ãƒƒãƒ—ã™ã¹ãå‹ã§ã™ã€‚
                 continue;
             }
 
@@ -961,8 +961,8 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
         }
 
         if (isFirstColumn) {
-            // ‚Ğ‚Æ‚Â‚à—ñ‚ªˆ—‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB
-            // ‚±‚Ì‘g‚İ‡‚í‚¹‚Í¶¬‚ğƒXƒLƒbƒv‚µ‚Ü‚·B
+            // ã²ã¨ã¤ã‚‚åˆ—ãŒå‡¦ç†ã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚
+            // ã“ã®çµ„ã¿åˆã‚ã›ã¯ç”Ÿæˆã‚’ã‚¹ã‚­ãƒƒãƒ—ã—ã¾ã™ã€‚
             return;
         }
 
@@ -971,18 +971,18 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
             try {
                 sqlInfo.setQuery(getSqlFormatter().format(sqlInfo.getQuery()));
             } catch (BlancoSqlFormatterException e) {
-                // ‚µ‚©‚½‚ª‚È‚¢‚Ì‚ÅA‚»‚Ì‚Ü‚Üi‚İ‚Ü‚·B
+                // ã—ã‹ãŸãŒãªã„ã®ã§ã€ãã®ã¾ã¾é€²ã¿ã¾ã™ã€‚
                 e.printStackTrace();
             }
         }
 
-        // ÅŒã‚ÌÅŒã‚Åƒ‹[ƒgƒm[ƒh‚É’Ç‰Á‚µ‚Ü‚·B
+        // æœ€å¾Œã®æœ€å¾Œã§ãƒ«ãƒ¼ãƒˆãƒãƒ¼ãƒ‰ã«è¿½åŠ ã—ã¾ã™ã€‚
         resultSqlInfo.add(sqlInfo);
     }
 
     /**
-     * —^‚¦‚ç‚ê‚½SQLã‚Ì–¼Ì(•\–¼‚Ü‚½‚Í—ñ–¼)‚ÉƒGƒXƒP[ƒv‚·‚é‚×‚«•¶š(ƒXƒy[ƒX)‚ªŠÜ‚Ü‚ê‚Ä‚¢‚éê‡‚ÉA•\–¼‚»‚Ì‚à‚Ì‚ğƒ_ƒuƒ‹ƒNƒI[ƒg‚ÅƒGƒXƒP[ƒv‚µ‚Ü‚·
-     * B
+     * ä¸ãˆã‚‰ã‚ŒãŸSQLä¸Šã®åç§°(è¡¨åã¾ãŸã¯åˆ—å)ã«ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã™ã‚‹ã¹ãæ–‡å­—(ã‚¹ãƒšãƒ¼ã‚¹)ãŒå«ã¾ã‚Œã¦ã„ã‚‹å ´åˆã«ã€è¡¨åãã®ã‚‚ã®ã‚’ãƒ€ãƒ–ãƒ«ã‚¯ã‚ªãƒ¼ãƒˆã§ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã—ã¾ã™
+     * ã€‚
      * 
      * @param tableName
      * @return
@@ -1004,24 +1004,24 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
     }
 
     /**
-     * SQL®Œ`ƒtƒH[ƒ}ƒbƒ^‚ğæ“¾‚µ‚Ü‚·B
+     * SQLæ•´å½¢ãƒ•ã‚©ãƒ¼ãƒãƒƒã‚¿ã‚’å–å¾—ã—ã¾ã™ã€‚
      * 
-     * @return SQL®Œ`ƒtƒH[ƒ}ƒbƒ^B
+     * @return SQLæ•´å½¢ãƒ•ã‚©ãƒ¼ãƒãƒƒã‚¿ã€‚
      */
     private static BlancoSqlFormatter getSqlFormatter() {
         return new BlancoSqlFormatter(new BlancoSqlRule());
     }
 
     /**
-     * ’Pˆê•\‚Ìˆ—‚Æ‚µ‚ÄƒXƒLƒbƒv‚·‚×‚«Œ^‚Å‚ ‚é‚©‚Ç‚¤‚©”»’è‚µ‚Ü‚·B
+     * å˜ä¸€è¡¨ã®å‡¦ç†ã¨ã—ã¦ã‚¹ã‚­ãƒƒãƒ—ã™ã¹ãå‹ã§ã‚ã‚‹ã‹ã©ã†ã‹åˆ¤å®šã—ã¾ã™ã€‚
      * 
-     * ¦‚±‚Ìƒƒ\ƒbƒh‚ÍAƒŠƒŒ[ƒVƒ‡ƒiƒ‹ƒf[ƒ^ƒx[ƒXA‚ ‚é‚¢‚Íƒf[ƒ^ƒx[ƒXAPI‚É‚æ‚è‰Â•Ï‚Æ‚È‚é‰ÓŠ‚Å‚·B
+     * â€»ã“ã®ãƒ¡ã‚½ãƒƒãƒ‰ã¯ã€ãƒªãƒ¬ãƒ¼ã‚·ãƒ§ãƒŠãƒ«ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã€ã‚ã‚‹ã„ã¯ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹APIã«ã‚ˆã‚Šå¯å¤‰ã¨ãªã‚‹ç®‡æ‰€ã§ã™ã€‚
      * 
-     * TODO JavaŒ¾ŒêˆÈŠO‚É‚¨‚¢‚Ä‚±‚ÌƒNƒ‰ƒX‚ğ—˜—p‚·‚éÛ‚É‚ÍA‚±‚Ìƒƒ\ƒbƒh‚ğƒI[ƒo[ƒ‰ƒCƒh‚·‚é•K—v‚ª‚ ‚è‚Ü‚·B
+     * TODO Javaè¨€èªä»¥å¤–ã«ãŠã„ã¦ã“ã®ã‚¯ãƒ©ã‚¹ã‚’åˆ©ç”¨ã™ã‚‹éš›ã«ã¯ã€ã“ã®ãƒ¡ã‚½ãƒƒãƒ‰ã‚’ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
      * 
      * @param argTypeName
-     *            Œ^–¼BƒpƒbƒP[ƒW–¼‚ğœ‚­B
-     * @return ƒXƒLƒbƒv‚·‚×‚«Œ^‚Ìê‡‚É‚ÍtrueB
+     *            å‹åã€‚ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸åã‚’é™¤ãã€‚
+     * @return ã‚¹ã‚­ãƒƒãƒ—ã™ã¹ãå‹ã®å ´åˆã«ã¯trueã€‚
      */
     protected boolean isSkipTypeForSimpleTable(
             final BlancoDbMetaDataColumnStructure columnStructure) {
@@ -1045,7 +1045,7 @@ public abstract class BlancoDbTableMeta2Xml implements IBlancoDbProgress {
         case Types.OTHER:
         case Types.REF:
         case Types.DATALINK:
-        case Types.ROWID:// ‚³‚µ‚ ‚½‚èƒTƒ|[ƒg”ÍˆÍŠO‚Éƒ}ƒbƒv‚µ‚Ü‚·B
+        case Types.ROWID:// ã•ã—ã‚ãŸã‚Šã‚µãƒãƒ¼ãƒˆç¯„å›²å¤–ã«ãƒãƒƒãƒ—ã—ã¾ã™ã€‚
             return true;
         default:
             return false;

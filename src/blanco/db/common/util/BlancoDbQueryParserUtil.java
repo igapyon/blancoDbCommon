@@ -18,44 +18,44 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * blancoDb‚ª—˜—p‚·‚éQueryƒp[ƒXEƒ†[ƒeƒBƒŠƒeƒBƒNƒ‰ƒX
+ * blancoDbãŒåˆ©ç”¨ã™ã‚‹Queryãƒ‘ãƒ¼ã‚¹ãƒ»ãƒ¦ãƒ¼ãƒ†ã‚£ãƒªãƒ†ã‚£ã‚¯ãƒ©ã‚¹
  * 
- * SQL‚Ì‰ğß‚¨‚æ‚Ñ•ÏŠ·‚È‚Ç‚ğ–Ú“I‚Æ‚µ‚Ü‚·B
+ * SQLã®è§£é‡ˆãŠã‚ˆã³å¤‰æ›ãªã©ã‚’ç›®çš„ã¨ã—ã¾ã™ã€‚
  * 
  * @author Tosiki Iga
  */
 public class BlancoDbQueryParserUtil {
     /**
-     * SQL“ü—Íƒpƒ‰ƒ[ƒ^‚Æ‚µ‚Ä”»’è‚·‚é‚½‚ß‚Ì³‹K•\Œ»•¶š—ñB
+     * SQLå…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã¨ã—ã¦åˆ¤å®šã™ã‚‹ãŸã‚ã®æ­£è¦è¡¨ç¾æ–‡å­—åˆ—ã€‚
      */
     private static final String SZ_PARAMETER_FOR_SQL_INPUT_PARAMETER = "#[a-zA-Z0-9.\\-_\\P{InBasicLatin}]*\\b|#.*$";
 
     /**
-     * SQL“ü—Íƒpƒ‰ƒ[ƒ^‚Ìƒ}ƒbƒv <br>
-     * TODO ƒ}ƒbƒv‚ğ—˜—p‚µ‚Ä‚¢‚Ü‚·‚ªA‚±‚ê‚¾‚Æ‡˜«‚ªŠm•Û‚³‚ê‚Ü‚¹‚ñB
+     * SQLå…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®ãƒãƒƒãƒ— <br>
+     * TODO ãƒãƒƒãƒ—ã‚’åˆ©ç”¨ã—ã¦ã„ã¾ã™ãŒã€ã“ã‚Œã ã¨é †åºæ€§ãŒç¢ºä¿ã•ã‚Œã¾ã›ã‚“ã€‚
      */
     @SuppressWarnings("unchecked")
     private final Map fMapForSqlInputParameters = new Hashtable();
 
     /**
-     * ƒIƒŠƒWƒiƒ‹‚ÌSQL•¶š—ñ
+     * ã‚ªãƒªã‚¸ãƒŠãƒ«ã®SQLæ–‡å­—åˆ—
      */
     private String fOriginalSqlQueryString = "";
 
     @SuppressWarnings("unchecked")
     public BlancoDbQueryParserUtil(final String sqlQueryString) {
-        // ƒpƒ‰ƒ[ƒ^‚ğ‹L‰¯‚µ‚Ü‚·B
+        // ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨˜æ†¶ã—ã¾ã™ã€‚
         fOriginalSqlQueryString = sqlQueryString;
 
-        // ³‹K•\Œ»•¶š—ñƒCƒ“ƒXƒ^ƒ“ƒX‚ğ¶¬‚µ‚Ü‚·B
-        // TODO ³‹K•\Œ»‚É‚æ‚éˆ—‚É‚¨‚¢‚Ä•s“KØ‚Èó‹µ‚ª”­¶‚·‚é‰Â”\«‚ª‚ ‚è‚Ü‚·B
+        // æ­£è¦è¡¨ç¾æ–‡å­—åˆ—ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç”Ÿæˆã—ã¾ã™ã€‚
+        // TODO æ­£è¦è¡¨ç¾ã«ã‚ˆã‚‹å‡¦ç†ã«ãŠã„ã¦ä¸é©åˆ‡ãªçŠ¶æ³ãŒç™ºç”Ÿã™ã‚‹å¯èƒ½æ€§ãŒã‚ã‚Šã¾ã™ã€‚
         final Matcher matcher = Pattern.compile(
                 SZ_PARAMETER_FOR_SQL_INPUT_PARAMETER).matcher(
                 fOriginalSqlQueryString);
 
         for (int index = 1; matcher.find(); index++) {
             String name = matcher.group();
-            // æ“ª‚Ì”‚ğœ‹‚µ‚Ü‚·B
+            // å…ˆé ­ã®ï¼ƒã‚’é™¤å»ã—ã¾ã™ã€‚
             name = name.substring(1, name.length());
             if (fMapForSqlInputParameters.containsKey(name) == false) {
                 fMapForSqlInputParameters.put(name, new ArrayList());
@@ -73,7 +73,7 @@ public class BlancoDbQueryParserUtil {
     }
 
     /**
-     * “ü—Í‚³‚ê‚½SQL“ü—Íƒpƒ‰ƒ[ƒ^‚ğint”z—ñ‚É•ÏŠ·‚µ‚Ü‚·B
+     * å…¥åŠ›ã•ã‚ŒãŸSQLå…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’inté…åˆ—ã«å¤‰æ›ã—ã¾ã™ã€‚
      * 
      * @param sqlInputParameterFoundList
      * @return
@@ -90,21 +90,21 @@ public class BlancoDbQueryParserUtil {
     }
 
     /**
-     * ìFƒL[‚ğŒ³‚ÉAint‚ğƒQƒbƒg‚µ‚Ü‚·B
+     * è©¦ä½œï¼šã‚­ãƒ¼ã‚’å…ƒã«ã€intã‚’ã‚²ãƒƒãƒˆã—ã¾ã™ã€‚
      * 
      * @param key
      * @return
      */
     public int[] getSqlParameters(final String key) {
-        // ƒ}ƒbƒv‚©‚çIterator‚ğì¬‚µ‚Ä‚¢‚é“_‚É’ˆÓB
+        // ãƒãƒƒãƒ—ã‹ã‚‰Iteratorã‚’ä½œæˆã—ã¦ã„ã‚‹ç‚¹ã«æ³¨æ„ã€‚
         return (int[]) fMapForSqlInputParameters.get(key);
     }
 
     /**
-     * JDBC‚ÉÀÛ‚É”­s‚·‚éÛ‚É—˜—p‚³‚ê‚éƒiƒ`ƒ…ƒ‰ƒ‹‚ÈSQL•¶
+     * JDBCã«å®Ÿéš›ã«ç™ºè¡Œã™ã‚‹éš›ã«åˆ©ç”¨ã•ã‚Œã‚‹ãƒŠãƒãƒ¥ãƒ©ãƒ«ãªSQLæ–‡
      * 
-     * SQL•¶‚©‚çƒƒ^î•ñ‚ğæ“¾‚·‚éÛ‚É—˜—p‚³‚ê‚Ü‚·B‚Â‚Ü‚èADotNet”Å‚È‚Ç
-     * Java”ÅˆÈŠO‚Ì”Å‚Ìƒ\[ƒXƒR[ƒh©“®¶¬‚ÌÛ‚ÉA‚±‚Ìƒƒ\ƒbƒh‚ª—˜—p‚³‚ê‚Ü‚·B
+     * SQLæ–‡ã‹ã‚‰ãƒ¡ã‚¿æƒ…å ±ã‚’å–å¾—ã™ã‚‹éš›ã«åˆ©ç”¨ã•ã‚Œã¾ã™ã€‚ã¤ã¾ã‚Šã€DotNetç‰ˆãªã©
+     * Javaç‰ˆä»¥å¤–ã®ç‰ˆã®ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰è‡ªå‹•ç”Ÿæˆã®éš›ã«ã€ã“ã®ãƒ¡ã‚½ãƒƒãƒ‰ãŒåˆ©ç”¨ã•ã‚Œã¾ã™ã€‚
      * 
      * @return
      */

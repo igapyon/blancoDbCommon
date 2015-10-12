@@ -1,53 +1,53 @@
 /*
- * ‚±‚Ìƒ\[ƒXƒR[ƒh‚Í blanco Framework‚É‚æ‚Á‚ÄŽ©“®¶¬‚³‚ê‚Ä‚¢‚Ü‚·B
+ * ã“ã®ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã¯ blanco Frameworkã«ã‚ˆã£ã¦è‡ªå‹•ç”Ÿæˆã•ã‚Œã¦ã„ã¾ã™ã€‚
  */
 package blanco.db.common.message;
 
 /**
- * blancoDb ‚Ì‹¤’Ê“I‚Èƒvƒ‰ƒOƒCƒ“ƒƒbƒZ[ƒWB
+ * blancoDb ã®å…±é€šçš„ãªãƒ—ãƒ©ã‚°ã‚¤ãƒ³ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã€‚
  */
 public class BlancoDbCommonPluginMessage {
     /**
-     * ƒƒbƒZ[ƒW‚ðƒvƒƒpƒeƒBƒtƒ@ƒCƒ‹‘Î‰ž‚³‚¹‚é‚½‚ß‚Ì“à•”“I‚É—˜—p‚·‚éƒŠƒ\[ƒXƒoƒ“ƒhƒ‹ƒNƒ‰ƒXB
+     * ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ãƒ•ã‚¡ã‚¤ãƒ«å¯¾å¿œã•ã›ã‚‹ãŸã‚ã®å†…éƒ¨çš„ã«åˆ©ç”¨ã™ã‚‹ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ«ã‚¯ãƒ©ã‚¹ã€‚
      */
     protected final BlancoDbCommonPluginMessageResourceBundle fBundle = new BlancoDbCommonPluginMessageResourceBundle();
 
     /**
-     * ƒƒbƒZ[ƒW’è‹`ID[BlancoDbCommonPlugin]AƒL[[MBDBCMI01]‚Ì•¶Žš—ñ‚ðŽæ“¾‚µ‚Ü‚·B
+     * ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å®šç¾©ID[BlancoDbCommonPlugin]ã€ã‚­ãƒ¼[MBDBCMI01]ã®æ–‡å­—åˆ—ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
      * No.1:
-     * •¶Žš—ñ[blancoDb ƒvƒ‰ƒOƒCƒ“‚ÍˆÈ‰º‚Ì‚æ‚¤‚É—˜—p‚µ‚Ä‚­‚¾‚³‚¢B\n  1.Java ƒvƒƒWƒFƒNƒg“à‚Å—˜—p‚µ‚Ä‚­‚¾‚³‚¢\n    blancoDb ‚Ìƒ\[ƒXƒR[ƒhŽ©“®¶¬‚ÍAJava ƒvƒƒWƒFƒNƒg“à‚ÅŽÀs‚µ‚Ä‚­‚¾‚³‚¢B\n  2.uƒ‰ƒCƒuƒ‰ƒŠ[v‚É JDBC ƒhƒ‰ƒCƒo‚Ì jar ƒtƒ@ƒCƒ‹‚ð’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢\n    ƒvƒƒWƒFƒNƒg‚ÌuƒvƒƒpƒeƒB[v-&gt;uJava ‚Ìƒrƒ‹ƒhEƒpƒXv‚Ìuƒ‰ƒCƒuƒ‰ƒŠ[v‚É\n    JDBC ƒhƒ‰ƒCƒo‚Ì jar ƒtƒ@ƒCƒ‹‚ð’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢B\n  ¦‚±‚ê‚ç‚ÍAƒ\[ƒXƒR[ƒh¶¬‚ð‚¨‚±‚È‚¤ê‡‚Ì§ŒÀ‚Å‚·B\n    ¶¬‚³‚ê‚½ƒ\[ƒXƒR[ƒh‚Ì—˜—pŽž‚É‚ÍAŠÖŒW‚ ‚è‚Ü‚¹‚ñB]
+     * æ–‡å­—åˆ—[blancoDb ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã¯ä»¥ä¸‹ã®ã‚ˆã†ã«åˆ©ç”¨ã—ã¦ãã ã•ã„ã€‚\n  1.Java ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆå†…ã§åˆ©ç”¨ã—ã¦ãã ã•ã„\n    blancoDb ã®ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰è‡ªå‹•ç”Ÿæˆã¯ã€Java ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆå†…ã§å®Ÿè¡Œã—ã¦ãã ã•ã„ã€‚\n  2.ã€Œãƒ©ã‚¤ãƒ–ãƒ©ãƒªãƒ¼ã€ã« JDBC ãƒ‰ãƒ©ã‚¤ãƒã® jar ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¿½åŠ ã—ã¦ãã ã•ã„\n    ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã®ã€Œãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ãƒ¼ã€-&gt;ã€ŒJava ã®ãƒ“ãƒ«ãƒ‰ãƒ»ãƒ‘ã‚¹ã€ã®ã€Œãƒ©ã‚¤ãƒ–ãƒ©ãƒªãƒ¼ã€ã«\n    JDBC ãƒ‰ãƒ©ã‚¤ãƒã® jar ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¿½åŠ ã—ã¦ãã ã•ã„ã€‚\n  â€»ã“ã‚Œã‚‰ã¯ã€ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ç”Ÿæˆã‚’ãŠã“ãªã†å ´åˆã®åˆ¶é™ã§ã™ã€‚\n    ç”Ÿæˆã•ã‚ŒãŸã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã®åˆ©ç”¨æ™‚ã«ã¯ã€é–¢ä¿‚ã‚ã‚Šã¾ã›ã‚“ã€‚]
      *
-     * @return ƒƒbƒZ[ƒW•¶Žš—ñB
+     * @return ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸æ–‡å­—åˆ—ã€‚
      */
     public String getMbdbcmi01() {
         return fBundle.getMbdbcmi01();
     }
 
     /**
-     * ƒƒbƒZ[ƒW’è‹`ID[BlancoDbCommonPlugin]AƒL[[MBDBCMC01]‚Ì•¶Žš—ñ‚ðŽæ“¾‚µ‚Ü‚·B
+     * ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å®šç¾©ID[BlancoDbCommonPlugin]ã€ã‚­ãƒ¼[MBDBCMC01]ã®æ–‡å­—åˆ—ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
      * No.3:
-     * •¶Žš—ñ[Ú‘±ƒ`ƒFƒbƒNŽ¸”s]
+     * æ–‡å­—åˆ—[æŽ¥ç¶šãƒã‚§ãƒƒã‚¯å¤±æ•—]
      *
-     * @return ƒƒbƒZ[ƒW•¶Žš—ñB
+     * @return ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸æ–‡å­—åˆ—ã€‚
      */
     public String getMbdbcmc01() {
         return fBundle.getMbdbcmc01();
     }
 
     /**
-     * ƒƒbƒZ[ƒW’è‹`ID[BlancoDbCommonPlugin]AƒL[[MBDBCMC02]‚Ì•¶Žš—ñ‚ðŽæ“¾‚µ‚Ü‚·B
+     * ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å®šç¾©ID[BlancoDbCommonPlugin]ã€ã‚­ãƒ¼[MBDBCMC02]ã®æ–‡å­—åˆ—ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
      * No.4:
-     * •¶Žš—ñ[Žw’è‚ÌJDBCƒhƒ‰ƒCƒo({0})‚Ì“Ç‚Ýž‚Ý‚ÉŽ¸”s‚µ‚Ü‚µ‚½B\n\nŠY“–‚Ì JDBC ƒhƒ‰ƒCƒo‚ð“Ç‚Ýž‚ß‚é‚æ‚¤‚ÉÝ’è•ÏX‚ª•K—v‚Å‚ ‚é‰Â”\«‚ª‚ ‚è‚Ü‚·B\nˆÈ‰º‚Ì“_‚ðŠm”F‚µ‚Ä‚­‚¾‚³‚¢B\n 1.Java ƒvƒƒWƒFƒNƒg“à‚Å—˜—p‚µ‚Ä‚­‚¾‚³‚¢\n   blancoDb ‚Ìƒ\[ƒXƒR[ƒhŽ©“®¶¬‚ÍAJava ƒvƒƒWƒFƒNƒg“à‚ÅŽÀs‚µ‚Ä\n   ‚­‚¾‚³‚¢B\n 2.uƒ‰ƒCƒuƒ‰ƒŠ[v‚É JDBC ƒhƒ‰ƒCƒo‚Ì jar ƒtƒ@ƒCƒ‹‚ð’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢\n   ƒvƒƒWƒFƒNƒg‚ÌuƒvƒƒpƒeƒB[v-&gt;uJava ‚Ìƒrƒ‹ƒhEƒpƒXv‚Ìuƒ‰ƒCƒuƒ‰ƒŠ[v\n   ‚É JDBC ƒhƒ‰ƒCƒo‚Ì jar ƒtƒ@ƒCƒ‹‚ð’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢B]
+     * æ–‡å­—åˆ—[æŒ‡å®šã®JDBCãƒ‰ãƒ©ã‚¤ãƒ({0})ã®èª­ã¿è¾¼ã¿ã«å¤±æ•—ã—ã¾ã—ãŸã€‚\n\nè©²å½“ã® JDBC ãƒ‰ãƒ©ã‚¤ãƒã‚’èª­ã¿è¾¼ã‚ã‚‹ã‚ˆã†ã«è¨­å®šå¤‰æ›´ãŒå¿…è¦ã§ã‚ã‚‹å¯èƒ½æ€§ãŒã‚ã‚Šã¾ã™ã€‚\nä»¥ä¸‹ã®ç‚¹ã‚’ç¢ºèªã—ã¦ãã ã•ã„ã€‚\n 1.Java ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆå†…ã§åˆ©ç”¨ã—ã¦ãã ã•ã„\n   blancoDb ã®ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰è‡ªå‹•ç”Ÿæˆã¯ã€Java ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆå†…ã§å®Ÿè¡Œã—ã¦\n   ãã ã•ã„ã€‚\n 2.ã€Œãƒ©ã‚¤ãƒ–ãƒ©ãƒªãƒ¼ã€ã« JDBC ãƒ‰ãƒ©ã‚¤ãƒã® jar ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¿½åŠ ã—ã¦ãã ã•ã„\n   ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã®ã€Œãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ãƒ¼ã€-&gt;ã€ŒJava ã®ãƒ“ãƒ«ãƒ‰ãƒ»ãƒ‘ã‚¹ã€ã®ã€Œãƒ©ã‚¤ãƒ–ãƒ©ãƒªãƒ¼ã€\n   ã« JDBC ãƒ‰ãƒ©ã‚¤ãƒã® jar ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¿½åŠ ã—ã¦ãã ã•ã„ã€‚]
      *
-     * @param arg0 ’uŠ·•¶Žš—ñ{0}‚Ì’lB
-     * @return ƒƒbƒZ[ƒW•¶Žš—ñB
+     * @param arg0 ç½®æ›æ–‡å­—åˆ—{0}ã®å€¤ã€‚
+     * @return ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸æ–‡å­—åˆ—ã€‚
      */
     public String getMbdbcmc02(final String arg0) {
         if (arg0 == null) {
-            throw new IllegalArgumentException("ƒƒ\ƒbƒh[getMbdbcmc02]‚Ìƒpƒ‰ƒ[ƒ^[arg0]‚Énull‚ª—^‚¦‚ç‚ê‚Ü‚µ‚½B‚µ‚©‚µA‚±‚Ìƒpƒ‰ƒ[ƒ^‚Énull‚ð—^‚¦‚é‚±‚Æ‚Í‚Å‚«‚Ü‚¹‚ñB");
+            throw new IllegalArgumentException("ãƒ¡ã‚½ãƒƒãƒ‰[getMbdbcmc02]ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿[arg0]ã«nullãŒä¸Žãˆã‚‰ã‚Œã¾ã—ãŸã€‚ã—ã‹ã—ã€ã“ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã«nullã‚’ä¸Žãˆã‚‹ã“ã¨ã¯ã§ãã¾ã›ã‚“ã€‚");
         }
 
         return fBundle.getMbdbcmc02(arg0);

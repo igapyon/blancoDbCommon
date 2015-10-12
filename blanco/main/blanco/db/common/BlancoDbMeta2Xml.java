@@ -1,6 +1,6 @@
 /*
- * ‚±‚Ìƒ\[ƒXƒR[ƒh‚Í blanco Framework‚É‚æ‚Á‚Ä©“®¶¬‚³‚ê‚Ä‚¢‚Ü‚·B
- * blancoDb‚Ì‚½‚ß‚Ì•ÏŠ·ˆ—‚ğ’è‹`‚µ‚Ü‚·B
+ * ã“ã®ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã¯ blanco Frameworkã«ã‚ˆã£ã¦è‡ªå‹•ç”Ÿæˆã•ã‚Œã¦ã„ã¾ã™ã€‚
+ * blancoDbã®ãŸã‚ã®å¤‰æ›å‡¦ç†ã‚’å®šç¾©ã—ã¾ã™ã€‚
  */
 package blanco.db.common;
 
@@ -20,42 +20,42 @@ import javax.xml.transform.TransformerException;
 import blanco.commons.calc.parser.BlancoCalcParser;
 
 /**
- * blancoDb‚Ì‚½‚ß‚Ì•ÏŠ·ˆ—‚ğ’è‹`‚µ‚Ü‚·B
+ * blancoDbã®ãŸã‚ã®å¤‰æ›å‡¦ç†ã‚’å®šç¾©ã—ã¾ã™ã€‚
  */
 public class BlancoDbMeta2Xml {
     /**
-     * ’è‹`‘ƒƒ^ƒtƒ@ƒCƒ‹‚©‚ç’†ŠÔXMLƒtƒ@ƒCƒ‹‚Ö‚Ì•ÏŠ·‚ğƒLƒƒƒbƒVƒ…‚ÅÏ‚Ü‚·‚©‚Ç‚¤‚©‚Ìƒtƒ‰ƒOB
+     * å®šç¾©æ›¸ãƒ¡ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ä¸­é–“XMLãƒ•ã‚¡ã‚¤ãƒ«ã¸ã®å¤‰æ›ã‚’ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã§æ¸ˆã¾ã™ã‹ã©ã†ã‹ã®ãƒ•ãƒ©ã‚°ã€‚
      */
     protected boolean fCacheMeta2Xml = false;
 
     /**
-     * ’è‹`‘ƒƒ^ƒtƒ@ƒCƒ‹‚©‚ç’†ŠÔXMLƒtƒ@ƒCƒ‹‚Ö‚Ì•ÏŠ·‚ğƒLƒƒƒbƒVƒ…‚ÅÏ‚Ü‚¹‚½‰ñ”B
+     * å®šç¾©æ›¸ãƒ¡ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ä¸­é–“XMLãƒ•ã‚¡ã‚¤ãƒ«ã¸ã®å¤‰æ›ã‚’ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã§æ¸ˆã¾ã›ãŸå›æ•°ã€‚
      */
     protected int fCacheMeta2XmlCount = 0;
 
     /**
-     * ƒNƒ‰ƒXƒ[ƒ_‚©‚ç‚Ì’è‹`‘\‘¢XMLƒtƒ@ƒCƒ‹‚Ì“Ç‰ñ”‚ğŒ¸‚ç‚·‚½‚ß‚ÌƒLƒƒƒbƒVƒ…B
+     * ã‚¯ãƒ©ã‚¹ãƒ­ãƒ¼ãƒ€ã‹ã‚‰ã®å®šç¾©æ›¸æ§‹é€ XMLãƒ•ã‚¡ã‚¤ãƒ«ã®èª­è¾¼å›æ•°ã‚’æ¸›ã‚‰ã™ãŸã‚ã®ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã€‚
      */
     protected byte[] fCacheMetaDefXml = null;
 
     /**
-     * ’è‹`‘ƒƒ^ƒtƒ@ƒCƒ‹‚©‚ç’†ŠÔXMLƒtƒ@ƒCƒ‹‚Ö‚Ì•ÏŠ·‚ğƒLƒƒƒbƒVƒ…‚ÅÏ‚Ü‚·‚©‚Ç‚¤‚©‚Ìƒtƒ‰ƒO‚ğw’è‚µ‚Ü‚·B
+     * å®šç¾©æ›¸ãƒ¡ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ä¸­é–“XMLãƒ•ã‚¡ã‚¤ãƒ«ã¸ã®å¤‰æ›ã‚’ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã§æ¸ˆã¾ã™ã‹ã©ã†ã‹ã®ãƒ•ãƒ©ã‚°ã‚’æŒ‡å®šã—ã¾ã™ã€‚
      *
-     * @param argCacheMeta2Xml ’è‹`‘ƒƒ^ƒtƒ@ƒCƒ‹‚©‚ç’†ŠÔXMLƒtƒ@ƒCƒ‹‚Ö‚Ì•ÏŠ·‚ğƒLƒƒƒbƒVƒ…‚ÅÏ‚Ü‚·‚©‚Ç‚¤‚©B
+     * @param argCacheMeta2Xml å®šç¾©æ›¸ãƒ¡ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ä¸­é–“XMLãƒ•ã‚¡ã‚¤ãƒ«ã¸ã®å¤‰æ›ã‚’ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã§æ¸ˆã¾ã™ã‹ã©ã†ã‹ã€‚
      */
     public void setCacheMeta2Xml(final boolean argCacheMeta2Xml) {
         fCacheMeta2Xml = argCacheMeta2Xml;
     }
 
     /**
-     * Excelƒtƒ@ƒCƒ‹‚ÌƒXƒgƒŠ[ƒ€‚ğXMLƒtƒ@ƒCƒ‹‚ÌƒXƒgƒŠ[ƒ€‚É•ÏŠ·‚µ‚Ü‚·B
+     * Excelãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚¹ãƒˆãƒªãƒ¼ãƒ ã‚’XMLãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚¹ãƒˆãƒªãƒ¼ãƒ ã«å¤‰æ›ã—ã¾ã™ã€‚
      *
-     * ’è‹`ƒtƒ@ƒCƒ‹‚Í“à•”“I‚ÉƒpƒX‚ğ•Û‚µ‚Ä‚¢‚Ü‚·B
+     * å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ã¯å†…éƒ¨çš„ã«ãƒ‘ã‚¹ã‚’ä¿æŒã—ã¦ã„ã¾ã™ã€‚
      *
-     * @param inStreamMetaSource ƒƒ^ƒtƒ@ƒCƒ‹‚Ì“ü—ÍƒXƒgƒŠ[ƒ€B
-     * @param outStreamTarget XMLƒtƒ@ƒCƒ‹‚Ìo—ÍƒXƒgƒŠ[ƒ€B
-     * @throws IOException “üo—Í—áŠO‚ª”­¶‚µ‚½ê‡B
-     * @throws TransformerException XML•ÏŠ·—áŠO‚ª”­¶‚µ‚½ê‡B
+     * @param inStreamMetaSource ãƒ¡ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã®å…¥åŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ ã€‚
+     * @param outStreamTarget XMLãƒ•ã‚¡ã‚¤ãƒ«ã®å‡ºåŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ ã€‚
+     * @throws IOException å…¥å‡ºåŠ›ä¾‹å¤–ãŒç™ºç”Ÿã—ãŸå ´åˆã€‚
+     * @throws TransformerException XMLå¤‰æ›ä¾‹å¤–ãŒç™ºç”Ÿã—ãŸå ´åˆã€‚
      */
     public void process(final InputStream inStreamMetaSource, final OutputStream outStreamTarget) throws IOException, TransformerException {
         if (inStreamMetaSource == null) {
@@ -66,10 +66,10 @@ public class BlancoDbMeta2Xml {
         }
 
         if (fCacheMetaDefXml == null) {
-            // ‚±‚ÌƒNƒ‰ƒX©g‚Æ‚¨‚È‚¶ƒNƒ‰ƒXƒ[ƒ_‚©‚çXMLİ’èƒtƒ@ƒCƒ‹‚Ìƒ[ƒh‚ğ‚¨‚±‚È‚¢‚Ü‚·B
+            // ã“ã®ã‚¯ãƒ©ã‚¹è‡ªèº«ã¨ãŠãªã˜ã‚¯ãƒ©ã‚¹ãƒ­ãƒ¼ãƒ€ã‹ã‚‰XMLè¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ­ãƒ¼ãƒ‰ã‚’ãŠã“ãªã„ã¾ã™ã€‚
             final InputStream meta2xmlStream = getClass().getClassLoader().getResourceAsStream("blanco/db/common/BlancoDbMeta2Xml.xml");
             if (meta2xmlStream == null) {
-                throw new IllegalArgumentException("BlancoDbMeta2Xml: ƒŠƒ\[ƒX[blanco/db/common/BlancoDbMeta2Xml.xml]‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½.");
+                throw new IllegalArgumentException("BlancoDbMeta2Xml: ãƒªã‚½ãƒ¼ã‚¹[blanco/db/common/BlancoDbMeta2Xml.xml]ã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸ.");
             }
             final ByteArrayOutputStream outStream = new ByteArrayOutputStream();
             final byte[] bufWrk = new byte[8192];
@@ -96,12 +96,12 @@ public class BlancoDbMeta2Xml {
     }
 
     /**
-     * Excelƒtƒ@ƒCƒ‹‚ğXMLƒtƒ@ƒCƒ‹‚É•ÏŠ·‚µ‚Ü‚·B
+     * Excelãƒ•ã‚¡ã‚¤ãƒ«ã‚’XMLãƒ•ã‚¡ã‚¤ãƒ«ã«å¤‰æ›ã—ã¾ã™ã€‚
      *
-     * @param fileMeta ƒƒ^ƒtƒ@ƒCƒ‹‚Ì“ü—Íƒtƒ@ƒCƒ‹B
-     * @param fileOutput XMLƒtƒ@ƒCƒ‹‚Ìo—ÍB
-     * @throws IOException “üo—Í—áŠO‚ª”­¶‚µ‚½ê‡B
-     * @throws TransformerException XML•ÏŠ·—áŠO‚ª”­¶‚µ‚½ê‡B
+     * @param fileMeta ãƒ¡ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã®å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«ã€‚
+     * @param fileOutput XMLãƒ•ã‚¡ã‚¤ãƒ«ã®å‡ºåŠ›ã€‚
+     * @throws IOException å…¥å‡ºåŠ›ä¾‹å¤–ãŒç™ºç”Ÿã—ãŸå ´åˆã€‚
+     * @throws TransformerException XMLå¤‰æ›ä¾‹å¤–ãŒç™ºç”Ÿã—ãŸå ´åˆã€‚
      */
     public void process(final File fileMeta, final File fileOutput) throws IOException, TransformerException {
         if (fileMeta == null) {
@@ -115,7 +115,7 @@ public class BlancoDbMeta2Xml {
         }
 
         if (fCacheMeta2Xml && fileMeta.lastModified() < fileOutput.lastModified()) {
-            // ƒLƒƒƒbƒVƒ…‚ğ—˜—p‚µ‚ÄAˆ—‚ğƒXƒLƒbƒv‚µ‚Ü‚·B
+            // ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‚’åˆ©ç”¨ã—ã¦ã€å‡¦ç†ã‚’ã‚¹ã‚­ãƒƒãƒ—ã—ã¾ã™ã€‚
             fCacheMeta2XmlCount++;
             return;
         }
@@ -126,7 +126,7 @@ public class BlancoDbMeta2Xml {
             inStream = new BufferedInputStream(new FileInputStream(fileMeta), 8192);
             outStream = new BufferedOutputStream(new FileOutputStream(fileOutput), 8192);
 
-            // ƒXƒgƒŠ[ƒ€‚Ì€”õ‚ª‚Å‚«‚½‚Ì‚ÅAÀÛ‚Ìˆ—‚ğ‚¨‚±‚È‚¢‚Ü‚·B
+            // ã‚¹ãƒˆãƒªãƒ¼ãƒ ã®æº–å‚™ãŒã§ããŸã®ã§ã€å®Ÿéš›ã®å‡¦ç†ã‚’ãŠã“ãªã„ã¾ã™ã€‚
             process(inStream, outStream);
 
             outStream.flush();
@@ -141,15 +141,15 @@ public class BlancoDbMeta2Xml {
     }
 
     /**
-     * w’èƒfƒBƒŒƒNƒgƒŠ“à‚ÌExcelƒtƒ@ƒCƒ‹‚ğXMLƒtƒ@ƒCƒ‹‚É•ÏŠ·‚µ‚Ü‚·B
+     * æŒ‡å®šãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªå†…ã®Excelãƒ•ã‚¡ã‚¤ãƒ«ã‚’XMLãƒ•ã‚¡ã‚¤ãƒ«ã«å¤‰æ›ã—ã¾ã™ã€‚
      *
-     * w’è‚³‚ê‚½ƒtƒHƒ‹ƒ_“à‚ÌŠg’£q[.xls]‚Ìƒtƒ@ƒCƒ‹‚ğˆ—‚µ‚Ü‚·B<br>
-     * ˆ—‚µ‚½ƒf[ƒ^‚Í ‚à‚Æ‚Ìƒtƒ@ƒCƒ‹–¼‚ÉŠg’£q[.xml]‚ğ•t—^‚µ‚½ƒtƒ@ƒCƒ‹‚Ö•Û‘¶‚µ‚Ü‚·B
+     * æŒ‡å®šã•ã‚ŒãŸãƒ•ã‚©ãƒ«ãƒ€å†…ã®æ‹¡å¼µå­[.xls]ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’å‡¦ç†ã—ã¾ã™ã€‚<br>
+     * å‡¦ç†ã—ãŸãƒ‡ãƒ¼ã‚¿ã¯ ã‚‚ã¨ã®ãƒ•ã‚¡ã‚¤ãƒ«åã«æ‹¡å¼µå­[.xml]ã‚’ä»˜ä¸ã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã¸ä¿å­˜ã—ã¾ã™ã€‚
      *
-     * @param fileMetadir ƒƒ^ƒtƒ@ƒCƒ‹‚ªŠi”[‚³‚ê‚Ä‚¢‚é“ü—ÍƒfƒBƒŒƒNƒgƒŠB
-     * @param targetDirectory o—ÍƒfƒBƒŒƒNƒgƒŠB
-     * @throws IOException “üo—Í—áŠO‚ª”­¶‚µ‚½ê‡B
-     * @throws TransformerException XML•ÏŠ·—áŠO‚ª”­¶‚µ‚½ê‡B
+     * @param fileMetadir ãƒ¡ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ãŒæ ¼ç´ã•ã‚Œã¦ã„ã‚‹å…¥åŠ›ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã€‚
+     * @param targetDirectory å‡ºåŠ›ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã€‚
+     * @throws IOException å…¥å‡ºåŠ›ä¾‹å¤–ãŒç™ºç”Ÿã—ãŸå ´åˆã€‚
+     * @throws TransformerException XMLå¤‰æ›ä¾‹å¤–ãŒç™ºç”Ÿã—ãŸå ´åˆã€‚
      */
     public void processDirectory(final File fileMetadir, final String targetDirectory) throws IOException, TransformerException {
         System.out.println("m2x: begin.");
@@ -168,23 +168,23 @@ public class BlancoDbMeta2Xml {
         }
         final File fileTargetDirectory = new File(targetDirectory);
         if (fileTargetDirectory.exists() == false) {
-            // o—ÍæƒfƒBƒŒƒNƒgƒŠ‚ª‘¶İ‚µ‚È‚¢‚Ì‚ÅA–‘O‚Éì¬‚µ‚Ü‚·B
+            // å‡ºåŠ›å…ˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªãŒå­˜åœ¨ã—ãªã„ã®ã§ã€äº‹å‰ã«ä½œæˆã—ã¾ã™ã€‚
             fileTargetDirectory.mkdirs();
         }
 
-        // w’è‚³‚ê‚½ƒfƒBƒŒƒNƒgƒŠ‚Ìƒtƒ@ƒCƒ‹ˆê——‚ğæ“¾‚µ‚Ü‚·B
+        // æŒ‡å®šã•ã‚ŒãŸãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®ãƒ•ã‚¡ã‚¤ãƒ«ä¸€è¦§ã‚’å–å¾—ã—ã¾ã™ã€‚
         final File[] fileMeta = fileMetadir.listFiles();
         if (fileMeta == null) {
             throw new IllegalArgumentException("BlancoMeta2XmlProcessMeta2Xml: list directory [" + fileMetadir.getAbsolutePath() + "] is failed.");
         }
         for (int index = 0; index < fileMeta.length; index++) {
             if (fileMeta[index].getName().endsWith(".xls") == false) {
-                // ƒtƒ@ƒCƒ‹‚ÌŠg’£q‚ªˆ—‚·‚×‚«‚à‚Ì‚Æ‚ÍˆÙ‚È‚é‚½‚ßˆ—‚ğƒXƒLƒbƒv‚µ‚Ü‚·BB
+                // ãƒ•ã‚¡ã‚¤ãƒ«ã®æ‹¡å¼µå­ãŒå‡¦ç†ã™ã¹ãã‚‚ã®ã¨ã¯ç•°ãªã‚‹ãŸã‚å‡¦ç†ã‚’ã‚¹ã‚­ãƒƒãƒ—ã—ã¾ã™ã€‚ã€‚
                 continue;
             }
 
             if (progress(index + 1, fileMeta.length, fileMeta[index].getName()) == false) {
-                // i’»•\¦‚©‚çˆ—’†’f‚Ìw¦‚ª—ˆ‚½‚Ì‚ÅAˆ—’†’f‚µ‚Ü‚·B
+                // é€²æ—è¡¨ç¤ºã‹ã‚‰å‡¦ç†ä¸­æ–­ã®æŒ‡ç¤ºãŒæ¥ãŸã®ã§ã€å‡¦ç†ä¸­æ–­ã—ã¾ã™ã€‚
                 break;
             }
 
@@ -206,17 +206,17 @@ public class BlancoDbMeta2Xml {
     }
 
     /**
-     * ˆ—‚Ìi’»‚ğ¦‚µ‚Ü‚·B
+     * å‡¦ç†ã®é€²æ—ã‚’ç¤ºã—ã¾ã™ã€‚
      *
-     * i’»•\¦‚ğ‚³‚¹‚½‚¢ê‡‚É‚ÍŒp³‚µ‚Äˆ—‚ğì‚è‚±‚İ‚Ü‚·B
+     * é€²æ—è¡¨ç¤ºã‚’ã•ã›ãŸã„å ´åˆã«ã¯ç¶™æ‰¿ã—ã¦å‡¦ç†ã‚’ä½œã‚Šã“ã¿ã¾ã™ã€‚
      *
-     * @param progressCurrent Œ»İˆ—‚µ‚Ä‚¢‚éŒ”‚Ì”Ô†B
-     * @param progressTotal ‘ˆ—Œ”B
-     * @param progressItem ˆ—‚µ‚Ä‚¢‚éƒAƒCƒeƒ€–¼B
-     * @return ˆ—‚ğ‘±s‚µ‚Ä‚æ‚¢‚©‚Ç‚¤‚©Bfalse‚È‚çˆ—’†’fB
+     * @param progressCurrent ç¾åœ¨å‡¦ç†ã—ã¦ã„ã‚‹ä»¶æ•°ã®ç•ªå·ã€‚
+     * @param progressTotal ç·å‡¦ç†ä»¶æ•°ã€‚
+     * @param progressItem å‡¦ç†ã—ã¦ã„ã‚‹ã‚¢ã‚¤ãƒ†ãƒ åã€‚
+     * @return å‡¦ç†ã‚’ç¶šè¡Œã—ã¦ã‚ˆã„ã‹ã©ã†ã‹ã€‚falseãªã‚‰å‡¦ç†ä¸­æ–­ã€‚
      */
     protected boolean progress(final int progressCurrent, final int progressTotal, final String progressItem) {
-        // í‚Éˆ—‘±s‚ğ¦‚· true ‚ğ–ß‚µ‚Ü‚·B
+        // å¸¸ã«å‡¦ç†ç¶šè¡Œã‚’ç¤ºã™ true ã‚’æˆ»ã—ã¾ã™ã€‚
         return true;
     }
 }

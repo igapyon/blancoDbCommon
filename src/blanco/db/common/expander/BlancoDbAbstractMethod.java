@@ -16,33 +16,33 @@ import blanco.db.common.valueobject.BlancoDbSetting;
 import blanco.db.common.valueobject.BlancoDbSqlInfoStructure;
 
 /**
- * blancoDb �� BlancoCgMethod�W�J�����ɂ����� ��ʓI�ȏ����W�߂����́B
+ * blancoDb の BlancoCgMethod展開処理における 一般的な情報を集めたもの。
  * 
  * @author IGA Tosiki
  */
 public abstract class BlancoDbAbstractMethod {
     /**
-     * blancoDb�Ɋւ���ݒ���B
+     * blancoDbに関する設定情報。
      */
     protected BlancoDbSetting fDbSetting = null;
 
     /**
-     * ���̃��\�b�h�������ΏۂƂ��Ă���SQL���̍\���́B
+     * このメソッドが処理対象としているSQL情報の構造体。
      */
     protected BlancoDbSqlInfoStructure fSqlInfo = null;
 
     /**
-     * �o�͐� blancoCg �I�u�W�F�N�g�t�@�N�g���B
+     * 出力先 blancoCg オブジェクトファクトリ。
      */
     protected BlancoCgObjectFactory fCgFactory = null;
 
     /**
-     * �o�͐�\�[�X�R�[�h�I�u�W�F�N�g�Bimport��ǉ��������ꍇ�ɗ��p����܂��B
+     * 出力先ソースコードオブジェクト。importを追加したい場合に利用されます。
      */
     protected BlancoCgSourceFile fCgSourceFile = null;
 
     /**
-     * �o�͐�� blancoCgClass�B
+     * 出力先の blancoCgClass。
      */
     protected BlancoCgClass fCgClass = null;
 

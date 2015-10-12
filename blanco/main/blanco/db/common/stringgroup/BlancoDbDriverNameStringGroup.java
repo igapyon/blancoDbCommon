@@ -1,101 +1,101 @@
 /*
- * ‚±‚Ìƒ\[ƒXƒR[ƒh‚Í blanco Framework‚É‚æ‚è©“®¶¬‚³‚ê‚Ü‚µ‚½B
+ * ã“ã®ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã¯ blanco Frameworkã«ã‚ˆã‚Šè‡ªå‹•ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚
  */
 package blanco.db.common.stringgroup;
 
 /**
- * JDBCƒhƒ‰ƒCƒo–¼‚Ìˆê——B
+ * JDBCãƒ‰ãƒ©ã‚¤ãƒåã®ä¸€è¦§ã€‚
  */
 public class BlancoDbDriverNameStringGroup {
     /**
-     * No.1 à–¾:SQL Server 2000—p‚ÌJDBCƒhƒ‰ƒCƒo
+     * No.1 èª¬æ˜:SQL Server 2000ç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒ
      */
     public static final int SQLSERVER_2000 = 1;
 
     /**
-     * No.2 à–¾:SQL Server 2005—p‚ÌJDBCƒhƒ‰ƒCƒoBSQL Server 2000‚É‚àÚ‘±‰Â”\B
+     * No.2 èª¬æ˜:SQL Server 2005ç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚SQL Server 2000ã«ã‚‚æ¥ç¶šå¯èƒ½ã€‚
      */
     public static final int SQLSERVER_2005 = 2;
 
     /**
-     * No.3 à–¾:SQL Server 2008—p‚ÌJDBCƒhƒ‰ƒCƒoB
+     * No.3 èª¬æ˜:SQL Server 2008ç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
      */
     public static final int SQLSERVER_2_0 = 3;
 
     /**
-     * No.4 à–¾:SQL Server 2008—p‚ÌJDBCƒhƒ‰ƒCƒoB
+     * No.4 èª¬æ˜:SQL Server 2008ç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
      */
     public static final int SQLSERVER_3_0 = 4;
 
     /**
-     * No.5 à–¾:Oracle—p‚ÌJDBCƒhƒ‰ƒCƒoB
+     * No.5 èª¬æ˜:Oracleç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
      */
     public static final int ORACLE = 5;
 
     /**
-     * No.6 à–¾:PostgreSQL—p‚ÌJDBCƒhƒ‰ƒCƒoB
+     * No.6 èª¬æ˜:PostgreSQLç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
      */
     public static final int POSTGRESQL = 6;
 
     /**
-     * No.7 à–¾:MySQL—p‚ÌJDBCƒhƒ‰ƒCƒoB
+     * No.7 èª¬æ˜:MySQLç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
      */
     public static final int MYSQL = 7;
 
     /**
-     * No.8 à–¾:SQLite —p‚Ì JDBC ƒhƒ‰ƒCƒoB
+     * No.8 èª¬æ˜:SQLite ç”¨ã® JDBC ãƒ‰ãƒ©ã‚¤ãƒã€‚
      */
     public static final int SQLITE = 8;
 
     /**
-     * –¢’è‹`B•¶š—ñƒOƒ‹[ƒvˆÈŠO‚Ì•¶š—ñ‚Ü‚½‚Í’è”‚ª–¢’è‹`‚Ì‚à‚ÌB
+     * æœªå®šç¾©ã€‚æ–‡å­—åˆ—ã‚°ãƒ«ãƒ¼ãƒ—ä»¥å¤–ã®æ–‡å­—åˆ—ã¾ãŸã¯å®šæ•°ãŒæœªå®šç¾©ã®ã‚‚ã®ã€‚
      */
     public static final int NOT_DEFINED = -1;
 
     /**
-     * •¶š—ñƒOƒ‹[ƒv‚ÉŠÜ‚Ü‚ê‚é•¶š—ñ‚Å‚ ‚é‚©‚Ç‚¤‚©‚ğ”»’è‚µ‚Ü‚·B
+     * æ–‡å­—åˆ—ã‚°ãƒ«ãƒ¼ãƒ—ã«å«ã¾ã‚Œã‚‹æ–‡å­—åˆ—ã§ã‚ã‚‹ã‹ã©ã†ã‹ã‚’åˆ¤å®šã—ã¾ã™ã€‚
      *
-     * @param argCheck ƒ`ƒFƒbƒN‚ğs‚¢‚½‚¢•¶š—ñB
-     * @return •¶š—ñƒOƒ‹[ƒv‚ÉŠÜ‚Ü‚ê‚Ä‚¢‚ê‚ÎtureBƒOƒ‹[ƒv‚ÉŠÜ‚Ü‚ê‚È‚¢•¶š—ñ‚Å‚ ‚ê‚ÎfalseB
+     * @param argCheck ãƒã‚§ãƒƒã‚¯ã‚’è¡Œã„ãŸã„æ–‡å­—åˆ—ã€‚
+     * @return æ–‡å­—åˆ—ã‚°ãƒ«ãƒ¼ãƒ—ã«å«ã¾ã‚Œã¦ã„ã‚Œã°tureã€‚ã‚°ãƒ«ãƒ¼ãƒ—ã«å«ã¾ã‚Œãªã„æ–‡å­—åˆ—ã§ã‚ã‚Œã°falseã€‚
      */
     public boolean match(final String argCheck) {
         // No.1
-        // à–¾:SQL Server 2000—p‚ÌJDBCƒhƒ‰ƒCƒo
+        // èª¬æ˜:SQL Server 2000ç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒ
         if ("SQLServer".equals(argCheck)) {
             return true;
         }
         // No.2
-        // à–¾:SQL Server 2005—p‚ÌJDBCƒhƒ‰ƒCƒoBSQL Server 2000‚É‚àÚ‘±‰Â”\B
+        // èª¬æ˜:SQL Server 2005ç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚SQL Server 2000ã«ã‚‚æ¥ç¶šå¯èƒ½ã€‚
         if ("Microsoft SQL Server 2005 JDBC Driver".equals(argCheck)) {
             return true;
         }
         // No.3
-        // à–¾:SQL Server 2008—p‚ÌJDBCƒhƒ‰ƒCƒoB
+        // èª¬æ˜:SQL Server 2008ç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
         if ("Microsoft SQL Server JDBC Driver 2.0".equals(argCheck)) {
             return true;
         }
         // No.4
-        // à–¾:SQL Server 2008—p‚ÌJDBCƒhƒ‰ƒCƒoB
+        // èª¬æ˜:SQL Server 2008ç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
         if ("Microsoft SQL Server JDBC Driver 3.0".equals(argCheck)) {
             return true;
         }
         // No.5
-        // à–¾:Oracle—p‚ÌJDBCƒhƒ‰ƒCƒoB
+        // èª¬æ˜:Oracleç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
         if ("Oracle JDBC driver".equals(argCheck)) {
             return true;
         }
         // No.6
-        // à–¾:PostgreSQL—p‚ÌJDBCƒhƒ‰ƒCƒoB
+        // èª¬æ˜:PostgreSQLç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
         if ("PostgreSQL Native Driver".equals(argCheck)) {
             return true;
         }
         // No.7
-        // à–¾:MySQL—p‚ÌJDBCƒhƒ‰ƒCƒoB
+        // èª¬æ˜:MySQLç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
         if ("MySQL-AB JDBC Driver".equals(argCheck)) {
             return true;
         }
         // No.8
-        // à–¾:SQLite —p‚Ì JDBC ƒhƒ‰ƒCƒoB
+        // èª¬æ˜:SQLite ç”¨ã® JDBC ãƒ‰ãƒ©ã‚¤ãƒã€‚
         if ("SQLiteJDBC".equals(argCheck)) {
             return true;
         }
@@ -103,49 +103,49 @@ public class BlancoDbDriverNameStringGroup {
     }
 
     /**
-     * •¶š—ñƒOƒ‹[ƒv‚ÉŠÜ‚Ü‚ê‚é•¶š—ñ‚Å‚ ‚é‚©‚Ç‚¤‚©‚ğA‘å•¶š¬•¶š‚ğ‹æ•Ê‚¹‚¸”»’è‚µ‚Ü‚·B
+     * æ–‡å­—åˆ—ã‚°ãƒ«ãƒ¼ãƒ—ã«å«ã¾ã‚Œã‚‹æ–‡å­—åˆ—ã§ã‚ã‚‹ã‹ã©ã†ã‹ã‚’ã€å¤§æ–‡å­—å°æ–‡å­—ã‚’åŒºåˆ¥ã›ãšåˆ¤å®šã—ã¾ã™ã€‚
      *
-     * @param argCheck ƒ`ƒFƒbƒN‚ğs‚¢‚½‚¢•¶š—ñB
-     * @return •¶š—ñƒOƒ‹[ƒv‚ÉŠÜ‚Ü‚ê‚Ä‚¢‚ê‚ÎtureBƒOƒ‹[ƒv‚ÉŠÜ‚Ü‚ê‚È‚¢•¶š—ñ‚Å‚ ‚ê‚ÎfalseB
+     * @param argCheck ãƒã‚§ãƒƒã‚¯ã‚’è¡Œã„ãŸã„æ–‡å­—åˆ—ã€‚
+     * @return æ–‡å­—åˆ—ã‚°ãƒ«ãƒ¼ãƒ—ã«å«ã¾ã‚Œã¦ã„ã‚Œã°tureã€‚ã‚°ãƒ«ãƒ¼ãƒ—ã«å«ã¾ã‚Œãªã„æ–‡å­—åˆ—ã§ã‚ã‚Œã°falseã€‚
      */
     public boolean matchIgnoreCase(final String argCheck) {
         // No.1
-        // à–¾:SQL Server 2000—p‚ÌJDBCƒhƒ‰ƒCƒo
+        // èª¬æ˜:SQL Server 2000ç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒ
         if ("SQLServer".equalsIgnoreCase(argCheck)) {
             return true;
         }
         // No.2
-        // à–¾:SQL Server 2005—p‚ÌJDBCƒhƒ‰ƒCƒoBSQL Server 2000‚É‚àÚ‘±‰Â”\B
+        // èª¬æ˜:SQL Server 2005ç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚SQL Server 2000ã«ã‚‚æ¥ç¶šå¯èƒ½ã€‚
         if ("Microsoft SQL Server 2005 JDBC Driver".equalsIgnoreCase(argCheck)) {
             return true;
         }
         // No.3
-        // à–¾:SQL Server 2008—p‚ÌJDBCƒhƒ‰ƒCƒoB
+        // èª¬æ˜:SQL Server 2008ç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
         if ("Microsoft SQL Server JDBC Driver 2.0".equalsIgnoreCase(argCheck)) {
             return true;
         }
         // No.4
-        // à–¾:SQL Server 2008—p‚ÌJDBCƒhƒ‰ƒCƒoB
+        // èª¬æ˜:SQL Server 2008ç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
         if ("Microsoft SQL Server JDBC Driver 3.0".equalsIgnoreCase(argCheck)) {
             return true;
         }
         // No.5
-        // à–¾:Oracle—p‚ÌJDBCƒhƒ‰ƒCƒoB
+        // èª¬æ˜:Oracleç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
         if ("Oracle JDBC driver".equalsIgnoreCase(argCheck)) {
             return true;
         }
         // No.6
-        // à–¾:PostgreSQL—p‚ÌJDBCƒhƒ‰ƒCƒoB
+        // èª¬æ˜:PostgreSQLç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
         if ("PostgreSQL Native Driver".equalsIgnoreCase(argCheck)) {
             return true;
         }
         // No.7
-        // à–¾:MySQL—p‚ÌJDBCƒhƒ‰ƒCƒoB
+        // èª¬æ˜:MySQLç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
         if ("MySQL-AB JDBC Driver".equalsIgnoreCase(argCheck)) {
             return true;
         }
         // No.8
-        // à–¾:SQLite —p‚Ì JDBC ƒhƒ‰ƒCƒoB
+        // èª¬æ˜:SQLite ç”¨ã® JDBC ãƒ‰ãƒ©ã‚¤ãƒã€‚
         if ("SQLiteJDBC".equalsIgnoreCase(argCheck)) {
             return true;
         }
@@ -153,114 +153,114 @@ public class BlancoDbDriverNameStringGroup {
     }
 
     /**
-     * •¶š—ñ‚©‚ç’è”‚É•ÏŠ·‚µ‚Ü‚·B
+     * æ–‡å­—åˆ—ã‹ã‚‰å®šæ•°ã«å¤‰æ›ã—ã¾ã™ã€‚
      *
-     * ’è”‚ª–¢’è‹`‚Ìê‡‚â —^‚¦‚ç‚ê‚½•¶š—ñ‚ª•¶š—ñƒOƒ‹[ƒvŠO‚Ìê‡‚É‚Í NOT_DEFINED ‚ğ–ß‚µ‚Ü‚·B
+     * å®šæ•°ãŒæœªå®šç¾©ã®å ´åˆã‚„ ä¸ãˆã‚‰ã‚ŒãŸæ–‡å­—åˆ—ãŒæ–‡å­—åˆ—ã‚°ãƒ«ãƒ¼ãƒ—å¤–ã®å ´åˆã«ã¯ NOT_DEFINED ã‚’æˆ»ã—ã¾ã™ã€‚
      *
-     * @param argCheck •ÏŠ·‚ğs‚¢‚½‚¢•¶š—ñB
-     * @return ’è”‚É•ÏŠ·Œã‚Ì’lB
+     * @param argCheck å¤‰æ›ã‚’è¡Œã„ãŸã„æ–‡å­—åˆ—ã€‚
+     * @return å®šæ•°ã«å¤‰æ›å¾Œã®å€¤ã€‚
      */
     public int convertToInt(final String argCheck) {
         // No.1
-        // à–¾:SQL Server 2000—p‚ÌJDBCƒhƒ‰ƒCƒo
+        // èª¬æ˜:SQL Server 2000ç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒ
         if ("SQLServer".equals(argCheck)) {
             return SQLSERVER_2000;
         }
         // No.2
-        // à–¾:SQL Server 2005—p‚ÌJDBCƒhƒ‰ƒCƒoBSQL Server 2000‚É‚àÚ‘±‰Â”\B
+        // èª¬æ˜:SQL Server 2005ç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚SQL Server 2000ã«ã‚‚æ¥ç¶šå¯èƒ½ã€‚
         if ("Microsoft SQL Server 2005 JDBC Driver".equals(argCheck)) {
             return SQLSERVER_2005;
         }
         // No.3
-        // à–¾:SQL Server 2008—p‚ÌJDBCƒhƒ‰ƒCƒoB
+        // èª¬æ˜:SQL Server 2008ç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
         if ("Microsoft SQL Server JDBC Driver 2.0".equals(argCheck)) {
             return SQLSERVER_2_0;
         }
         // No.4
-        // à–¾:SQL Server 2008—p‚ÌJDBCƒhƒ‰ƒCƒoB
+        // èª¬æ˜:SQL Server 2008ç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
         if ("Microsoft SQL Server JDBC Driver 3.0".equals(argCheck)) {
             return SQLSERVER_3_0;
         }
         // No.5
-        // à–¾:Oracle—p‚ÌJDBCƒhƒ‰ƒCƒoB
+        // èª¬æ˜:Oracleç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
         if ("Oracle JDBC driver".equals(argCheck)) {
             return ORACLE;
         }
         // No.6
-        // à–¾:PostgreSQL—p‚ÌJDBCƒhƒ‰ƒCƒoB
+        // èª¬æ˜:PostgreSQLç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
         if ("PostgreSQL Native Driver".equals(argCheck)) {
             return POSTGRESQL;
         }
         // No.7
-        // à–¾:MySQL—p‚ÌJDBCƒhƒ‰ƒCƒoB
+        // èª¬æ˜:MySQLç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
         if ("MySQL-AB JDBC Driver".equals(argCheck)) {
             return MYSQL;
         }
         // No.8
-        // à–¾:SQLite —p‚Ì JDBC ƒhƒ‰ƒCƒoB
+        // èª¬æ˜:SQLite ç”¨ã® JDBC ãƒ‰ãƒ©ã‚¤ãƒã€‚
         if ("SQLiteJDBC".equals(argCheck)) {
             return SQLITE;
         }
 
-        // ŠY“–‚·‚é’è”‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ‚Å‚µ‚½B
+        // è©²å½“ã™ã‚‹å®šæ•°ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã§ã—ãŸã€‚
         return NOT_DEFINED;
     }
 
     /**
-     * ’è”‚©‚ç•¶š—ñ‚É•ÏŠ·‚µ‚Ü‚·B
+     * å®šæ•°ã‹ã‚‰æ–‡å­—åˆ—ã«å¤‰æ›ã—ã¾ã™ã€‚
      *
-     * ’è”‚Æ‘Î‰‚Ã‚­•¶š—ñ‚É•ÏŠ·‚µ‚Ü‚·B
+     * å®šæ•°ã¨å¯¾å¿œã¥ãæ–‡å­—åˆ—ã«å¤‰æ›ã—ã¾ã™ã€‚
      *
-     * @param argCheck •ÏŠ·‚ğs‚¢‚½‚¢•¶š’è”B
-     * @return •¶š—ñ‚É•ÏŠ·Œã‚Ì’lBNOT_DEFINED‚Ìê‡‚É‚Í’·‚³0‚Ì•¶š—ñB
+     * @param argCheck å¤‰æ›ã‚’è¡Œã„ãŸã„æ–‡å­—å®šæ•°ã€‚
+     * @return æ–‡å­—åˆ—ã«å¤‰æ›å¾Œã®å€¤ã€‚NOT_DEFINEDã®å ´åˆã«ã¯é•·ã•0ã®æ–‡å­—åˆ—ã€‚
      */
     public String convertToString(final int argCheck) {
         // No.1
-        // à–¾:SQL Server 2000—p‚ÌJDBCƒhƒ‰ƒCƒo
+        // èª¬æ˜:SQL Server 2000ç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒ
         if (argCheck == SQLSERVER_2000) {
             return "SQLServer";
         }
         // No.2
-        // à–¾:SQL Server 2005—p‚ÌJDBCƒhƒ‰ƒCƒoBSQL Server 2000‚É‚àÚ‘±‰Â”\B
+        // èª¬æ˜:SQL Server 2005ç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚SQL Server 2000ã«ã‚‚æ¥ç¶šå¯èƒ½ã€‚
         if (argCheck == SQLSERVER_2005) {
             return "Microsoft SQL Server 2005 JDBC Driver";
         }
         // No.3
-        // à–¾:SQL Server 2008—p‚ÌJDBCƒhƒ‰ƒCƒoB
+        // èª¬æ˜:SQL Server 2008ç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
         if (argCheck == SQLSERVER_2_0) {
             return "Microsoft SQL Server JDBC Driver 2.0";
         }
         // No.4
-        // à–¾:SQL Server 2008—p‚ÌJDBCƒhƒ‰ƒCƒoB
+        // èª¬æ˜:SQL Server 2008ç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
         if (argCheck == SQLSERVER_3_0) {
             return "Microsoft SQL Server JDBC Driver 3.0";
         }
         // No.5
-        // à–¾:Oracle—p‚ÌJDBCƒhƒ‰ƒCƒoB
+        // èª¬æ˜:Oracleç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
         if (argCheck == ORACLE) {
             return "Oracle JDBC driver";
         }
         // No.6
-        // à–¾:PostgreSQL—p‚ÌJDBCƒhƒ‰ƒCƒoB
+        // èª¬æ˜:PostgreSQLç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
         if (argCheck == POSTGRESQL) {
             return "PostgreSQL Native Driver";
         }
         // No.7
-        // à–¾:MySQL—p‚ÌJDBCƒhƒ‰ƒCƒoB
+        // èª¬æ˜:MySQLç”¨ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã€‚
         if (argCheck == MYSQL) {
             return "MySQL-AB JDBC Driver";
         }
         // No.8
-        // à–¾:SQLite —p‚Ì JDBC ƒhƒ‰ƒCƒoB
+        // èª¬æ˜:SQLite ç”¨ã® JDBC ãƒ‰ãƒ©ã‚¤ãƒã€‚
         if (argCheck == SQLITE) {
             return "SQLiteJDBC";
         }
-        // –¢’è‹`B
+        // æœªå®šç¾©ã€‚
         if (argCheck == NOT_DEFINED) {
             return "";
         }
 
-        // ‚¢‚¸‚ê‚É‚àŠY“–‚µ‚Ü‚¹‚ñ‚Å‚µ‚½B
-        throw new IllegalArgumentException("—^‚¦‚ç‚ê‚½’l(" + argCheck + ")‚Í•¶š—ñƒOƒ‹[ƒv[BlancoDbDriverName]‚Å‚Í’è‹`‚³‚ê‚È‚¢’l‚Å‚·B");
+        // ã„ãšã‚Œã«ã‚‚è©²å½“ã—ã¾ã›ã‚“ã§ã—ãŸã€‚
+        throw new IllegalArgumentException("ä¸ãˆã‚‰ã‚ŒãŸå€¤(" + argCheck + ")ã¯æ–‡å­—åˆ—ã‚°ãƒ«ãƒ¼ãƒ—[BlancoDbDriverName]ã§ã¯å®šç¾©ã•ã‚Œãªã„å€¤ã§ã™ã€‚");
     }
 }

@@ -1,41 +1,41 @@
 /*
- * ���̃\�[�X�R�[�h�� blanco Framework�ɂ�莩����������܂����B
+ * このソースコードは blanco Frameworkにより自動生成されました。
  */
 package blanco.db.common.stringgroup;
 
 /**
- * ���������̍ۂ�SQL�����s�������Ȃ����ǂ������w�肷�邽�߂̃t���O�B
+ * 自動生成の際にSQL文実行をおこなうかどうかを指定するためのフラグ。
  */
 public class BlancoDbExecuteSqlStringGroup {
     /**
-     * No.1 ����:SQL���͎��s���܂���B
+     * No.1 説明:SQL文は実行しません。
      */
     public static final int NONE = 1;
 
     /**
-     * No.2 ����:�����^(iterator)�̏ꍇ�ɁASQL�������ۂɎ��s���܂��B
+     * No.2 説明:検索型(iterator)の場合に、SQL文を実際に実行します。
      */
     public static final int ITERATOR = 2;
 
     /**
-     * ����`�B������O���[�v�ȊO�̕�����܂��͒萔������`�̂��́B
+     * 未定義。文字列グループ以外の文字列または定数が未定義のもの。
      */
     public static final int NOT_DEFINED = -1;
 
     /**
-     * ������O���[�v�Ɋ܂܂�镶����ł��邩�ǂ����𔻒肵�܂��B
+     * 文字列グループに含まれる文字列であるかどうかを判定します。
      *
-     * @param argCheck �`�F�b�N���s������������B
-     * @return ������O���[�v�Ɋ܂܂�Ă����ture�B�O���[�v�Ɋ܂܂�Ȃ�������ł����false�B
+     * @param argCheck チェックを行いたい文字列。
+     * @return 文字列グループに含まれていればture。グループに含まれない文字列であればfalse。
      */
     public boolean match(final String argCheck) {
         // No.1
-        // ����:SQL���͎��s���܂���B
+        // 説明:SQL文は実行しません。
         if ("none".equals(argCheck)) {
             return true;
         }
         // No.2
-        // ����:�����^(iterator)�̏ꍇ�ɁASQL�������ۂɎ��s���܂��B
+        // 説明:検索型(iterator)の場合に、SQL文を実際に実行します。
         if ("iterator".equals(argCheck)) {
             return true;
         }
@@ -43,19 +43,19 @@ public class BlancoDbExecuteSqlStringGroup {
     }
 
     /**
-     * ������O���[�v�Ɋ܂܂�镶����ł��邩�ǂ������A�啶������������ʂ������肵�܂��B
+     * 文字列グループに含まれる文字列であるかどうかを、大文字小文字を区別せず判定します。
      *
-     * @param argCheck �`�F�b�N���s������������B
-     * @return ������O���[�v�Ɋ܂܂�Ă����ture�B�O���[�v�Ɋ܂܂�Ȃ�������ł����false�B
+     * @param argCheck チェックを行いたい文字列。
+     * @return 文字列グループに含まれていればture。グループに含まれない文字列であればfalse。
      */
     public boolean matchIgnoreCase(final String argCheck) {
         // No.1
-        // ����:SQL���͎��s���܂���B
+        // 説明:SQL文は実行しません。
         if ("none".equalsIgnoreCase(argCheck)) {
             return true;
         }
         // No.2
-        // ����:�����^(iterator)�̏ꍇ�ɁASQL�������ۂɎ��s���܂��B
+        // 説明:検索型(iterator)の場合に、SQL文を実際に実行します。
         if ("iterator".equalsIgnoreCase(argCheck)) {
             return true;
         }
@@ -63,54 +63,54 @@ public class BlancoDbExecuteSqlStringGroup {
     }
 
     /**
-     * �����񂩂�萔�ɕϊ����܂��B
+     * 文字列から定数に変換します。
      *
-     * �萔������`�̏ꍇ�� �^����ꂽ�����񂪕�����O���[�v�O�̏ꍇ�ɂ� NOT_DEFINED ��߂��܂��B
+     * 定数が未定義の場合や 与えられた文字列が文字列グループ外の場合には NOT_DEFINED を戻します。
      *
-     * @param argCheck �ϊ����s������������B
-     * @return �萔�ɕϊ���̒l�B
+     * @param argCheck 変換を行いたい文字列。
+     * @return 定数に変換後の値。
      */
     public int convertToInt(final String argCheck) {
         // No.1
-        // ����:SQL���͎��s���܂���B
+        // 説明:SQL文は実行しません。
         if ("none".equals(argCheck)) {
             return NONE;
         }
         // No.2
-        // ����:�����^(iterator)�̏ꍇ�ɁASQL�������ۂɎ��s���܂��B
+        // 説明:検索型(iterator)の場合に、SQL文を実際に実行します。
         if ("iterator".equals(argCheck)) {
             return ITERATOR;
         }
 
-        // �Y������萔��������܂���ł����B
+        // 該当する定数が見つかりませんでした。
         return NOT_DEFINED;
     }
 
     /**
-     * �萔���當����ɕϊ����܂��B
+     * 定数から文字列に変換します。
      *
-     * �萔�ƑΉ��Â�������ɕϊ����܂��B
+     * 定数と対応づく文字列に変換します。
      *
-     * @param argCheck �ϊ����s�����������萔�B
-     * @return ������ɕϊ���̒l�BNOT_DEFINED�̏ꍇ�ɂ͒���0�̕�����B
+     * @param argCheck 変換を行いたい文字定数。
+     * @return 文字列に変換後の値。NOT_DEFINEDの場合には長さ0の文字列。
      */
     public String convertToString(final int argCheck) {
         // No.1
-        // ����:SQL���͎��s���܂���B
+        // 説明:SQL文は実行しません。
         if (argCheck == NONE) {
             return "none";
         }
         // No.2
-        // ����:�����^(iterator)�̏ꍇ�ɁASQL�������ۂɎ��s���܂��B
+        // 説明:検索型(iterator)の場合に、SQL文を実際に実行します。
         if (argCheck == ITERATOR) {
             return "iterator";
         }
-        // ����`�B
+        // 未定義。
         if (argCheck == NOT_DEFINED) {
             return "";
         }
 
-        // ������ɂ��Y�����܂���ł����B
-        throw new IllegalArgumentException("�^����ꂽ�l(" + argCheck + ")�͕�����O���[�v[BlancoDbExecuteSql]�ł͒�`����Ȃ��l�ł��B");
+        // いずれにも該当しませんでした。
+        throw new IllegalArgumentException("与えられた値(" + argCheck + ")は文字列グループ[BlancoDbExecuteSql]では定義されない値です。");
     }
 }

@@ -33,11 +33,11 @@ import blanco.xml.bind.valueobject.BlancoXmlDocument;
 import blanco.xml.bind.valueobject.BlancoXmlElement;
 
 /**
- * blancoDb ‚Ì‹¤’Êƒ†[ƒeƒBƒŠƒeƒBEƒNƒ‰ƒXB
+ * blancoDb ã®å…±é€šãƒ¦ãƒ¼ãƒ†ã‚£ãƒªãƒ†ã‚£ãƒ»ã‚¯ãƒ©ã‚¹ã€‚
  */
 public class BlancoDbUtil {
     /**
-     * ƒvƒ‰ƒCƒ}ƒŠƒL[‚Å‚ ‚é‚©‚Ç‚¤‚©‚ğƒ`ƒFƒbƒN‚·‚éƒƒ\ƒbƒhB
+     * ãƒ—ãƒ©ã‚¤ãƒãƒªã‚­ãƒ¼ã§ã‚ã‚‹ã‹ã©ã†ã‹ã‚’ãƒã‚§ãƒƒã‚¯ã™ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰ã€‚
      * 
      * @param table
      * @param columnStructure
@@ -50,7 +50,7 @@ public class BlancoDbUtil {
             final BlancoDbMetaDataKeyStructure columnLook = (BlancoDbMetaDataKeyStructure) table
                     .getPrimaryKeys().get(index);
             if (columnLook.getPkcolumnName().equals(columnStructure.getName())) {
-                // ƒvƒ‰ƒCƒ}ƒŠƒL[‚Å‚·B
+                // ãƒ—ãƒ©ã‚¤ãƒãƒªã‚­ãƒ¼ã§ã™ã€‚
                 return true;
             }
         }
@@ -58,9 +58,9 @@ public class BlancoDbUtil {
     }
 
     /**
-     * ƒ‰ƒ“ƒ^ƒCƒ€ƒpƒbƒP[ƒW‚Ìƒ‹[ƒgƒtƒHƒ‹ƒ_‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ©ãƒ³ã‚¿ã‚¤ãƒ ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã®ãƒ«ãƒ¼ãƒˆãƒ•ã‚©ãƒ«ãƒ€ã‚’å–å¾—ã—ã¾ã™ã€‚
      * 
-     * w’è‚ª‚È‚¢ê‡‚É‚ÍŠî€ƒfƒBƒŒƒNƒgƒŠ‚ª—˜—p‚³‚ê‚Ü‚·B
+     * æŒ‡å®šãŒãªã„å ´åˆã«ã¯åŸºæº–ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªãŒåˆ©ç”¨ã•ã‚Œã¾ã™ã€‚
      * 
      * @param dbSetting
      * @return
@@ -74,7 +74,7 @@ public class BlancoDbUtil {
     }
 
     /**
-     * ƒf[ƒ^ƒx[ƒXÚ‘±‚ÌŠm—§‚ğ‚İ‚Ü‚·B
+     * ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹æ¥ç¶šã®ç¢ºç«‹ã‚’è©¦ã¿ã¾ã™ã€‚
      * 
      * @param connDef
      * @throws SQLException
@@ -83,7 +83,7 @@ public class BlancoDbUtil {
     @SuppressWarnings("deprecation")
     public static Connection connect(final BlancoDbSetting dbSetting)
             throws SQLException, ClassNotFoundException {
-        System.out.println("ƒf[ƒ^ƒx[ƒXÚ‘±‚ğƒI[ƒvƒ“‚µ‚Ü‚·.");
+        System.out.println("ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹æ¥ç¶šã‚’ã‚ªãƒ¼ãƒ—ãƒ³ã—ã¾ã™.");
 
         try {
             ClassLoader loader = null;
@@ -106,7 +106,7 @@ public class BlancoDbUtil {
                         urlArray[index++] = new File(look).toURL();
                     } catch (MalformedURLException e) {
                         throw new IllegalArgumentException(
-                                "JDBC Ú‘±Šm—§: jar ƒtƒ@ƒCƒ‹‚Ì URL æ“¾‚É¸”s‚µ‚Ü‚µ‚½B", e);
+                                "JDBC æ¥ç¶šç¢ºç«‹: jar ãƒ•ã‚¡ã‚¤ãƒ«ã® URL å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", e);
                     }
                 }
                 loader = BlancoDbMetaDataUtil.loadDriverClass(urlArray,
@@ -127,14 +127,14 @@ public class BlancoDbUtil {
                         dbSetting.getJdbcpassword(), loader);
             }
 
-            // ©“®ƒRƒ~ƒbƒg‚ğOFF‚Éİ’è‚µ‚Ü‚·B
+            // è‡ªå‹•ã‚³ãƒŸãƒƒãƒˆã‚’OFFã«è¨­å®šã—ã¾ã™ã€‚
             conn.setAutoCommit(false);
             return conn;
         } catch (SQLException ex) {
-            System.out.println("JDBCÚ‘±‚ÌŠm—§‚É¸”s‚µ‚Ü‚µ‚½: " + ex.toString());
+            System.out.println("JDBCæ¥ç¶šã®ç¢ºç«‹ã«å¤±æ•—ã—ã¾ã—ãŸ: " + ex.toString());
             throw ex;
         } catch (ClassNotFoundException ex) {
-            System.out.println("JDBCÚ‘±‚ÌŠm—§‚É¸”s‚µ‚Ü‚µ‚½: " + ex.toString());
+            System.out.println("JDBCæ¥ç¶šã®ç¢ºç«‹ã«å¤±æ•—ã—ã¾ã—ãŸ: " + ex.toString());
             throw ex;
         }
     }
@@ -142,25 +142,25 @@ public class BlancoDbUtil {
     public static void close(final Connection conn) {
         if (conn != null) {
             try {
-                System.out.println("ƒf[ƒ^ƒx[ƒXÚ‘±‚ğƒNƒ[ƒY‚µ‚Ü‚·. (rollback‚µ‚Äclose‚µ‚Ü‚·)");
+                System.out.println("ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹æ¥ç¶šã‚’ã‚¯ãƒ­ãƒ¼ã‚ºã—ã¾ã™. (rollbackã—ã¦closeã—ã¾ã™)");
                 try {
                     conn.rollback();
                 } finally {
                     conn.close();
                 }
             } catch (SQLException e) {
-                System.out.println("JDBCÚ‘±‚ÌŠJ•ú‚É¸”s‚µ‚Ü‚µ‚½: " + e.toString());
+                System.out.println("JDBCæ¥ç¶šã®é–‹æ”¾ã«å¤±æ•—ã—ã¾ã—ãŸ: " + e.toString());
                 e.printStackTrace();
             }
         }
     }
 
     /**
-     * ƒf[ƒ^ƒx[ƒX‚Ìƒo[ƒWƒ‡ƒ“î•ñ‚È‚Ç‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³æƒ…å ±ãªã©ã‚’å–å¾—ã—ã¾ã™ã€‚
      */
     public static void getDatabaseVersionInfo(final Connection conn,
             final BlancoDbSetting dbSetting) {
-        System.out.println("JDBCƒhƒ‰ƒCƒo‚ÌŠî‘bî•ñ‚ğæ“¾‚µ‚Ü‚·B");
+        System.out.println("JDBCãƒ‰ãƒ©ã‚¤ãƒã®åŸºç¤æƒ…å ±ã‚’å–å¾—ã—ã¾ã™ã€‚");
         try {
             final DatabaseMetaData databaseMetaData = conn.getMetaData();
 
@@ -175,7 +175,7 @@ public class BlancoDbUtil {
                 System.out.println("  DatabaseMinorVersion:"
                         + databaseMetaData.getDatabaseMinorVersion());
             } catch (java.lang.AbstractMethodError er) {
-                // SQL Server 2000 JDBC Driver‚Í ‚±‚Ìƒƒ\ƒbƒh‚ğƒTƒ|[ƒg‚µ‚Ü‚¹‚ñB
+                // SQL Server 2000 JDBC Driverã¯ ã“ã®ãƒ¡ã‚½ãƒƒãƒ‰ã‚’ã‚µãƒãƒ¼ãƒˆã—ã¾ã›ã‚“ã€‚
                 // System.out.println(er.toString());
             } catch (SQLException ex) {
             }
@@ -185,17 +185,17 @@ public class BlancoDbUtil {
                 System.out.println("  JDBCMinorVersion:"
                         + databaseMetaData.getJDBCMinorVersion());
             } catch (java.lang.AbstractMethodError er) {
-                // SQL Server 2000 JDBC Driver‚Í ‚±‚Ìƒƒ\ƒbƒh‚ğƒTƒ|[ƒg‚µ‚Ü‚¹‚ñB
+                // SQL Server 2000 JDBC Driverã¯ ã“ã®ãƒ¡ã‚½ãƒƒãƒ‰ã‚’ã‚µãƒãƒ¼ãƒˆã—ã¾ã›ã‚“ã€‚
                 // System.out.println(er.toString());
             } catch (SQLException ex) {
-                // Oracle 9i JDBC Driver‚Í ‚±‚Ìƒƒ\ƒbƒh‚ğƒTƒ|[ƒg‚µ‚Ü‚¹‚ñB
+                // Oracle 9i JDBC Driverã¯ ã“ã®ãƒ¡ã‚½ãƒƒãƒ‰ã‚’ã‚µãƒãƒ¼ãƒˆã—ã¾ã›ã‚“ã€‚
             }
 
             dbSetting.setDriverName(new BlancoDbDriverNameStringGroup()
                     .convertToInt(driverName));
             if (BlancoDbDriverNameStringGroup.NOT_DEFINED == dbSetting
                     .getDriverName()) {
-                System.out.println("–¢’m‚ÌJDBCƒhƒ‰ƒCƒo‚Å‚·: " + driverName);
+                System.out.println("æœªçŸ¥ã®JDBCãƒ‰ãƒ©ã‚¤ãƒã§ã™: " + driverName);
             }
 
         } catch (SQLException e1) {
@@ -205,14 +205,14 @@ public class BlancoDbUtil {
     }
 
     /**
-     * Eclipse Java ƒvƒƒWƒFƒNƒg‚©‚çƒNƒ‰ƒXƒpƒXî•ñ‚ğ“Ç‚İæ‚èB
+     * Eclipse Java ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã‹ã‚‰ã‚¯ãƒ©ã‚¹ãƒ‘ã‚¹æƒ…å ±ã‚’èª­ã¿å–ã‚Šã€‚
      * 
-     * u.classpathvƒtƒ@ƒCƒ‹‚Ì‹LÚ“à—e‚ğ“ü—Í‚Æ‚µ‚Ü‚·B
+     * ã€Œ.classpathã€ãƒ•ã‚¡ã‚¤ãƒ«ã®è¨˜è¼‰å†…å®¹ã‚’å…¥åŠ›ã¨ã—ã¾ã™ã€‚
      * 
      * @param fileClasspath
-     *            “ü—Í‚Æ‚È‚éu.classpathvƒtƒ@ƒCƒ‹B
+     *            å…¥åŠ›ã¨ãªã‚‹ã€Œ.classpathã€ãƒ•ã‚¡ã‚¤ãƒ«ã€‚
      * @param dbSetting
-     *            o—Í‚Æ‚È‚é DB î•ñB
+     *            å‡ºåŠ›ã¨ãªã‚‹ DB æƒ…å ±ã€‚
      */
     public static void readClasspathEntryFromEclipseJavaProject(
             final File fileClasspath, final BlancoDbSetting dbSetting) {
@@ -248,8 +248,8 @@ public class BlancoDbUtil {
     }
 
     /**
-     * Šî€ƒpƒbƒP[ƒW‚ğæ“¾‚µ‚Ü‚·BBlancoDbSqlInfoStructure ‚ğ—Dæ‚µA–³‚¢ê‡‚É‚Í BlancoDbSetting
-     * ‚ğ—˜—p‚µ‚ÄŠm’è‚³‚¹‚Ü‚·B
+     * åŸºæº–ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚’å–å¾—ã—ã¾ã™ã€‚BlancoDbSqlInfoStructure ã‚’å„ªå…ˆã—ã€ç„¡ã„å ´åˆã«ã¯ BlancoDbSetting
+     * ã‚’åˆ©ç”¨ã—ã¦ç¢ºå®šã•ã›ã¾ã™ã€‚
      * 
      * @param sqlInfo
      * @param dbSetting

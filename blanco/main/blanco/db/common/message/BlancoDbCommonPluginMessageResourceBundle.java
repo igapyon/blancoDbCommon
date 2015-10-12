@@ -1,5 +1,5 @@
 /*
- * ‚±‚Ìƒ\[ƒXƒR[ƒh‚Í blanco Framework‚É‚æ‚èŽ©“®¶¬‚³‚ê‚Ü‚µ‚½B
+ * ã“ã®ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã¯ blanco Frameworkã«ã‚ˆã‚Šè‡ªå‹•ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚
  */
 package blanco.db.common.message;
 
@@ -9,23 +9,23 @@ import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 /**
- * ƒƒbƒZ[ƒW’è‹`[BlancoDbCommonPlugin]‚ª“à•”“I‚É—˜—p‚·‚éƒŠƒ\[ƒXƒoƒ“ƒhƒ‹ƒNƒ‰ƒXB
+ * ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å®šç¾©[BlancoDbCommonPlugin]ãŒå†…éƒ¨çš„ã«åˆ©ç”¨ã™ã‚‹ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ«ã‚¯ãƒ©ã‚¹ã€‚
  *
- * ƒŠƒ\[ƒXƒoƒ“ƒhƒ‹’è‹`: [BlancoDbCommonPluginMessage]B<BR>
- * ‚±‚ÌƒNƒ‰ƒX‚ÍƒŠƒ\[ƒXƒoƒ“ƒhƒ‹’è‹`‘‚©‚çŽ©“®¶¬‚³‚ê‚½ƒŠƒ\[ƒXƒoƒ“ƒhƒ‹ƒNƒ‰ƒX‚Å‚·B<BR>
+ * ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ«å®šç¾©: [BlancoDbCommonPluginMessage]ã€‚<BR>
+ * ã“ã®ã‚¯ãƒ©ã‚¹ã¯ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ«å®šç¾©æ›¸ã‹ã‚‰è‡ªå‹•ç”Ÿæˆã•ã‚ŒãŸãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ«ã‚¯ãƒ©ã‚¹ã§ã™ã€‚<BR>
  */
 class BlancoDbCommonPluginMessageResourceBundle {
     /**
-     * ƒŠƒ\[ƒXƒoƒ“ƒhƒ‹ƒIƒuƒWƒFƒNƒgB
+     * ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ«ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã€‚
      *
-     * “à•”“I‚ÉŽÀÛ‚É“ü—Í‚ðs‚¤ƒŠƒ\[ƒXƒoƒ“ƒhƒ‹‚ð‹L‰¯‚µ‚Ü‚·B
+     * å†…éƒ¨çš„ã«å®Ÿéš›ã«å…¥åŠ›ã‚’è¡Œã†ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ«ã‚’è¨˜æ†¶ã—ã¾ã™ã€‚
      */
     private ResourceBundle fResourceBundle;
 
     /**
-     * BlancoDbCommonPluginMessageResourceBundleƒNƒ‰ƒX‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^B
+     * BlancoDbCommonPluginMessageResourceBundleã‚¯ãƒ©ã‚¹ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã€‚
      *
-     * Šî’ê–¼[BlancoDbCommonPluginMessage]AƒfƒtƒHƒ‹ƒg‚ÌƒƒP[ƒ‹AŒÄ‚Ño‚µ‘¤‚ÌƒNƒ‰ƒXƒ[ƒ_‚ðŽg—p‚µ‚ÄAƒŠƒ\[ƒXƒoƒ“ƒhƒ‹‚ðŽæ“¾‚µ‚Ü‚·B
+     * åŸºåº•å[BlancoDbCommonPluginMessage]ã€ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãƒ­ã‚±ãƒ¼ãƒ«ã€å‘¼ã³å‡ºã—å´ã®ã‚¯ãƒ©ã‚¹ãƒ­ãƒ¼ãƒ€ã‚’ä½¿ç”¨ã—ã¦ã€ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ«ã‚’å–å¾—ã—ã¾ã™ã€‚
      */
     public BlancoDbCommonPluginMessageResourceBundle() {
         try {
@@ -35,11 +35,11 @@ class BlancoDbCommonPluginMessageResourceBundle {
     }
 
     /**
-     * BlancoDbCommonPluginMessageResourceBundleƒNƒ‰ƒX‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^B
+     * BlancoDbCommonPluginMessageResourceBundleã‚¯ãƒ©ã‚¹ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã€‚
      *
-     * Šî’ê–¼[BlancoDbCommonPluginMessage]AŽw’è‚³‚ê‚½ƒƒP[ƒ‹AŒÄ‚Ño‚µ‘¤‚ÌƒNƒ‰ƒXƒ[ƒ_‚ðŽg—p‚µ‚ÄAƒŠƒ\[ƒXƒoƒ“ƒhƒ‹‚ðŽæ“¾‚µ‚Ü‚·B
+     * åŸºåº•å[BlancoDbCommonPluginMessage]ã€æŒ‡å®šã•ã‚ŒãŸãƒ­ã‚±ãƒ¼ãƒ«ã€å‘¼ã³å‡ºã—å´ã®ã‚¯ãƒ©ã‚¹ãƒ­ãƒ¼ãƒ€ã‚’ä½¿ç”¨ã—ã¦ã€ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ«ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * @param locale ƒƒP[ƒ‹‚ÌŽw’è
+     * @param locale ãƒ­ã‚±ãƒ¼ãƒ«ã®æŒ‡å®š
      */
     public BlancoDbCommonPluginMessageResourceBundle(final Locale locale) {
         try {
@@ -49,12 +49,12 @@ class BlancoDbCommonPluginMessageResourceBundle {
     }
 
     /**
-     * BlancoDbCommonPluginMessageResourceBundleƒNƒ‰ƒX‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^B
+     * BlancoDbCommonPluginMessageResourceBundleã‚¯ãƒ©ã‚¹ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã€‚
      *
-     * Šî’ê–¼[BlancoDbCommonPluginMessage]AŽw’è‚³‚ê‚½ƒƒP[ƒ‹AŽw’è‚³‚ê‚½ƒNƒ‰ƒXƒ[ƒ_‚ðŽg—p‚µ‚ÄAƒŠƒ\[ƒXƒoƒ“ƒhƒ‹‚ðŽæ“¾‚µ‚Ü‚·B
+     * åŸºåº•å[BlancoDbCommonPluginMessage]ã€æŒ‡å®šã•ã‚ŒãŸãƒ­ã‚±ãƒ¼ãƒ«ã€æŒ‡å®šã•ã‚ŒãŸã‚¯ãƒ©ã‚¹ãƒ­ãƒ¼ãƒ€ã‚’ä½¿ç”¨ã—ã¦ã€ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ«ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * @param locale ƒƒP[ƒ‹‚ÌŽw’è
-     * @param loader ƒNƒ‰ƒXƒ[ƒ_‚ÌŽw’è
+     * @param locale ãƒ­ã‚±ãƒ¼ãƒ«ã®æŒ‡å®š
+     * @param loader ã‚¯ãƒ©ã‚¹ãƒ­ãƒ¼ãƒ€ã®æŒ‡å®š
      */
     public BlancoDbCommonPluginMessageResourceBundle(final Locale locale, final ClassLoader loader) {
         try {
@@ -64,9 +64,9 @@ class BlancoDbCommonPluginMessageResourceBundle {
     }
 
     /**
-     * “à•”“I‚É•ÛŽ‚µ‚Ä‚¢‚éƒŠƒ\[ƒXƒoƒ“ƒhƒ‹ƒIƒuƒWƒFƒNƒg‚ðŽæ“¾‚µ‚Ü‚·B
+     * å†…éƒ¨çš„ã«ä¿æŒã—ã¦ã„ã‚‹ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ«ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * @return “à•”“I‚É•ÛŽ‚µ‚Ä‚¢‚éƒŠƒ\[ƒXƒoƒ“ƒhƒ‹ƒIƒuƒWƒFƒNƒgB
+     * @return å†…éƒ¨çš„ã«ä¿æŒã—ã¦ã„ã‚‹ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ«ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã€‚
      */
     public ResourceBundle getResourceBundle() {
         return fResourceBundle;
@@ -75,54 +75,54 @@ class BlancoDbCommonPluginMessageResourceBundle {
     /**
      * bundle[BlancoDbCommonPluginMessage], key[MBDBCMI01]
      *
-     * [blancoDb ƒvƒ‰ƒOƒCƒ“‚ÍˆÈ‰º‚Ì‚æ‚¤‚É—˜—p‚µ‚Ä‚­‚¾‚³‚¢B\n  1.Java ƒvƒƒWƒFƒNƒg“à‚Å—˜—p‚µ‚Ä‚­‚¾‚³‚¢\n    blancoDb ‚Ìƒ\[ƒXƒR[ƒhŽ©“®¶¬‚ÍAJava ƒvƒƒWƒFƒNƒg“à‚ÅŽÀs‚µ‚Ä‚­‚¾‚³‚¢B\n  2.uƒ‰ƒCƒuƒ‰ƒŠ[v‚É JDBC ƒhƒ‰ƒCƒo‚Ì jar ƒtƒ@ƒCƒ‹‚ð’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢\n    ƒvƒƒWƒFƒNƒg‚ÌuƒvƒƒpƒeƒB[v-&gt;uJava ‚Ìƒrƒ‹ƒhEƒpƒXv‚Ìuƒ‰ƒCƒuƒ‰ƒŠ[v‚É\n    JDBC ƒhƒ‰ƒCƒo‚Ì jar ƒtƒ@ƒCƒ‹‚ð’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢B\n  ¦‚±‚ê‚ç‚ÍAƒ\[ƒXƒR[ƒh¶¬‚ð‚¨‚±‚È‚¤ê‡‚Ì§ŒÀ‚Å‚·B\n    ¶¬‚³‚ê‚½ƒ\[ƒXƒR[ƒh‚Ì—˜—pŽž‚É‚ÍAŠÖŒW‚ ‚è‚Ü‚¹‚ñB] (ja)<br>
+     * [blancoDb ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã¯ä»¥ä¸‹ã®ã‚ˆã†ã«åˆ©ç”¨ã—ã¦ãã ã•ã„ã€‚\n  1.Java ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆå†…ã§åˆ©ç”¨ã—ã¦ãã ã•ã„\n    blancoDb ã®ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰è‡ªå‹•ç”Ÿæˆã¯ã€Java ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆå†…ã§å®Ÿè¡Œã—ã¦ãã ã•ã„ã€‚\n  2.ã€Œãƒ©ã‚¤ãƒ–ãƒ©ãƒªãƒ¼ã€ã« JDBC ãƒ‰ãƒ©ã‚¤ãƒã® jar ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¿½åŠ ã—ã¦ãã ã•ã„\n    ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã®ã€Œãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ãƒ¼ã€-&gt;ã€ŒJava ã®ãƒ“ãƒ«ãƒ‰ãƒ»ãƒ‘ã‚¹ã€ã®ã€Œãƒ©ã‚¤ãƒ–ãƒ©ãƒªãƒ¼ã€ã«\n    JDBC ãƒ‰ãƒ©ã‚¤ãƒã® jar ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¿½åŠ ã—ã¦ãã ã•ã„ã€‚\n  â€»ã“ã‚Œã‚‰ã¯ã€ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ç”Ÿæˆã‚’ãŠã“ãªã†å ´åˆã®åˆ¶é™ã§ã™ã€‚\n    ç”Ÿæˆã•ã‚ŒãŸã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã®åˆ©ç”¨æ™‚ã«ã¯ã€é–¢ä¿‚ã‚ã‚Šã¾ã›ã‚“ã€‚] (ja)<br>
      *
-     * @return key[MBDBCMI01]‚É‘Î‰ž‚·‚é’lBŠO•”‚©‚ç“Ç‚Ýž‚Ý‚ª‚Å‚«‚È‚¢ê‡‚É‚ÍA’è‹`‘‚Ì’l‚ð–ß‚µ‚Ü‚·B•K‚¸nullˆÈŠO‚Ì’l‚ª–ß‚è‚Ü‚·B
+     * @return key[MBDBCMI01]ã«å¯¾å¿œã™ã‚‹å€¤ã€‚å¤–éƒ¨ã‹ã‚‰èª­ã¿è¾¼ã¿ãŒã§ããªã„å ´åˆã«ã¯ã€å®šç¾©æ›¸ã®å€¤ã‚’æˆ»ã—ã¾ã™ã€‚å¿…ãšnullä»¥å¤–ã®å€¤ãŒæˆ»ã‚Šã¾ã™ã€‚
      */
     public String getMbdbcmi01() {
-        // ‰Šú’l‚Æ‚µ‚Ä’è‹`‘‚Ì’l‚ð—˜—p‚µ‚Ü‚·B
-        String strFormat = "blancoDb ƒvƒ‰ƒOƒCƒ“‚ÍˆÈ‰º‚Ì‚æ‚¤‚É—˜—p‚µ‚Ä‚­‚¾‚³‚¢B\n  1.Java ƒvƒƒWƒFƒNƒg“à‚Å—˜—p‚µ‚Ä‚­‚¾‚³‚¢\n    blancoDb ‚Ìƒ\[ƒXƒR[ƒhŽ©“®¶¬‚ÍAJava ƒvƒƒWƒFƒNƒg“à‚ÅŽÀs‚µ‚Ä‚­‚¾‚³‚¢B\n  2.uƒ‰ƒCƒuƒ‰ƒŠ[v‚É JDBC ƒhƒ‰ƒCƒo‚Ì jar ƒtƒ@ƒCƒ‹‚ð’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢\n    ƒvƒƒWƒFƒNƒg‚ÌuƒvƒƒpƒeƒB[v->uJava ‚Ìƒrƒ‹ƒhEƒpƒXv‚Ìuƒ‰ƒCƒuƒ‰ƒŠ[v‚É\n    JDBC ƒhƒ‰ƒCƒo‚Ì jar ƒtƒ@ƒCƒ‹‚ð’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢B\n  ¦‚±‚ê‚ç‚ÍAƒ\[ƒXƒR[ƒh¶¬‚ð‚¨‚±‚È‚¤ê‡‚Ì§ŒÀ‚Å‚·B\n    ¶¬‚³‚ê‚½ƒ\[ƒXƒR[ƒh‚Ì—˜—pŽž‚É‚ÍAŠÖŒW‚ ‚è‚Ü‚¹‚ñB";
+        // åˆæœŸå€¤ã¨ã—ã¦å®šç¾©æ›¸ã®å€¤ã‚’åˆ©ç”¨ã—ã¾ã™ã€‚
+        String strFormat = "blancoDb ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã¯ä»¥ä¸‹ã®ã‚ˆã†ã«åˆ©ç”¨ã—ã¦ãã ã•ã„ã€‚\n  1.Java ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆå†…ã§åˆ©ç”¨ã—ã¦ãã ã•ã„\n    blancoDb ã®ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰è‡ªå‹•ç”Ÿæˆã¯ã€Java ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆå†…ã§å®Ÿè¡Œã—ã¦ãã ã•ã„ã€‚\n  2.ã€Œãƒ©ã‚¤ãƒ–ãƒ©ãƒªãƒ¼ã€ã« JDBC ãƒ‰ãƒ©ã‚¤ãƒã® jar ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¿½åŠ ã—ã¦ãã ã•ã„\n    ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã®ã€Œãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ãƒ¼ã€->ã€ŒJava ã®ãƒ“ãƒ«ãƒ‰ãƒ»ãƒ‘ã‚¹ã€ã®ã€Œãƒ©ã‚¤ãƒ–ãƒ©ãƒªãƒ¼ã€ã«\n    JDBC ãƒ‰ãƒ©ã‚¤ãƒã® jar ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¿½åŠ ã—ã¦ãã ã•ã„ã€‚\n  â€»ã“ã‚Œã‚‰ã¯ã€ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ç”Ÿæˆã‚’ãŠã“ãªã†å ´åˆã®åˆ¶é™ã§ã™ã€‚\n    ç”Ÿæˆã•ã‚ŒãŸã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã®åˆ©ç”¨æ™‚ã«ã¯ã€é–¢ä¿‚ã‚ã‚Šã¾ã›ã‚“ã€‚";
         try {
             if (fResourceBundle != null) {
                 strFormat = fResourceBundle.getString("MBDBCMI01");
             }
         } catch (MissingResourceException ex) {
         }
-        // ’uŠ·•¶Žš—ñ‚Í‚Ð‚Æ‚Â‚à‚ ‚è‚Ü‚¹‚ñB
+        // ç½®æ›æ–‡å­—åˆ—ã¯ã²ã¨ã¤ã‚‚ã‚ã‚Šã¾ã›ã‚“ã€‚
         return strFormat;
     }
 
     /**
      * bundle[BlancoDbCommonPluginMessage], key[MBDBCMC01]
      *
-     * [Ú‘±ƒ`ƒFƒbƒNŽ¸”s] (ja)<br>
+     * [æŽ¥ç¶šãƒã‚§ãƒƒã‚¯å¤±æ•—] (ja)<br>
      *
-     * @return key[MBDBCMC01]‚É‘Î‰ž‚·‚é’lBŠO•”‚©‚ç“Ç‚Ýž‚Ý‚ª‚Å‚«‚È‚¢ê‡‚É‚ÍA’è‹`‘‚Ì’l‚ð–ß‚µ‚Ü‚·B•K‚¸nullˆÈŠO‚Ì’l‚ª–ß‚è‚Ü‚·B
+     * @return key[MBDBCMC01]ã«å¯¾å¿œã™ã‚‹å€¤ã€‚å¤–éƒ¨ã‹ã‚‰èª­ã¿è¾¼ã¿ãŒã§ããªã„å ´åˆã«ã¯ã€å®šç¾©æ›¸ã®å€¤ã‚’æˆ»ã—ã¾ã™ã€‚å¿…ãšnullä»¥å¤–ã®å€¤ãŒæˆ»ã‚Šã¾ã™ã€‚
      */
     public String getMbdbcmc01() {
-        // ‰Šú’l‚Æ‚µ‚Ä’è‹`‘‚Ì’l‚ð—˜—p‚µ‚Ü‚·B
-        String strFormat = "Ú‘±ƒ`ƒFƒbƒNŽ¸”s";
+        // åˆæœŸå€¤ã¨ã—ã¦å®šç¾©æ›¸ã®å€¤ã‚’åˆ©ç”¨ã—ã¾ã™ã€‚
+        String strFormat = "æŽ¥ç¶šãƒã‚§ãƒƒã‚¯å¤±æ•—";
         try {
             if (fResourceBundle != null) {
                 strFormat = fResourceBundle.getString("MBDBCMC01");
             }
         } catch (MissingResourceException ex) {
         }
-        // ’uŠ·•¶Žš—ñ‚Í‚Ð‚Æ‚Â‚à‚ ‚è‚Ü‚¹‚ñB
+        // ç½®æ›æ–‡å­—åˆ—ã¯ã²ã¨ã¤ã‚‚ã‚ã‚Šã¾ã›ã‚“ã€‚
         return strFormat;
     }
 
     /**
      * bundle[BlancoDbCommonPluginMessage], key[MBDBCMC02]
      *
-     * [Žw’è‚ÌJDBCƒhƒ‰ƒCƒo({0})‚Ì“Ç‚Ýž‚Ý‚ÉŽ¸”s‚µ‚Ü‚µ‚½B\n\nŠY“–‚Ì JDBC ƒhƒ‰ƒCƒo‚ð“Ç‚Ýž‚ß‚é‚æ‚¤‚ÉÝ’è•ÏX‚ª•K—v‚Å‚ ‚é‰Â”\«‚ª‚ ‚è‚Ü‚·B\nˆÈ‰º‚Ì“_‚ðŠm”F‚µ‚Ä‚­‚¾‚³‚¢B\n 1.Java ƒvƒƒWƒFƒNƒg“à‚Å—˜—p‚µ‚Ä‚­‚¾‚³‚¢\n   blancoDb ‚Ìƒ\[ƒXƒR[ƒhŽ©“®¶¬‚ÍAJava ƒvƒƒWƒFƒNƒg“à‚ÅŽÀs‚µ‚Ä\n   ‚­‚¾‚³‚¢B\n 2.uƒ‰ƒCƒuƒ‰ƒŠ[v‚É JDBC ƒhƒ‰ƒCƒo‚Ì jar ƒtƒ@ƒCƒ‹‚ð’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢\n   ƒvƒƒWƒFƒNƒg‚ÌuƒvƒƒpƒeƒB[v-&gt;uJava ‚Ìƒrƒ‹ƒhEƒpƒXv‚Ìuƒ‰ƒCƒuƒ‰ƒŠ[v\n   ‚É JDBC ƒhƒ‰ƒCƒo‚Ì jar ƒtƒ@ƒCƒ‹‚ð’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢B] (ja)<br>
+     * [æŒ‡å®šã®JDBCãƒ‰ãƒ©ã‚¤ãƒ({0})ã®èª­ã¿è¾¼ã¿ã«å¤±æ•—ã—ã¾ã—ãŸã€‚\n\nè©²å½“ã® JDBC ãƒ‰ãƒ©ã‚¤ãƒã‚’èª­ã¿è¾¼ã‚ã‚‹ã‚ˆã†ã«è¨­å®šå¤‰æ›´ãŒå¿…è¦ã§ã‚ã‚‹å¯èƒ½æ€§ãŒã‚ã‚Šã¾ã™ã€‚\nä»¥ä¸‹ã®ç‚¹ã‚’ç¢ºèªã—ã¦ãã ã•ã„ã€‚\n 1.Java ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆå†…ã§åˆ©ç”¨ã—ã¦ãã ã•ã„\n   blancoDb ã®ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰è‡ªå‹•ç”Ÿæˆã¯ã€Java ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆå†…ã§å®Ÿè¡Œã—ã¦\n   ãã ã•ã„ã€‚\n 2.ã€Œãƒ©ã‚¤ãƒ–ãƒ©ãƒªãƒ¼ã€ã« JDBC ãƒ‰ãƒ©ã‚¤ãƒã® jar ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¿½åŠ ã—ã¦ãã ã•ã„\n   ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã®ã€Œãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ãƒ¼ã€-&gt;ã€ŒJava ã®ãƒ“ãƒ«ãƒ‰ãƒ»ãƒ‘ã‚¹ã€ã®ã€Œãƒ©ã‚¤ãƒ–ãƒ©ãƒªãƒ¼ã€\n   ã« JDBC ãƒ‰ãƒ©ã‚¤ãƒã® jar ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¿½åŠ ã—ã¦ãã ã•ã„ã€‚] (ja)<br>
      *
-     * @param arg0 ’uŠ·•¶Žš—ñ{0}‚ð’uŠ·‚·‚é’lBjava.lang.StringŒ^‚ð—^‚¦‚Ä‚­‚¾‚³‚¢B
-     * @return key[MBDBCMC02]‚É‘Î‰ž‚·‚é’lBŠO•”‚©‚ç“Ç‚Ýž‚Ý‚ª‚Å‚«‚È‚¢ê‡‚É‚ÍA’è‹`‘‚Ì’l‚ð–ß‚µ‚Ü‚·B•K‚¸nullˆÈŠO‚Ì’l‚ª–ß‚è‚Ü‚·B
+     * @param arg0 ç½®æ›æ–‡å­—åˆ—{0}ã‚’ç½®æ›ã™ã‚‹å€¤ã€‚java.lang.Stringåž‹ã‚’ä¸Žãˆã¦ãã ã•ã„ã€‚
+     * @return key[MBDBCMC02]ã«å¯¾å¿œã™ã‚‹å€¤ã€‚å¤–éƒ¨ã‹ã‚‰èª­ã¿è¾¼ã¿ãŒã§ããªã„å ´åˆã«ã¯ã€å®šç¾©æ›¸ã®å€¤ã‚’æˆ»ã—ã¾ã™ã€‚å¿…ãšnullä»¥å¤–ã®å€¤ãŒæˆ»ã‚Šã¾ã™ã€‚
      */
     public String getMbdbcmc02(final String arg0) {
-        // ‰Šú’l‚Æ‚µ‚Ä’è‹`‘‚Ì’l‚ð—˜—p‚µ‚Ü‚·B
-        String strFormat = "Žw’è‚ÌJDBCƒhƒ‰ƒCƒo({0})‚Ì“Ç‚Ýž‚Ý‚ÉŽ¸”s‚µ‚Ü‚µ‚½B\n\nŠY“–‚Ì JDBC ƒhƒ‰ƒCƒo‚ð“Ç‚Ýž‚ß‚é‚æ‚¤‚ÉÝ’è•ÏX‚ª•K—v‚Å‚ ‚é‰Â”\«‚ª‚ ‚è‚Ü‚·B\nˆÈ‰º‚Ì“_‚ðŠm”F‚µ‚Ä‚­‚¾‚³‚¢B\n 1.Java ƒvƒƒWƒFƒNƒg“à‚Å—˜—p‚µ‚Ä‚­‚¾‚³‚¢\n   blancoDb ‚Ìƒ\[ƒXƒR[ƒhŽ©“®¶¬‚ÍAJava ƒvƒƒWƒFƒNƒg“à‚ÅŽÀs‚µ‚Ä\n   ‚­‚¾‚³‚¢B\n 2.uƒ‰ƒCƒuƒ‰ƒŠ[v‚É JDBC ƒhƒ‰ƒCƒo‚Ì jar ƒtƒ@ƒCƒ‹‚ð’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢\n   ƒvƒƒWƒFƒNƒg‚ÌuƒvƒƒpƒeƒB[v->uJava ‚Ìƒrƒ‹ƒhEƒpƒXv‚Ìuƒ‰ƒCƒuƒ‰ƒŠ[v\n   ‚É JDBC ƒhƒ‰ƒCƒo‚Ì jar ƒtƒ@ƒCƒ‹‚ð’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢B";
+        // åˆæœŸå€¤ã¨ã—ã¦å®šç¾©æ›¸ã®å€¤ã‚’åˆ©ç”¨ã—ã¾ã™ã€‚
+        String strFormat = "æŒ‡å®šã®JDBCãƒ‰ãƒ©ã‚¤ãƒ({0})ã®èª­ã¿è¾¼ã¿ã«å¤±æ•—ã—ã¾ã—ãŸã€‚\n\nè©²å½“ã® JDBC ãƒ‰ãƒ©ã‚¤ãƒã‚’èª­ã¿è¾¼ã‚ã‚‹ã‚ˆã†ã«è¨­å®šå¤‰æ›´ãŒå¿…è¦ã§ã‚ã‚‹å¯èƒ½æ€§ãŒã‚ã‚Šã¾ã™ã€‚\nä»¥ä¸‹ã®ç‚¹ã‚’ç¢ºèªã—ã¦ãã ã•ã„ã€‚\n 1.Java ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆå†…ã§åˆ©ç”¨ã—ã¦ãã ã•ã„\n   blancoDb ã®ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰è‡ªå‹•ç”Ÿæˆã¯ã€Java ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆå†…ã§å®Ÿè¡Œã—ã¦\n   ãã ã•ã„ã€‚\n 2.ã€Œãƒ©ã‚¤ãƒ–ãƒ©ãƒªãƒ¼ã€ã« JDBC ãƒ‰ãƒ©ã‚¤ãƒã® jar ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¿½åŠ ã—ã¦ãã ã•ã„\n   ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã®ã€Œãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ãƒ¼ã€->ã€ŒJava ã®ãƒ“ãƒ«ãƒ‰ãƒ»ãƒ‘ã‚¹ã€ã®ã€Œãƒ©ã‚¤ãƒ–ãƒ©ãƒªãƒ¼ã€\n   ã« JDBC ãƒ‰ãƒ©ã‚¤ãƒã® jar ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¿½åŠ ã—ã¦ãã ã•ã„ã€‚";
         try {
             if (fResourceBundle != null) {
                 strFormat = fResourceBundle.getString("MBDBCMC02");
@@ -131,7 +131,7 @@ class BlancoDbCommonPluginMessageResourceBundle {
         }
         final MessageFormat messageFormat = new MessageFormat(strFormat);
         final StringBuffer strbuf = new StringBuffer();
-        // —^‚¦‚ç‚ê‚½ˆø”‚ðŒ³‚É’uŠ·•¶Žš—ñ‚ð’u‚«Š·‚¦‚Ü‚·B
+        // ä¸Žãˆã‚‰ã‚ŒãŸå¼•æ•°ã‚’å…ƒã«ç½®æ›æ–‡å­—åˆ—ã‚’ç½®ãæ›ãˆã¾ã™ã€‚
         messageFormat.format(new Object[] {arg0}, strbuf, null);
         return strbuf.toString();
     }

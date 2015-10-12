@@ -1,558 +1,558 @@
 /*
- * ���̃\�[�X�R�[�h�� blanco Framework�ɂ�莩����������܂����B
+ * このソースコードは blanco Frameworkにより自動生成されました。
  */
 package blanco.db.common.valueobject;
 
 /**
- * blancoDb���N�����邽�߂̐ݒ���B
+ * blancoDbが起動するための設定情報。
  */
 public class BlancoDbSetting {
     /**
-     * �o�͐�f�B���N�g���B
+     * 出力先ディレクトリ。
      *
-     * �t�B�[���h: [TargetDir]�B
+     * フィールド: [TargetDir]。
      */
     private String fTargetDir;
 
     /**
-     * ��ƂȂ�p�b�P�[�W���B
+     * 基準となるパッケージ名。
      *
-     * �t�B�[���h: [BasePackage]�B
+     * フィールド: [BasePackage]。
      */
     private String fBasePackage;
 
     /**
-     * SQL ��`���̏������ɃG���[�����������ꍇ�ɏ������f���邩�ǂ����B2012.01 ���_�ł� Java �̂ݑΉ��ς݁B
+     * SQL 定義書の処理中にエラーが発生した場合に処理中断するかどうか。2012.01 時点では Java のみ対応済み。
      *
-     * �t�B�[���h: [failonerror]�B
-     * �f�t�H���g: [false]�B
+     * フィールド: [failonerror]。
+     * デフォルト: [false]。
      */
     private boolean fFailonerror = false;
 
     /**
-     * ���M���O���s�����ǂ����B
+     * ロギングを行うかどうか。
      *
-     * �t�B�[���h: [logging]�B
+     * フィールド: [logging]。
      */
     private boolean fLogging;
 
     /**
-     * ���M���O�̃��[�h�B0:�m�[�}����debug���O��񍐁B1.�p�t�H�[�}���X�񍐕t���񍐁B2:SQLID�̂ݕ񍐁B
+     * ロギングのモード。0:ノーマルなdebugログを報告。1.パフォーマンス報告付き報告。2:SQLIDのみ報告。
      *
-     * �t�B�[���h: [loggingMode]�B
-     * �f�t�H���g: [0]�B
+     * フィールド: [loggingMode]。
+     * デフォルト: [0]。
      */
     private int fLoggingMode = 0;
 
     /**
-     * SQL �̃��M���O���s�����ǂ����Blogging �ƈقȂ�Aloggingsql �ł� ���ǐ��̍������O���o�͂��܂��B
+     * SQL のロギングを行うかどうか。logging と異なり、loggingsql では より可読性の高いログを出力します。
      *
-     * �t�B�[���h: [loggingsql]�B
-     * �f�t�H���g: [false]�B
+     * フィールド: [loggingsql]。
+     * デフォルト: [false]。
      */
     private boolean fLoggingsql = false;
 
     /**
-     * JDBC�ڑ��̍ۂɗ��p����JDBC�h���C�o�E�N���X��
+     * JDBC接続の際に利用するJDBCドライバ・クラス名
      *
-     * �t�B�[���h: [jdbcdriver]�B
+     * フィールド: [jdbcdriver]。
      */
     private String fJdbcdriver;
 
     /**
-     * JDBC�ڑ��̍ۂɗ��p����JDBC URI��
+     * JDBC接続の際に利用するJDBC URI名
      *
-     * �t�B�[���h: [jdbcurl]�B
+     * フィールド: [jdbcurl]。
      */
     private String fJdbcurl;
 
     /**
-     * JDBC�ڑ��̍ۂɗ��p���郆�[�U��
+     * JDBC接続の際に利用するユーザ名
      *
-     * �t�B�[���h: [jdbcuser]�B
+     * フィールド: [jdbcuser]。
      */
     private String fJdbcuser;
 
     /**
-     * JDBC�ڑ��̍ۂɗ��p����p�X���[�h
+     * JDBC接続の際に利用するパスワード
      *
-     * �t�B�[���h: [jdbcpassword]�B
+     * フィールド: [jdbcpassword]。
      */
     private String fJdbcpassword;
 
     /**
-     * JDBC�h���C�o�� jar �t�@�C�����B�w�肵���ꍇ�ɂ͊Y���t�@�C���𗘗p���Đڑ������݂�B�����t�@�C������΂����ɂ́u;�v�ŋ�؂�B
+     * JDBCドライバの jar ファイル名。指定した場合には該当ファイルを利用して接続を試みる。複数ファイルあるばあいには「;」で区切る。
      *
-     * �t�B�[���h: [jdbcdriverfile]�B
+     * フィールド: [jdbcdriverfile]。
      */
     private String fJdbcdriverfile;
 
     /**
-     * JDBC�ڑ��̍ۂɗ��p����X�L�[�}�� ���Oracle�̍ۂɗ��p����܂��B
+     * JDBC接続の際に利用するスキーマ名 主にOracleの際に利用されます。
      *
-     * �t�B�[���h: [schema]�B
+     * フィールド: [schema]。
      */
     private String fSchema;
 
     /**
-     * �ڑ��m����ɓ�������ۂ�JDBC�h���C�o�̖��́B
+     * 接続確立後に得られる実際のJDBCドライバの名称。
      *
-     * �t�B�[���h: [DriverName]�B
-     * �f�t�H���g: [-1]�B
+     * フィールド: [DriverName]。
+     * デフォルト: [-1]。
      */
     private int fDriverName = -1;
 
     /**
-     * �����^�C���p�b�P�[�W���Bnull�ȊO�̏ꍇ�ɂ́A���̎w�肳�ꂽ�p�b�P�[�W�ւƃ����^�C���N���X�𐶐����܂��B
+     * ランタイムパッケージ名。null以外の場合には、その指定されたパッケージへとランタイムクラスを生成します。
      *
-     * �t�B�[���h: [RuntimePackage]�B
+     * フィールド: [RuntimePackage]。
      */
     private String fRuntimePackage;
 
     /**
-     * �X�e�[�g�����g�^�C���A�E�g�l�B-1�͖��w��������B�f�t�H���g�l��-1�B
+     * ステートメントタイムアウト値。-1は無指定を示す。デフォルト値は-1。
      *
-     * �t�B�[���h: [StatementTimeout]�B
-     * �f�t�H���g: [-1]�B
+     * フィールド: [StatementTimeout]。
+     * デフォルト: [-1]。
      */
     private int fStatementTimeout = -1;
 
     /**
-     * �\�[�X�R�[�h������������SQL��`��SQL�������s���邩�ǂ�����ݒ肷��t���O�B�f�t�H���g�� iterator�Biterator:�����^�̂�SQL�������s���Č��؂���Bnone:SQL���͎��s���Ȃ��B
+     * ソースコード自動生成時にSQL定義のSQL文を実行するかどうかを設定するフラグ。デフォルトは iterator。iterator:検索型のみSQL文を実行して検証する。none:SQL文は実行しない。
      *
-     * �t�B�[���h: [executeSql]�B
-     * �f�t�H���g: [2]�B
+     * フィールド: [executeSql]。
+     * デフォルト: [2]。
      */
     private int fExecuteSql = 2;
 
     /**
-     * ������������\�[�X�t�@�C���̕����G���R�[�f�B���O���w�肵�܂��B
+     * 自動生成するソースファイルの文字エンコーディングを指定します。
      *
-     * �t�B�[���h: [encoding]�B
+     * フィールド: [encoding]。
      */
     private String fEncoding;
 
     /**
-     * ������ɂ��āAMicrosoft Windows 3.1���{��ł̃��j�R�[�h�ւƕϊ����邩�ǂ���.
+     * 文字列について、Microsoft Windows 3.1日本語版のユニコードへと変換するかどうか.
      *
-     * �t�B�[���h: [convertStringToMsWindows31jUnicode]�B
-     * �f�t�H���g: [false]�B
+     * フィールド: [convertStringToMsWindows31jUnicode]。
+     * デフォルト: [false]。
      */
     private boolean fConvertStringToMsWindows31jUnicode = false;
 
     /**
-     * �t�B�[���h [TargetDir] �̒l��ݒ肵�܂��B
+     * フィールド [TargetDir] の値を設定します。
      *
-     * �t�B�[���h�̐���: [�o�͐�f�B���N�g���B]�B
+     * フィールドの説明: [出力先ディレクトリ。]。
      *
-     * @param argTargetDir �t�B�[���h[TargetDir]�ɐݒ肷��l�B
+     * @param argTargetDir フィールド[TargetDir]に設定する値。
      */
     public void setTargetDir(final String argTargetDir) {
         fTargetDir = argTargetDir;
     }
 
     /**
-     * �t�B�[���h [TargetDir] �̒l���擾���܂��B
+     * フィールド [TargetDir] の値を取得します。
      *
-     * �t�B�[���h�̐���: [�o�͐�f�B���N�g���B]�B
+     * フィールドの説明: [出力先ディレクトリ。]。
      *
-     * @return �t�B�[���h[TargetDir]����擾�����l�B
+     * @return フィールド[TargetDir]から取得した値。
      */
     public String getTargetDir() {
         return fTargetDir;
     }
 
     /**
-     * �t�B�[���h [BasePackage] �̒l��ݒ肵�܂��B
+     * フィールド [BasePackage] の値を設定します。
      *
-     * �t�B�[���h�̐���: [��ƂȂ�p�b�P�[�W���B]�B
+     * フィールドの説明: [基準となるパッケージ名。]。
      *
-     * @param argBasePackage �t�B�[���h[BasePackage]�ɐݒ肷��l�B
+     * @param argBasePackage フィールド[BasePackage]に設定する値。
      */
     public void setBasePackage(final String argBasePackage) {
         fBasePackage = argBasePackage;
     }
 
     /**
-     * �t�B�[���h [BasePackage] �̒l���擾���܂��B
+     * フィールド [BasePackage] の値を取得します。
      *
-     * �t�B�[���h�̐���: [��ƂȂ�p�b�P�[�W���B]�B
+     * フィールドの説明: [基準となるパッケージ名。]。
      *
-     * @return �t�B�[���h[BasePackage]����擾�����l�B
+     * @return フィールド[BasePackage]から取得した値。
      */
     public String getBasePackage() {
         return fBasePackage;
     }
 
     /**
-     * �t�B�[���h [failonerror] �̒l��ݒ肵�܂��B
+     * フィールド [failonerror] の値を設定します。
      *
-     * �t�B�[���h�̐���: [SQL ��`���̏������ɃG���[�����������ꍇ�ɏ������f���邩�ǂ����B2012.01 ���_�ł� Java �̂ݑΉ��ς݁B]�B
+     * フィールドの説明: [SQL 定義書の処理中にエラーが発生した場合に処理中断するかどうか。2012.01 時点では Java のみ対応済み。]。
      *
-     * @param argFailonerror �t�B�[���h[failonerror]�ɐݒ肷��l�B
+     * @param argFailonerror フィールド[failonerror]に設定する値。
      */
     public void setFailonerror(final boolean argFailonerror) {
         fFailonerror = argFailonerror;
     }
 
     /**
-     * �t�B�[���h [failonerror] �̒l���擾���܂��B
+     * フィールド [failonerror] の値を取得します。
      *
-     * �t�B�[���h�̐���: [SQL ��`���̏������ɃG���[�����������ꍇ�ɏ������f���邩�ǂ����B2012.01 ���_�ł� Java �̂ݑΉ��ς݁B]�B
-     * �f�t�H���g: [false]�B
+     * フィールドの説明: [SQL 定義書の処理中にエラーが発生した場合に処理中断するかどうか。2012.01 時点では Java のみ対応済み。]。
+     * デフォルト: [false]。
      *
-     * @return �t�B�[���h[failonerror]����擾�����l�B
+     * @return フィールド[failonerror]から取得した値。
      */
     public boolean getFailonerror() {
         return fFailonerror;
     }
 
     /**
-     * �t�B�[���h [logging] �̒l��ݒ肵�܂��B
+     * フィールド [logging] の値を設定します。
      *
-     * �t�B�[���h�̐���: [���M���O���s�����ǂ����B]�B
+     * フィールドの説明: [ロギングを行うかどうか。]。
      *
-     * @param argLogging �t�B�[���h[logging]�ɐݒ肷��l�B
+     * @param argLogging フィールド[logging]に設定する値。
      */
     public void setLogging(final boolean argLogging) {
         fLogging = argLogging;
     }
 
     /**
-     * �t�B�[���h [logging] �̒l���擾���܂��B
+     * フィールド [logging] の値を取得します。
      *
-     * �t�B�[���h�̐���: [���M���O���s�����ǂ����B]�B
+     * フィールドの説明: [ロギングを行うかどうか。]。
      *
-     * @return �t�B�[���h[logging]����擾�����l�B
+     * @return フィールド[logging]から取得した値。
      */
     public boolean getLogging() {
         return fLogging;
     }
 
     /**
-     * �t�B�[���h [loggingMode] �̒l��ݒ肵�܂��B
+     * フィールド [loggingMode] の値を設定します。
      *
-     * �t�B�[���h�̐���: [���M���O�̃��[�h�B0:�m�[�}����debug���O��񍐁B1.�p�t�H�[�}���X�񍐕t���񍐁B2:SQLID�̂ݕ񍐁B]�B
+     * フィールドの説明: [ロギングのモード。0:ノーマルなdebugログを報告。1.パフォーマンス報告付き報告。2:SQLIDのみ報告。]。
      *
-     * @param argLoggingMode �t�B�[���h[loggingMode]�ɐݒ肷��l�B
+     * @param argLoggingMode フィールド[loggingMode]に設定する値。
      */
     public void setLoggingMode(final int argLoggingMode) {
         fLoggingMode = argLoggingMode;
     }
 
     /**
-     * �t�B�[���h [loggingMode] �̒l���擾���܂��B
+     * フィールド [loggingMode] の値を取得します。
      *
-     * �t�B�[���h�̐���: [���M���O�̃��[�h�B0:�m�[�}����debug���O��񍐁B1.�p�t�H�[�}���X�񍐕t���񍐁B2:SQLID�̂ݕ񍐁B]�B
-     * �f�t�H���g: [0]�B
+     * フィールドの説明: [ロギングのモード。0:ノーマルなdebugログを報告。1.パフォーマンス報告付き報告。2:SQLIDのみ報告。]。
+     * デフォルト: [0]。
      *
-     * @return �t�B�[���h[loggingMode]����擾�����l�B
+     * @return フィールド[loggingMode]から取得した値。
      */
     public int getLoggingMode() {
         return fLoggingMode;
     }
 
     /**
-     * �t�B�[���h [loggingsql] �̒l��ݒ肵�܂��B
+     * フィールド [loggingsql] の値を設定します。
      *
-     * �t�B�[���h�̐���: [SQL �̃��M���O���s�����ǂ����Blogging �ƈقȂ�Aloggingsql �ł� ���ǐ��̍������O���o�͂��܂��B]�B
+     * フィールドの説明: [SQL のロギングを行うかどうか。logging と異なり、loggingsql では より可読性の高いログを出力します。]。
      *
-     * @param argLoggingsql �t�B�[���h[loggingsql]�ɐݒ肷��l�B
+     * @param argLoggingsql フィールド[loggingsql]に設定する値。
      */
     public void setLoggingsql(final boolean argLoggingsql) {
         fLoggingsql = argLoggingsql;
     }
 
     /**
-     * �t�B�[���h [loggingsql] �̒l���擾���܂��B
+     * フィールド [loggingsql] の値を取得します。
      *
-     * �t�B�[���h�̐���: [SQL �̃��M���O���s�����ǂ����Blogging �ƈقȂ�Aloggingsql �ł� ���ǐ��̍������O���o�͂��܂��B]�B
-     * �f�t�H���g: [false]�B
+     * フィールドの説明: [SQL のロギングを行うかどうか。logging と異なり、loggingsql では より可読性の高いログを出力します。]。
+     * デフォルト: [false]。
      *
-     * @return �t�B�[���h[loggingsql]����擾�����l�B
+     * @return フィールド[loggingsql]から取得した値。
      */
     public boolean getLoggingsql() {
         return fLoggingsql;
     }
 
     /**
-     * �t�B�[���h [jdbcdriver] �̒l��ݒ肵�܂��B
+     * フィールド [jdbcdriver] の値を設定します。
      *
-     * �t�B�[���h�̐���: [JDBC�ڑ��̍ۂɗ��p����JDBC�h���C�o�E�N���X��]�B
+     * フィールドの説明: [JDBC接続の際に利用するJDBCドライバ・クラス名]。
      *
-     * @param argJdbcdriver �t�B�[���h[jdbcdriver]�ɐݒ肷��l�B
+     * @param argJdbcdriver フィールド[jdbcdriver]に設定する値。
      */
     public void setJdbcdriver(final String argJdbcdriver) {
         fJdbcdriver = argJdbcdriver;
     }
 
     /**
-     * �t�B�[���h [jdbcdriver] �̒l���擾���܂��B
+     * フィールド [jdbcdriver] の値を取得します。
      *
-     * �t�B�[���h�̐���: [JDBC�ڑ��̍ۂɗ��p����JDBC�h���C�o�E�N���X��]�B
+     * フィールドの説明: [JDBC接続の際に利用するJDBCドライバ・クラス名]。
      *
-     * @return �t�B�[���h[jdbcdriver]����擾�����l�B
+     * @return フィールド[jdbcdriver]から取得した値。
      */
     public String getJdbcdriver() {
         return fJdbcdriver;
     }
 
     /**
-     * �t�B�[���h [jdbcurl] �̒l��ݒ肵�܂��B
+     * フィールド [jdbcurl] の値を設定します。
      *
-     * �t�B�[���h�̐���: [JDBC�ڑ��̍ۂɗ��p����JDBC URI��]�B
+     * フィールドの説明: [JDBC接続の際に利用するJDBC URI名]。
      *
-     * @param argJdbcurl �t�B�[���h[jdbcurl]�ɐݒ肷��l�B
+     * @param argJdbcurl フィールド[jdbcurl]に設定する値。
      */
     public void setJdbcurl(final String argJdbcurl) {
         fJdbcurl = argJdbcurl;
     }
 
     /**
-     * �t�B�[���h [jdbcurl] �̒l���擾���܂��B
+     * フィールド [jdbcurl] の値を取得します。
      *
-     * �t�B�[���h�̐���: [JDBC�ڑ��̍ۂɗ��p����JDBC URI��]�B
+     * フィールドの説明: [JDBC接続の際に利用するJDBC URI名]。
      *
-     * @return �t�B�[���h[jdbcurl]����擾�����l�B
+     * @return フィールド[jdbcurl]から取得した値。
      */
     public String getJdbcurl() {
         return fJdbcurl;
     }
 
     /**
-     * �t�B�[���h [jdbcuser] �̒l��ݒ肵�܂��B
+     * フィールド [jdbcuser] の値を設定します。
      *
-     * �t�B�[���h�̐���: [JDBC�ڑ��̍ۂɗ��p���郆�[�U��]�B
+     * フィールドの説明: [JDBC接続の際に利用するユーザ名]。
      *
-     * @param argJdbcuser �t�B�[���h[jdbcuser]�ɐݒ肷��l�B
+     * @param argJdbcuser フィールド[jdbcuser]に設定する値。
      */
     public void setJdbcuser(final String argJdbcuser) {
         fJdbcuser = argJdbcuser;
     }
 
     /**
-     * �t�B�[���h [jdbcuser] �̒l���擾���܂��B
+     * フィールド [jdbcuser] の値を取得します。
      *
-     * �t�B�[���h�̐���: [JDBC�ڑ��̍ۂɗ��p���郆�[�U��]�B
+     * フィールドの説明: [JDBC接続の際に利用するユーザ名]。
      *
-     * @return �t�B�[���h[jdbcuser]����擾�����l�B
+     * @return フィールド[jdbcuser]から取得した値。
      */
     public String getJdbcuser() {
         return fJdbcuser;
     }
 
     /**
-     * �t�B�[���h [jdbcpassword] �̒l��ݒ肵�܂��B
+     * フィールド [jdbcpassword] の値を設定します。
      *
-     * �t�B�[���h�̐���: [JDBC�ڑ��̍ۂɗ��p����p�X���[�h]�B
+     * フィールドの説明: [JDBC接続の際に利用するパスワード]。
      *
-     * @param argJdbcpassword �t�B�[���h[jdbcpassword]�ɐݒ肷��l�B
+     * @param argJdbcpassword フィールド[jdbcpassword]に設定する値。
      */
     public void setJdbcpassword(final String argJdbcpassword) {
         fJdbcpassword = argJdbcpassword;
     }
 
     /**
-     * �t�B�[���h [jdbcpassword] �̒l���擾���܂��B
+     * フィールド [jdbcpassword] の値を取得します。
      *
-     * �t�B�[���h�̐���: [JDBC�ڑ��̍ۂɗ��p����p�X���[�h]�B
+     * フィールドの説明: [JDBC接続の際に利用するパスワード]。
      *
-     * @return �t�B�[���h[jdbcpassword]����擾�����l�B
+     * @return フィールド[jdbcpassword]から取得した値。
      */
     public String getJdbcpassword() {
         return fJdbcpassword;
     }
 
     /**
-     * �t�B�[���h [jdbcdriverfile] �̒l��ݒ肵�܂��B
+     * フィールド [jdbcdriverfile] の値を設定します。
      *
-     * �t�B�[���h�̐���: [JDBC�h���C�o�� jar �t�@�C�����B�w�肵���ꍇ�ɂ͊Y���t�@�C���𗘗p���Đڑ������݂�B�����t�@�C������΂����ɂ́u;�v�ŋ�؂�B]�B
+     * フィールドの説明: [JDBCドライバの jar ファイル名。指定した場合には該当ファイルを利用して接続を試みる。複数ファイルあるばあいには「;」で区切る。]。
      *
-     * @param argJdbcdriverfile �t�B�[���h[jdbcdriverfile]�ɐݒ肷��l�B
+     * @param argJdbcdriverfile フィールド[jdbcdriverfile]に設定する値。
      */
     public void setJdbcdriverfile(final String argJdbcdriverfile) {
         fJdbcdriverfile = argJdbcdriverfile;
     }
 
     /**
-     * �t�B�[���h [jdbcdriverfile] �̒l���擾���܂��B
+     * フィールド [jdbcdriverfile] の値を取得します。
      *
-     * �t�B�[���h�̐���: [JDBC�h���C�o�� jar �t�@�C�����B�w�肵���ꍇ�ɂ͊Y���t�@�C���𗘗p���Đڑ������݂�B�����t�@�C������΂����ɂ́u;�v�ŋ�؂�B]�B
+     * フィールドの説明: [JDBCドライバの jar ファイル名。指定した場合には該当ファイルを利用して接続を試みる。複数ファイルあるばあいには「;」で区切る。]。
      *
-     * @return �t�B�[���h[jdbcdriverfile]����擾�����l�B
+     * @return フィールド[jdbcdriverfile]から取得した値。
      */
     public String getJdbcdriverfile() {
         return fJdbcdriverfile;
     }
 
     /**
-     * �t�B�[���h [schema] �̒l��ݒ肵�܂��B
+     * フィールド [schema] の値を設定します。
      *
-     * �t�B�[���h�̐���: [JDBC�ڑ��̍ۂɗ��p����X�L�[�}�� ���Oracle�̍ۂɗ��p����܂��B]�B
+     * フィールドの説明: [JDBC接続の際に利用するスキーマ名 主にOracleの際に利用されます。]。
      *
-     * @param argSchema �t�B�[���h[schema]�ɐݒ肷��l�B
+     * @param argSchema フィールド[schema]に設定する値。
      */
     public void setSchema(final String argSchema) {
         fSchema = argSchema;
     }
 
     /**
-     * �t�B�[���h [schema] �̒l���擾���܂��B
+     * フィールド [schema] の値を取得します。
      *
-     * �t�B�[���h�̐���: [JDBC�ڑ��̍ۂɗ��p����X�L�[�}�� ���Oracle�̍ۂɗ��p����܂��B]�B
+     * フィールドの説明: [JDBC接続の際に利用するスキーマ名 主にOracleの際に利用されます。]。
      *
-     * @return �t�B�[���h[schema]����擾�����l�B
+     * @return フィールド[schema]から取得した値。
      */
     public String getSchema() {
         return fSchema;
     }
 
     /**
-     * �t�B�[���h [DriverName] �̒l��ݒ肵�܂��B
+     * フィールド [DriverName] の値を設定します。
      *
-     * �t�B�[���h�̐���: [�ڑ��m����ɓ�������ۂ�JDBC�h���C�o�̖��́B]�B
+     * フィールドの説明: [接続確立後に得られる実際のJDBCドライバの名称。]。
      *
-     * @param argDriverName �t�B�[���h[DriverName]�ɐݒ肷��l�B
+     * @param argDriverName フィールド[DriverName]に設定する値。
      */
     public void setDriverName(final int argDriverName) {
         fDriverName = argDriverName;
     }
 
     /**
-     * �t�B�[���h [DriverName] �̒l���擾���܂��B
+     * フィールド [DriverName] の値を取得します。
      *
-     * �t�B�[���h�̐���: [�ڑ��m����ɓ�������ۂ�JDBC�h���C�o�̖��́B]�B
-     * �f�t�H���g: [-1]�B
+     * フィールドの説明: [接続確立後に得られる実際のJDBCドライバの名称。]。
+     * デフォルト: [-1]。
      *
-     * @return �t�B�[���h[DriverName]����擾�����l�B
+     * @return フィールド[DriverName]から取得した値。
      */
     public int getDriverName() {
         return fDriverName;
     }
 
     /**
-     * �t�B�[���h [RuntimePackage] �̒l��ݒ肵�܂��B
+     * フィールド [RuntimePackage] の値を設定します。
      *
-     * �t�B�[���h�̐���: [�����^�C���p�b�P�[�W���Bnull�ȊO�̏ꍇ�ɂ́A���̎w�肳�ꂽ�p�b�P�[�W�ւƃ����^�C���N���X�𐶐����܂��B]�B
+     * フィールドの説明: [ランタイムパッケージ名。null以外の場合には、その指定されたパッケージへとランタイムクラスを生成します。]。
      *
-     * @param argRuntimePackage �t�B�[���h[RuntimePackage]�ɐݒ肷��l�B
+     * @param argRuntimePackage フィールド[RuntimePackage]に設定する値。
      */
     public void setRuntimePackage(final String argRuntimePackage) {
         fRuntimePackage = argRuntimePackage;
     }
 
     /**
-     * �t�B�[���h [RuntimePackage] �̒l���擾���܂��B
+     * フィールド [RuntimePackage] の値を取得します。
      *
-     * �t�B�[���h�̐���: [�����^�C���p�b�P�[�W���Bnull�ȊO�̏ꍇ�ɂ́A���̎w�肳�ꂽ�p�b�P�[�W�ւƃ����^�C���N���X�𐶐����܂��B]�B
+     * フィールドの説明: [ランタイムパッケージ名。null以外の場合には、その指定されたパッケージへとランタイムクラスを生成します。]。
      *
-     * @return �t�B�[���h[RuntimePackage]����擾�����l�B
+     * @return フィールド[RuntimePackage]から取得した値。
      */
     public String getRuntimePackage() {
         return fRuntimePackage;
     }
 
     /**
-     * �t�B�[���h [StatementTimeout] �̒l��ݒ肵�܂��B
+     * フィールド [StatementTimeout] の値を設定します。
      *
-     * �t�B�[���h�̐���: [�X�e�[�g�����g�^�C���A�E�g�l�B-1�͖��w��������B�f�t�H���g�l��-1�B]�B
+     * フィールドの説明: [ステートメントタイムアウト値。-1は無指定を示す。デフォルト値は-1。]。
      *
-     * @param argStatementTimeout �t�B�[���h[StatementTimeout]�ɐݒ肷��l�B
+     * @param argStatementTimeout フィールド[StatementTimeout]に設定する値。
      */
     public void setStatementTimeout(final int argStatementTimeout) {
         fStatementTimeout = argStatementTimeout;
     }
 
     /**
-     * �t�B�[���h [StatementTimeout] �̒l���擾���܂��B
+     * フィールド [StatementTimeout] の値を取得します。
      *
-     * �t�B�[���h�̐���: [�X�e�[�g�����g�^�C���A�E�g�l�B-1�͖��w��������B�f�t�H���g�l��-1�B]�B
-     * �f�t�H���g: [-1]�B
+     * フィールドの説明: [ステートメントタイムアウト値。-1は無指定を示す。デフォルト値は-1。]。
+     * デフォルト: [-1]。
      *
-     * @return �t�B�[���h[StatementTimeout]����擾�����l�B
+     * @return フィールド[StatementTimeout]から取得した値。
      */
     public int getStatementTimeout() {
         return fStatementTimeout;
     }
 
     /**
-     * �t�B�[���h [executeSql] �̒l��ݒ肵�܂��B
+     * フィールド [executeSql] の値を設定します。
      *
-     * �t�B�[���h�̐���: [�\�[�X�R�[�h������������SQL��`��SQL�������s���邩�ǂ�����ݒ肷��t���O�B�f�t�H���g�� iterator�Biterator:�����^�̂�SQL�������s���Č��؂���Bnone:SQL���͎��s���Ȃ��B]�B
+     * フィールドの説明: [ソースコード自動生成時にSQL定義のSQL文を実行するかどうかを設定するフラグ。デフォルトは iterator。iterator:検索型のみSQL文を実行して検証する。none:SQL文は実行しない。]。
      *
-     * @param argExecuteSql �t�B�[���h[executeSql]�ɐݒ肷��l�B
+     * @param argExecuteSql フィールド[executeSql]に設定する値。
      */
     public void setExecuteSql(final int argExecuteSql) {
         fExecuteSql = argExecuteSql;
     }
 
     /**
-     * �t�B�[���h [executeSql] �̒l���擾���܂��B
+     * フィールド [executeSql] の値を取得します。
      *
-     * �t�B�[���h�̐���: [�\�[�X�R�[�h������������SQL��`��SQL�������s���邩�ǂ�����ݒ肷��t���O�B�f�t�H���g�� iterator�Biterator:�����^�̂�SQL�������s���Č��؂���Bnone:SQL���͎��s���Ȃ��B]�B
-     * �f�t�H���g: [2]�B
+     * フィールドの説明: [ソースコード自動生成時にSQL定義のSQL文を実行するかどうかを設定するフラグ。デフォルトは iterator。iterator:検索型のみSQL文を実行して検証する。none:SQL文は実行しない。]。
+     * デフォルト: [2]。
      *
-     * @return �t�B�[���h[executeSql]����擾�����l�B
+     * @return フィールド[executeSql]から取得した値。
      */
     public int getExecuteSql() {
         return fExecuteSql;
     }
 
     /**
-     * �t�B�[���h [encoding] �̒l��ݒ肵�܂��B
+     * フィールド [encoding] の値を設定します。
      *
-     * �t�B�[���h�̐���: [������������\�[�X�t�@�C���̕����G���R�[�f�B���O���w�肵�܂��B]�B
+     * フィールドの説明: [自動生成するソースファイルの文字エンコーディングを指定します。]。
      *
-     * @param argEncoding �t�B�[���h[encoding]�ɐݒ肷��l�B
+     * @param argEncoding フィールド[encoding]に設定する値。
      */
     public void setEncoding(final String argEncoding) {
         fEncoding = argEncoding;
     }
 
     /**
-     * �t�B�[���h [encoding] �̒l���擾���܂��B
+     * フィールド [encoding] の値を取得します。
      *
-     * �t�B�[���h�̐���: [������������\�[�X�t�@�C���̕����G���R�[�f�B���O���w�肵�܂��B]�B
+     * フィールドの説明: [自動生成するソースファイルの文字エンコーディングを指定します。]。
      *
-     * @return �t�B�[���h[encoding]����擾�����l�B
+     * @return フィールド[encoding]から取得した値。
      */
     public String getEncoding() {
         return fEncoding;
     }
 
     /**
-     * �t�B�[���h [convertStringToMsWindows31jUnicode] �̒l��ݒ肵�܂��B
+     * フィールド [convertStringToMsWindows31jUnicode] の値を設定します。
      *
-     * �t�B�[���h�̐���: [������ɂ��āAMicrosoft Windows 3.1���{��ł̃��j�R�[�h�ւƕϊ����邩�ǂ���.]�B
+     * フィールドの説明: [文字列について、Microsoft Windows 3.1日本語版のユニコードへと変換するかどうか.]。
      *
-     * @param argConvertStringToMsWindows31jUnicode �t�B�[���h[convertStringToMsWindows31jUnicode]�ɐݒ肷��l�B
+     * @param argConvertStringToMsWindows31jUnicode フィールド[convertStringToMsWindows31jUnicode]に設定する値。
      */
     public void setConvertStringToMsWindows31jUnicode(final boolean argConvertStringToMsWindows31jUnicode) {
         fConvertStringToMsWindows31jUnicode = argConvertStringToMsWindows31jUnicode;
     }
 
     /**
-     * �t�B�[���h [convertStringToMsWindows31jUnicode] �̒l���擾���܂��B
+     * フィールド [convertStringToMsWindows31jUnicode] の値を取得します。
      *
-     * �t�B�[���h�̐���: [������ɂ��āAMicrosoft Windows 3.1���{��ł̃��j�R�[�h�ւƕϊ����邩�ǂ���.]�B
-     * �f�t�H���g: [false]�B
+     * フィールドの説明: [文字列について、Microsoft Windows 3.1日本語版のユニコードへと変換するかどうか.]。
+     * デフォルト: [false]。
      *
-     * @return �t�B�[���h[convertStringToMsWindows31jUnicode]����擾�����l�B
+     * @return フィールド[convertStringToMsWindows31jUnicode]から取得した値。
      */
     public boolean getConvertStringToMsWindows31jUnicode() {
         return fConvertStringToMsWindows31jUnicode;
     }
 
     /**
-     * ���̃o�����[�I�u�W�F�N�g�̕�����\�����擾���܂��B
+     * このバリューオブジェクトの文字列表現を取得します。
      *
-     * <P>�g�p��̒���</P>
+     * <P>使用上の注意</P>
      * <UL>
-     * <LI>�I�u�W�F�N�g�̃V�����[�͈͂̂ݕ����񉻂̏����ΏۂƂȂ�܂��B
-     * <LI>�I�u�W�F�N�g���z�Q�Ƃ��Ă���ꍇ�ɂ́A���̃��\�b�h�͎g��Ȃ��ł��������B
+     * <LI>オブジェクトのシャロー範囲のみ文字列化の処理対象となります。
+     * <LI>オブジェクトが循環参照している場合には、このメソッドは使わないでください。
      * </UL>
      *
-     * @return �o�����[�I�u�W�F�N�g�̕�����\���B
+     * @return バリューオブジェクトの文字列表現。
      */
     @Override
     public String toString() {

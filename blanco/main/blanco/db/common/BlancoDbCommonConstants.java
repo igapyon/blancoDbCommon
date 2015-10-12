@@ -1,33 +1,33 @@
 /*
- * ���̃\�[�X�R�[�h�� blanco Framework�ɂ�莩����������܂����B
+ * このソースコードは blanco Frameworkにより自動生成されました。
  */
 package blanco.db.common;
 
 /**
- * blancoDbCommon�̒萔�N���X�ł��B
+ * blancoDbCommonの定数クラスです。
  */
 public class BlancoDbCommonConstants {
     /**
-     * ���ڔԍ�:1<br>
-     * �v���_�N�g���B�p���Ŏw�肵�܂��B
+     * 項目番号:1<br>
+     * プロダクト名。英字で指定します。
      */
     public static final String PRODUCT_NAME = "blancoDbCommon";
 
     /**
-     * ���ڔԍ�:2<br>
-     * �v���_�N�g���̏������ŁB�p���Ŏw�肵�܂��B
+     * 項目番号:2<br>
+     * プロダクト名の小文字版。英字で指定します。
      */
     public static final String PRODUCT_NAME_LOWER = "blancodbcommon";
 
     /**
-     * ���ڔԍ�:3<br>
-     * �o�[�W�����ԍ��B
+     * 項目番号:3<br>
+     * バージョン番号。
      */
     public static final String VERSION = "0.2.3";
 
     /**
-     * ���ڔԍ�:4<br>
-     * �����̉ߒ��ŗ��p�����T�u�f�B���N�g���B
+     * 項目番号:4<br>
+     * 処理の過程で利用されるサブディレクトリ。
      */
     public static final String TARGET_SUBDIRECTORY = "/db";
 }

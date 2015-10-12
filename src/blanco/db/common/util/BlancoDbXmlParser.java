@@ -39,51 +39,51 @@ import blanco.dbmetadata.BlancoDbMetaDataUtil;
 import blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure;
 
 /**
- * SQL’è‹`‘‚Ì’†ŠÔXML‚ğ“Ç‚İ‚ñ‚ÅJavaƒIƒuƒWƒFƒNƒg‰»‚µ‚Ü‚·B
+ * SQLå®šç¾©æ›¸ã®ä¸­é–“XMLã‚’èª­ã¿è¾¼ã‚“ã§Javaã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆåŒ–ã—ã¾ã™ã€‚
  * 
  * @author IGA Tosiki
  */
 public class BlancoDbXmlParser {
 	/**
-	 * C#.NET ‚Ì  SQL “ü—Íƒpƒ‰ƒ[ƒ^‚Ì‹““®‚Ì\‘¢“I‚È–â‘è‚É‘Î‚·‚é‘Îˆ•û–@B
+	 * C#.NET ã®  SQL å…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®æŒ™å‹•ã®æ§‹é€ çš„ãªå•é¡Œã«å¯¾ã™ã‚‹å¯¾å‡¦æ–¹æ³•ã€‚
 	 * 
-	 * FIXME ‚¢‚¸‚êA‚±‚Ì•Ï”‚ğŠO•”‰»‚µ‚Ä‚­‚¾‚³‚¢B
+	 * FIXME ã„ãšã‚Œã€ã“ã®å¤‰æ•°ã‚’å¤–éƒ¨åŒ–ã—ã¦ãã ã•ã„ã€‚
 	 */
 	private static final boolean IS_FORCE_CS_DOTNET_STRING_AS_NVARCHAR = false;
 
 	/**
-     * blancoDbƒŠƒ\[ƒXƒoƒ“ƒhƒ‹î•ñ‚Ö‚ÌƒAƒNƒZƒTB
+     * blancoDbãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ«æƒ…å ±ã¸ã®ã‚¢ã‚¯ã‚»ã‚µã€‚
      */
     private final BlancoDbCommonResourceBundle fBundle = new BlancoDbCommonResourceBundle();
 
     /**
-     * ‹¤’Êî•ñ‚ª’~‚¦‚ç‚ê‚Ä‚¢‚éƒGƒŒƒƒ“ƒg–¼B
+     * å…±é€šæƒ…å ±ãŒè“„ãˆã‚‰ã‚Œã¦ã„ã‚‹ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆåã€‚
      */
     private static final String ELEMENT_COMMON = "blancodb-common";
 
     /**
-     * SQL“ü—Íƒpƒ‰ƒ[ƒ^‚ª’~‚¦‚ç‚ê‚Ä‚¢‚éƒGƒŒƒƒ“ƒg–¼B
+     * SQLå…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãŒè“„ãˆã‚‰ã‚Œã¦ã„ã‚‹ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆåã€‚
      */
     private static final String ELEMENT_INPARAMETERS = "blancodb-inparameters";
 
     /**
-     * SQLo—Íƒpƒ‰ƒ[ƒ^‚ª’~‚¦‚ç‚ê‚Ä‚¢‚éƒGƒŒƒƒ“ƒg–¼B
+     * SQLå‡ºåŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãŒè“„ãˆã‚‰ã‚Œã¦ã„ã‚‹ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆåã€‚
      */
     private static final String ELEMENT_OUTPARAMETERS = "blancodb-outparameters";
 
     /**
-     * SQL•¶‚ª’~‚¦‚ç‚ê‚Ä‚¢‚éƒGƒŒƒƒ“ƒg–¼B
+     * SQLæ–‡ãŒè“„ãˆã‚‰ã‚Œã¦ã„ã‚‹ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆåã€‚
      */
     private static final String ELEMENT_QUERY = "blancodb-query";
 
     /**
-     * SQL’è‹`‘‚Ì’†ŠÔXML‚ğ“ü—Í‚ÉASQL’è‹`‘î•ñ‚ğûW‚µ‚Ü‚·B
+     * SQLå®šç¾©æ›¸ã®ä¸­é–“XMLã‚’å…¥åŠ›ã«ã€SQLå®šç¾©æ›¸æƒ…å ±ã‚’åé›†ã—ã¾ã™ã€‚
      * 
      * @param conn
-     *            ƒf[ƒ^ƒx[ƒXÚ‘±İ’èî•ñB
+     *            ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹æ¥ç¶šè¨­å®šæƒ…å ±ã€‚
      * @param fileSqlForm
-     *            ˆ—‚ğs‚¢‚½‚¢SQL’è‹`‘‚ÌXML’†ŠÔŒ`®ƒtƒ@ƒCƒ‹B
-     * @return ‰ğÍŒã‚ÌSQL’è‹`‘‚ÌƒŠƒXƒgB
+     *            å‡¦ç†ã‚’è¡Œã„ãŸã„SQLå®šç¾©æ›¸ã®XMLä¸­é–“å½¢å¼ãƒ•ã‚¡ã‚¤ãƒ«ã€‚
+     * @return è§£æå¾Œã®SQLå®šç¾©æ›¸ã®ãƒªã‚¹ãƒˆã€‚
      * @throws SQLException
      * @throws SAXException
      * @throws IOException
@@ -93,10 +93,10 @@ public class BlancoDbXmlParser {
     public List<BlancoDbSqlInfoStructure> parse(final File fileSqlForm)
             throws SQLException, SAXException, IOException,
             ParserConfigurationException, TransformerException {
-        // blancoDb’è‹`î•ñ
+        // blancoDbå®šç¾©æƒ…å ±
         final List<BlancoDbSqlInfoStructure> resultBlancoDbDef = new ArrayList<BlancoDbSqlInfoStructure>();
 
-        // XMLƒtƒ@ƒCƒ‹‚ğDOM‚Æ‚µ‚Äƒp[ƒX‚µ‚Ü‚·B
+        // XMLãƒ•ã‚¡ã‚¤ãƒ«ã‚’DOMã¨ã—ã¦ãƒ‘ãƒ¼ã‚¹ã—ã¾ã™ã€‚
         InputStream inStream = null;
         final DOMResult result;
         try {
@@ -106,10 +106,10 @@ public class BlancoDbXmlParser {
             inStream.close();
         }
 
-        // ƒ‹[ƒgƒm[ƒh‚ğæ“¾‚µ‚Ü‚·B
+        // ãƒ«ãƒ¼ãƒˆãƒãƒ¼ãƒ‰ã‚’å–å¾—ã—ã¾ã™ã€‚
         final Node nodeRootNode = result.getNode();
         if (nodeRootNode == null) {
-            // XMLƒtƒ@ƒCƒ‹‚Å‚Í‚ ‚è‚Ü‚¹‚ñB
+            // XMLãƒ•ã‚¡ã‚¤ãƒ«ã§ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚
             return resultBlancoDbDef;
         }
 
@@ -119,14 +119,14 @@ public class BlancoDbXmlParser {
             return resultBlancoDbDef;
         }
 
-        // ƒV[ƒgƒGƒŒƒƒ“ƒg‚ğ“WŠJ‚µ‚Ü‚·B
+        // ã‚·ãƒ¼ãƒˆã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã‚’å±•é–‹ã—ã¾ã™ã€‚
         final NodeList listSheet = eleWorkbook.getElementsByTagName("sheet");
         if (listSheet == null) {
-            // ƒV[ƒg‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñB
+            // ã‚·ãƒ¼ãƒˆãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã€‚
             return resultBlancoDbDef;
         }
 
-        // ŠeƒV[ƒgƒGƒŒƒƒ“ƒg‚É‚Â‚¢‚Äˆ—‚ğÀ{B
+        // å„ã‚·ãƒ¼ãƒˆã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã«ã¤ã„ã¦å‡¦ç†ã‚’å®Ÿæ–½ã€‚
         final int nodeLength = listSheet.getLength();
         for (int index = 0; index < nodeLength; index++) {
             final Node nodeSheet = listSheet.item(index);
@@ -141,56 +141,56 @@ public class BlancoDbXmlParser {
     }
 
     /**
-     * —^‚¦‚ç‚ê‚½ƒV[ƒgƒGƒŒƒƒ“ƒg‚ğ“WŠJ‚µ‚Ü‚·B
+     * ä¸ãˆã‚‰ã‚ŒãŸã‚·ãƒ¼ãƒˆã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã‚’å±•é–‹ã—ã¾ã™ã€‚
      * 
      * @param eleSheet
-     *            ƒV[ƒgƒGƒŒƒƒ“ƒgB
+     *            ã‚·ãƒ¼ãƒˆã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã€‚
      * @param conn
-     *            blancoƒf[ƒ^ƒx[ƒXÚ‘±ƒIƒuƒWƒFƒNƒgB
+     *            blancoãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹æ¥ç¶šã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã€‚
      * @param resultBlancoDbDef
-     *            blancoDb’è‹`î•ñB
+     *            blancoDbå®šç¾©æƒ…å ±ã€‚
      */
     private void expandSheet(final Element eleSheet,
             final List<BlancoDbSqlInfoStructure> resultBlancoDbDef) {
-        // Å‰‚É‹¤’Êî•ñ‚ğ“WŠJ‚µ‚Ü‚·B
+        // æœ€åˆã«å…±é€šæƒ…å ±ã‚’å±•é–‹ã—ã¾ã™ã€‚
         final BlancoDbSqlInfoStructure fSqlInfo = expandCommon(eleSheet);
         if (fSqlInfo == null) {
-            // SQL’è‹`‘‚Æ‚µ‚Ä‚Ó‚³‚í‚µ‚­‚È‚¢‚Ì‚ÅAˆ—‚ğƒXƒLƒbƒv‚µ‚Ü‚·B
+            // SQLå®šç¾©æ›¸ã¨ã—ã¦ãµã•ã‚ã—ããªã„ã®ã§ã€å‡¦ç†ã‚’ã‚¹ã‚­ãƒƒãƒ—ã—ã¾ã™ã€‚
             return;
         }
 
-        // SQL“ü—Íƒpƒ‰ƒ[ƒ^‚ğ“WŠJ‚µ‚Ü‚·B
+        // SQLå…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’å±•é–‹ã—ã¾ã™ã€‚
         expandInParameter(eleSheet, fSqlInfo);
 
-        // SQLo—Íƒpƒ‰ƒ[ƒ^‚ğ“WŠJ‚µ‚Ü‚·B
+        // SQLå‡ºåŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’å±•é–‹ã—ã¾ã™ã€‚
         expandOutParameter(eleSheet, fSqlInfo);
 
-        // SQL•¶‚ğ“WŠJ‚µ‚Ü‚·B
+        // SQLæ–‡ã‚’å±•é–‹ã—ã¾ã™ã€‚
         expandQuery(eleSheet, fSqlInfo);
 
-        // ‚Ğ‚Æ‚Æ‚¨‚è‚Ìî•ñ‚ğ‚»‚ë‚¦‚½ã‚ÅAûW‚µ‚½î•ñ‚Ì‘Ã“–«ƒ`ƒFƒbƒN‚ğ‚¨‚±‚È‚¢‚Ü‚·B
+        // ã²ã¨ã¨ãŠã‚Šã®æƒ…å ±ã‚’ãã‚ãˆãŸä¸Šã§ã€åé›†ã—ãŸæƒ…å ±ã®å¦¥å½“æ€§ãƒã‚§ãƒƒã‚¯ã‚’ãŠã“ãªã„ã¾ã™ã€‚
         if (fSqlInfo.getQuery() == null || fSqlInfo.getQuery().length() == 0) {
-            // SQL•¶‚ªæ“¾‚Å‚«‚È‚¢‚à‚Ì‚ÍƒGƒ‰[ˆµ‚¢‚µ‚Ü‚·B
+            // SQLæ–‡ãŒå–å¾—ã§ããªã„ã‚‚ã®ã¯ã‚¨ãƒ©ãƒ¼æ‰±ã„ã—ã¾ã™ã€‚
             throw new IllegalArgumentException(fBundle
                     .getXml2javaclassErr001(fSqlInfo.getName()));
         }
 
-        // ‰ğÍŒã‚ÌSQL’è‹`‘‚ÌƒŠƒXƒg‚Öî•ñ‚ğ’Ç‰ÁB
+        // è§£æå¾Œã®SQLå®šç¾©æ›¸ã®ãƒªã‚¹ãƒˆã¸æƒ…å ±ã‚’è¿½åŠ ã€‚
         resultBlancoDbDef.add(fSqlInfo);
     }
 
     /**
-     * —^‚¦‚ç‚ê‚½‹¤’ÊƒGƒŒƒƒ“ƒg‚ğ‰ğÍ‚µ‚Äî•ñ‚ğ“WŠJ‚µ‚Ü‚·B
+     * ä¸ãˆã‚‰ã‚ŒãŸå…±é€šã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã‚’è§£æã—ã¦æƒ…å ±ã‚’å±•é–‹ã—ã¾ã™ã€‚
      * 
      * @param elementSheet
-     *            ƒV[ƒgƒIƒuƒWƒFƒNƒgB
-     * @return ’ŠÛƒNƒGƒŠƒIƒuƒWƒFƒNƒgB
+     *            ã‚·ãƒ¼ãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã€‚
+     * @return æŠ½è±¡ã‚¯ã‚¨ãƒªã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã€‚
      */
     private BlancoDbSqlInfoStructure expandCommon(final Element eleSheet) {
         final Element elementCommon = BlancoXmlUtil.getElement(eleSheet,
                 ELEMENT_COMMON);
         if (elementCommon == null) {
-            // ELEMENT_COMMON‚ªŒ©‚Â‚©‚ç‚È‚¢ê‡‚É‚ÍA‚±‚ÌƒV[ƒg‚ğƒXƒLƒbƒv‚µ‚Ü‚·B
+            // ELEMENT_COMMONãŒè¦‹ã¤ã‹ã‚‰ãªã„å ´åˆã«ã¯ã€ã“ã®ã‚·ãƒ¼ãƒˆã‚’ã‚¹ã‚­ãƒƒãƒ—ã—ã¾ã™ã€‚
             return null;
         }
 
@@ -199,9 +199,9 @@ public class BlancoDbXmlParser {
         fSqlInfo.setName(BlancoStringUtil.null2Blank(BlancoXmlUtil
                 .getTextContent(elementCommon, "name")));
         if (fSqlInfo.getName().length() == 0) {
-            // ‚±‚Ì’è‹`‘‚Íˆ—‚Ì•K—v‚ª‚ ‚è‚Ü‚¹‚ñBˆ—‚µ‚È‚¢‚±‚Æ‚Æ‚µ‚Ü‚·B
-            // ]—ˆ‚Íquery-type‚ª–³w’è‚Ìê‡‚É‚àˆ—‚ğƒXƒLƒbƒv‚µ‚Ä‚¢‚Ü‚µ‚½‚ªAŒ»İ‚ÍƒGƒ‰[ˆµ‚¢‚Æ‚µ‚Ü‚·B
-            // name‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñB
+            // ã“ã®å®šç¾©æ›¸ã¯å‡¦ç†ã®å¿…è¦ãŒã‚ã‚Šã¾ã›ã‚“ã€‚å‡¦ç†ã—ãªã„ã“ã¨ã¨ã—ã¾ã™ã€‚
+            // å¾“æ¥ã¯query-typeãŒç„¡æŒ‡å®šã®å ´åˆã«ã‚‚å‡¦ç†ã‚’ã‚¹ã‚­ãƒƒãƒ—ã—ã¦ã„ã¾ã—ãŸãŒã€ç¾åœ¨ã¯ã‚¨ãƒ©ãƒ¼æ‰±ã„ã¨ã—ã¾ã™ã€‚
+            // nameãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã€‚
             return null;
         }
 
@@ -213,9 +213,9 @@ public class BlancoDbXmlParser {
         fSqlInfo.setType(new BlancoDbSqlInfoTypeStringGroup()
                 .convertToInt(queryType));
         if (fSqlInfo.getType() == BlancoDbSqlInfoTypeStringGroup.NOT_DEFINED) {
-            // ˆ—‚Å‚«‚Ü‚¹‚ñB’†’f‚µ‚Ü‚·B
-            throw new IllegalArgumentException("ƒTƒ|[ƒg‚µ‚È‚¢ƒNƒGƒŠƒ^ƒCƒv["
-                    + fSqlInfo.getType() + "]‚ª—^‚¦‚ç‚ê‚Ü‚µ‚½Bˆ—’†’f‚µ‚Ü‚·B");
+            // å‡¦ç†ã§ãã¾ã›ã‚“ã€‚ä¸­æ–­ã—ã¾ã™ã€‚
+            throw new IllegalArgumentException("ã‚µãƒãƒ¼ãƒˆã—ãªã„ã‚¯ã‚¨ãƒªã‚¿ã‚¤ãƒ—["
+                    + fSqlInfo.getType() + "]ãŒä¸ãˆã‚‰ã‚Œã¾ã—ãŸã€‚å‡¦ç†ä¸­æ–­ã—ã¾ã™ã€‚");
         }
 
         fSqlInfo.setDescription(BlancoStringUtil.null2Blank(BlancoXmlUtil
@@ -225,7 +225,7 @@ public class BlancoDbXmlParser {
                 "true"));
 
         if (fSqlInfo.getType() == BlancoDbSqlInfoTypeStringGroup.ITERATOR) {
-            // ŒŸõŒ^‚Ìê‡‚É‚Ì‚İƒXƒNƒ[ƒ‹‘®«‚¨‚æ‚ÑXV‰Â”\‘®«‚ğ“Ç‚İ‚İ‚Ü‚·B
+            // æ¤œç´¢å‹ã®å ´åˆã«ã®ã¿ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«å±æ€§ãŠã‚ˆã³æ›´æ–°å¯èƒ½å±æ€§ã‚’èª­ã¿è¾¼ã¿ã¾ã™ã€‚
             fSqlInfo.setScroll(new BlancoDbSqlInfoScrollStringGroup()
                     .convertToInt(BlancoStringUtil.null2Blank(BlancoXmlUtil
                             .getTextContent(elementCommon, "scroll"))));
@@ -245,7 +245,7 @@ public class BlancoDbXmlParser {
                         "use-bean-parameter")).equals("true"));
 
         {
-            // ƒXƒe[ƒgƒƒ“ƒgEƒ^ƒCƒ€ƒAƒEƒg
+            // ã‚¹ãƒ†ãƒ¼ãƒˆãƒ¡ãƒ³ãƒˆãƒ»ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆ
             final String statementTimeout = BlancoXmlUtil.getTextContent(
                     elementCommon, "statementTimeout");
             if (BlancoStringUtil.null2Blank(statementTimeout).length() > 0) {
@@ -264,12 +264,12 @@ public class BlancoDbXmlParser {
     }
 
     /**
-     * —^‚¦‚ç‚ê‚½ƒV[ƒg‚ğ‰ğÍ‚µ‚ÄSQL“ü—Íƒpƒ‰ƒ[ƒ^î•ñ‚ğ“WŠJ‚µ‚Ü‚·B
+     * ä¸ãˆã‚‰ã‚ŒãŸã‚·ãƒ¼ãƒˆã‚’è§£æã—ã¦SQLå…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿æƒ…å ±ã‚’å±•é–‹ã—ã¾ã™ã€‚
      * 
      * @param elementSheet
-     *            ƒV[ƒgƒIƒuƒWƒFƒNƒgB
+     *            ã‚·ãƒ¼ãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã€‚
      * @param sqlInfo
-     *            ’ŠÛƒNƒGƒŠƒIƒuƒWƒFƒNƒgB
+     *            æŠ½è±¡ã‚¯ã‚¨ãƒªã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã€‚
      */
     private void expandInParameter(final Element elementSheet,
             final BlancoDbSqlInfoStructure sqlInfo) {
@@ -282,7 +282,7 @@ public class BlancoDbXmlParser {
         final NodeList nodeList = elementBlancoDbInparameters
                 .getElementsByTagName("inparameter");
         if (nodeList == null) {
-            // SQL“ü—Íƒpƒ‰ƒ[ƒ^‚Í‚ ‚è‚Ü‚¹‚ñB
+            // SQLå…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚
             return;
         }
         final int nodeLength = nodeList.getLength();
@@ -300,7 +300,7 @@ public class BlancoDbXmlParser {
             final String nullable = BlancoStringUtil.null2Blank(BlancoXmlUtil
                     .getTextContent((Element) nodeLook, "nullable"));
 
-            // Œ»İAdescription‚ÍŠi”[æ‚ª‚ ‚è‚Ü‚¹‚ñB
+            // ç¾åœ¨ã€descriptionã¯æ ¼ç´å…ˆãŒã‚ã‚Šã¾ã›ã‚“ã€‚
             // final String description = BlancoXmlUtil.getTextContent(
             // (Element) nodeLook, "description");
 
@@ -325,12 +325,12 @@ public class BlancoDbXmlParser {
                 columnStructure.setNullable(ResultSetMetaData.columnNoNulls);
             }
 
-            // Å‰‚ÉV—l®‚Ìƒf[ƒ^Œ^‚Å‚ ‚é‚±‚Æ‚Æ‰¼’è‚µ‚Ä“Ç‚İ‚İ‚Ü‚·B
+            // æœ€åˆã«æ–°æ§˜å¼ã®ãƒ‡ãƒ¼ã‚¿å‹ã§ã‚ã‚‹ã“ã¨ã¨ä»®å®šã—ã¦èª­ã¿è¾¼ã¿ã¾ã™ã€‚
             columnStructure.setDataType(BlancoDbMetaDataUtil
                     .convertJdbcDataType2Int(type));
             if (columnStructure.getDataType() == Integer.MIN_VALUE) {
-                // V—l®‚Ìƒf[ƒ^Œ^‚É‡’v‚µ‚È‚¢ê‡‚É‚ÍA‹Œ—l®‚Æ‚µ‚Ä“Ç‚İ‚İ‚ğs‚¢‚Ü‚·B
-                // ‚±‚±‚Å‚ÍAdataType‚¨‚æ‚Ñnullable ‚É‚Â‚¢‚Ä JavaŒ^‚©‚ç“±o‚µ‚Ü‚·B
+                // æ–°æ§˜å¼ã®ãƒ‡ãƒ¼ã‚¿å‹ã«åˆè‡´ã—ãªã„å ´åˆã«ã¯ã€æ—§æ§˜å¼ã¨ã—ã¦èª­ã¿è¾¼ã¿ã‚’è¡Œã„ã¾ã™ã€‚
+                // ã“ã“ã§ã¯ã€dataTypeãŠã‚ˆã³nullable ã«ã¤ã„ã¦ Javaå‹ã‹ã‚‰å°å‡ºã—ã¾ã™ã€‚
                 convertOldSqlInputTypeToJdbc(type, columnStructure);
             }
 
@@ -339,19 +339,19 @@ public class BlancoDbXmlParser {
     }
 
     /**
-     * —^‚¦‚ç‚ê‚½ƒV[ƒg‚ğ‰ğÍ‚µ‚ÄSQLo—Íƒpƒ‰ƒ[ƒ^î•ñ‚ğ“WŠJ‚µ‚Ü‚·B
+     * ä¸ãˆã‚‰ã‚ŒãŸã‚·ãƒ¼ãƒˆã‚’è§£æã—ã¦SQLå‡ºåŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿æƒ…å ±ã‚’å±•é–‹ã—ã¾ã™ã€‚
      * 
      * @param elementSheet
-     *            ƒV[ƒgƒIƒuƒWƒFƒNƒgB
+     *            ã‚·ãƒ¼ãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã€‚
      * @param sqlInfo
-     *            ’ŠÛƒNƒGƒŠƒIƒuƒWƒFƒNƒgB
+     *            æŠ½è±¡ã‚¯ã‚¨ãƒªã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã€‚
      */
     private void expandOutParameter(final Element elementSheet,
             final BlancoDbSqlInfoStructure sqlInfo) {
         final Element elementBlancoDbOutparameters = BlancoXmlUtil.getElement(
                 elementSheet, ELEMENT_OUTPARAMETERS);
         if (elementBlancoDbOutparameters == null) {
-            // SQLo—Íƒpƒ‰ƒ[ƒ^‚Í‚ ‚è‚Ü‚¹‚ñB
+            // SQLå‡ºåŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚
             return;
         }
 
@@ -376,7 +376,7 @@ public class BlancoDbXmlParser {
             final String nullable = BlancoStringUtil.null2Blank(BlancoXmlUtil
                     .getTextContent((Element) nodeLook, "nullable"));
 
-            // Œ»İAdescription‚ÍŠi”[æ‚ª‚ ‚è‚Ü‚¹‚ñB
+            // ç¾åœ¨ã€descriptionã¯æ ¼ç´å…ˆãŒã‚ã‚Šã¾ã›ã‚“ã€‚
 
             final String paramNoString = (no == null ? "" : " No.[" + no + "] ");
             if (name == null || name.length() == 0) {
@@ -390,7 +390,7 @@ public class BlancoDbXmlParser {
                                 paramNoString, name));
             }
             if (sqlInfo.getType() != BlancoDbSqlInfoTypeStringGroup.CALLER) {
-                // callerˆÈŠO‚Ìê‡‚É‚ÍSQLo—Íƒpƒ‰ƒ[ƒ^‚ÍƒZƒbƒg‚Å‚«‚Ü‚¹‚ñB
+                // callerä»¥å¤–ã®å ´åˆã«ã¯SQLå‡ºåŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã¯ã‚»ãƒƒãƒˆã§ãã¾ã›ã‚“ã€‚
                 throw new IllegalArgumentException(fBundle
                         .getXml2javaclassErr008(sqlInfo.getName(),
                                 paramNoString, name));
@@ -405,12 +405,12 @@ public class BlancoDbXmlParser {
                 columnStructure.setNullable(ResultSetMetaData.columnNoNulls);
             }
 
-            // Å‰‚ÉV—l®‚Ìƒf[ƒ^Œ^‚Å‚ ‚é‚±‚Æ‚Æ‰¼’è‚µ‚Ä“Ç‚İ‚İ‚Ü‚·B
+            // æœ€åˆã«æ–°æ§˜å¼ã®ãƒ‡ãƒ¼ã‚¿å‹ã§ã‚ã‚‹ã“ã¨ã¨ä»®å®šã—ã¦èª­ã¿è¾¼ã¿ã¾ã™ã€‚
             columnStructure.setDataType(BlancoDbMetaDataUtil
                     .convertJdbcDataType2Int(type));
             if (columnStructure.getDataType() == Integer.MIN_VALUE) {
-                // V—l®‚Ìƒf[ƒ^Œ^‚É‡’v‚µ‚È‚¢ê‡‚É‚ÍA‹Œ—l®‚Æ‚µ‚Ä“Ç‚İ‚İ‚ğs‚¢‚Ü‚·B
-                // ‚±‚±‚Å‚ÍAdataType‚¨‚æ‚Ñnullable ‚É‚Â‚¢‚Ä JavaŒ^‚©‚ç“±o‚µ‚Ü‚·B
+                // æ–°æ§˜å¼ã®ãƒ‡ãƒ¼ã‚¿å‹ã«åˆè‡´ã—ãªã„å ´åˆã«ã¯ã€æ—§æ§˜å¼ã¨ã—ã¦èª­ã¿è¾¼ã¿ã‚’è¡Œã„ã¾ã™ã€‚
+                // ã“ã“ã§ã¯ã€dataTypeãŠã‚ˆã³nullable ã«ã¤ã„ã¦ Javaå‹ã‹ã‚‰å°å‡ºã—ã¾ã™ã€‚
                 convertOldSqlInputTypeToJdbc(type, columnStructure);
             }
 
@@ -419,12 +419,12 @@ public class BlancoDbXmlParser {
     }
 
     /**
-     * —^‚¦‚ç‚ê‚½ƒV[ƒg‚ğ‰ğÍ‚µ‚ÄSQL•¶‚ÉŠÖ‚·‚éî•ñ‚ğ“WŠJ‚µ‚Ü‚·B
+     * ä¸ãˆã‚‰ã‚ŒãŸã‚·ãƒ¼ãƒˆã‚’è§£æã—ã¦SQLæ–‡ã«é–¢ã™ã‚‹æƒ…å ±ã‚’å±•é–‹ã—ã¾ã™ã€‚
      * 
      * @param elementSheet
-     *            ƒV[ƒgƒIƒuƒWƒFƒNƒgB
+     *            ã‚·ãƒ¼ãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã€‚
      * @param sqlInfo
-     *            ’ŠÛƒNƒGƒŠƒIƒuƒWƒFƒNƒgB
+     *            æŠ½è±¡ã‚¯ã‚¨ãƒªã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã€‚
      */
     private void expandQuery(final Element elementSheet,
             final BlancoDbSqlInfoStructure sqlInfo) {
@@ -448,7 +448,7 @@ public class BlancoDbXmlParser {
             if (query == null || query.length() == 0) {
                 query = "";
             } else {
-                // •¶š—ñ‚ª‚·‚Å‚É‘¶İ‚µ‚Ä‚¢‚éê‡‚É‚Ì‚İ‰üs‚ğ•t—^‚µ‚Ü‚·B
+                // æ–‡å­—åˆ—ãŒã™ã§ã«å­˜åœ¨ã—ã¦ã„ã‚‹å ´åˆã«ã®ã¿æ”¹è¡Œã‚’ä»˜ä¸ã—ã¾ã™ã€‚
                 query = query + "\n";
             }
             sqlInfo.setQuery(query + queryLine);
@@ -456,12 +456,12 @@ public class BlancoDbXmlParser {
     }
 
     /**
-     * ‹Œƒo[ƒWƒ‡ƒ“‚ÌSQL’è‹`‘‚É‚¨‚¢‚ÄASQL“ü—Í^o—Íƒpƒ‰ƒ[ƒ^‚ÌŒ^–¼‚ÉJava/C#.NET‚ÌŒ^–¼‚ª—^‚¦‚ç‚ê‚éB‚±‚ÌŒ^–¼‚ğ
-     * java.sql.Types‚ÌŒ^–¼‚É“Ç‚İ‘Ö‚¦‚é‚½‚ß‚Ìƒ‹[ƒ`ƒ“B
+     * æ—§ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã®SQLå®šç¾©æ›¸ã«ãŠã„ã¦ã€SQLå…¥åŠ›ï¼å‡ºåŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®å‹åã«Java/C#.NETã®å‹åãŒä¸ãˆã‚‰ã‚Œã‚‹ã€‚ã“ã®å‹åã‚’
+     * java.sql.Typesã®å‹åã«èª­ã¿æ›¿ãˆã‚‹ãŸã‚ã®ãƒ«ãƒ¼ãƒãƒ³ã€‚
      * 
-     * ‚±‚Ìƒƒ\ƒbƒh‚Í‹Œƒo[ƒWƒ‡ƒ“‚Ì’è‹`‘‚Ì“Çˆ—‚Ì–Ú“I‚Å‘¶İ‚µ‚Ü‚·B
+     * ã“ã®ãƒ¡ã‚½ãƒƒãƒ‰ã¯æ—§ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã®å®šç¾©æ›¸ã®èª­è¾¼å‡¦ç†ã®ç›®çš„ã§å­˜åœ¨ã—ã¾ã™ã€‚
      * 
-     * TODO JavaŒ¾Œê‚¨‚æ‚ÑC#.NETŒ¾Œê‚ÉˆË‘¶‚µ‚½‹Lq‚ª‚ ‚è‚Ü‚·B
+     * TODO Javaè¨€èªãŠã‚ˆã³C#.NETè¨€èªã«ä¾å­˜ã—ãŸè¨˜è¿°ãŒã‚ã‚Šã¾ã™ã€‚
      * 
      * @param type
      * @param columnStructure
@@ -514,30 +514,30 @@ public class BlancoDbXmlParser {
         } else if (type.equals("java.io.Reader")) {
             columnStructure.setDataType(Types.LONGVARCHAR);
         } else if (type.equals("string")) {
-            // C#.NET‚Ì‹Œ”Å’è‹`‘ã‚ÌŒ^B
+            // C#.NETã®æ—§ç‰ˆå®šç¾©æ›¸ä¸Šã®å‹ã€‚
             columnStructure.setDataType(Types.VARCHAR);
         	if (IS_FORCE_CS_DOTNET_STRING_AS_NVARCHAR) {
-        		// FIXME 2012.07.09 ‚¢‚¸‚êA‚±‚Ì’l‚ÍŠO•”‚©‚çİ’è‚Å‚«‚é‚æ‚¤‚É•ÏX‚µ‚½‚¢B
+        		// FIXME 2012.07.09 ã„ãšã‚Œã€ã“ã®å€¤ã¯å¤–éƒ¨ã‹ã‚‰è¨­å®šã§ãã‚‹ã‚ˆã†ã«å¤‰æ›´ã—ãŸã„ã€‚
                 columnStructure.setDataType(Types.NVARCHAR);
         	}
         } else if (type.equals("string(Unicode)")) {
-            // C#.NET‚Ì‹Œ”Å’è‹`‘ã‚ÌŒ^B
+            // C#.NETã®æ—§ç‰ˆå®šç¾©æ›¸ä¸Šã®å‹ã€‚
             columnStructure.setDataType(Types.NVARCHAR);
         } else if (type.equals("bool")) {
-            // C#.NET‚Ì‹Œ”Å’è‹`‘ã‚ÌŒ^B
+            // C#.NETã®æ—§ç‰ˆå®šç¾©æ›¸ä¸Šã®å‹ã€‚
             columnStructure.setDataType(Types.BIT);
         } else if (type.equals("decimal")) {
-            // C#.NET‚Ì‹Œ”Å’è‹`‘ã‚ÌŒ^B
+            // C#.NETã®æ—§ç‰ˆå®šç¾©æ›¸ä¸Šã®å‹ã€‚
             columnStructure.setDataType(Types.DECIMAL);
         } else if (type.equals("System.DateTime")) {
-            // C#.NET‚Ì‹Œ”Å’è‹`‘ã‚ÌŒ^B
+            // C#.NETã®æ—§ç‰ˆå®šç¾©æ›¸ä¸Šã®å‹ã€‚
             columnStructure.setDataType(Types.TIMESTAMP);
         } else if (type.equals("byte[]")) {
-            // C#.NET‚Ì‹Œ”Å’è‹`‘ã‚ÌŒ^B
+            // C#.NETã®æ—§ç‰ˆå®šç¾©æ›¸ä¸Šã®å‹ã€‚
             columnStructure.setDataType(Types.LONGVARBINARY);
         } else {
-            throw new IllegalArgumentException("blancoDb‚ÅƒTƒ|[ƒg‚µ‚È‚¢Œ^[" + type
-                    + "]‚ª—^‚¦‚ç‚ê‚Ü‚µ‚½B");
+            throw new IllegalArgumentException("blancoDbã§ã‚µãƒãƒ¼ãƒˆã—ãªã„å‹[" + type
+                    + "]ãŒä¸ãˆã‚‰ã‚Œã¾ã—ãŸã€‚");
         }
     }
 }

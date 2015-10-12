@@ -11,15 +11,15 @@ package blanco.db.common;
 
 public interface IBlancoDbProgress {
     /**
-     * ‚¨‚Ì‚¨‚Ì‚Ìƒtƒ@ƒCƒ‹‚ªˆ—‚³‚ê‚é‚½‚Ñ‚ÉƒR[ƒ‹ƒoƒbƒN‚³‚ê‚Ü‚·B
+     * ãŠã®ãŠã®ã®ãƒ•ã‚¡ã‚¤ãƒ«ãŒå‡¦ç†ã•ã‚Œã‚‹ãŸã³ã«ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ã•ã‚Œã¾ã™ã€‚
      * 
      * @param progressCurrent
-     *            Œ»İ‚Ìi’»
+     *            ç¾åœ¨ã®é€²æ—
      * @param progressTotal
-     *            ƒg[ƒ^ƒ‹”
+     *            ãƒˆãƒ¼ã‚¿ãƒ«æ•°
      * @param progressMessage
-     *            Œ»İˆ—‚µ‚Ä‚¢‚éƒtƒ@ƒCƒ‹–¼E•\–¼‚È‚Ç
-     * @return ’†’f‚µ‚½‚¢ê‡‚É‚Ífalse
+     *            ç¾åœ¨å‡¦ç†ã—ã¦ã„ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«åãƒ»è¡¨åãªã©
+     * @return ä¸­æ–­ã—ãŸã„å ´åˆã«ã¯false
      */
     boolean progress(final int progressCurrent, final int progressTotal,
             final String progressItem);

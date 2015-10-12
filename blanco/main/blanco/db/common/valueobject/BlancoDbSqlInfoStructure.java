@@ -1,446 +1,446 @@
 /*
- * ‚±‚Ìƒ\[ƒXƒR[ƒh‚Í blanco Framework‚É‚æ‚è©“®¶¬‚³‚ê‚Ü‚µ‚½B
+ * ã“ã®ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã¯ blanco Frameworkã«ã‚ˆã‚Šè‡ªå‹•ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚
  */
 package blanco.db.common.valueobject;
 
 import java.util.List;
 
 /**
- * SQLî•ñ‚ÉŠÖ‚·‚é\‘¢BSQL’è‹`‘‚ğ’ŠÛ“I‚É‚ ‚ç‚í‚µ‚½‚à‚Ì‚É‚à‘Š“–‚µ‚Ü‚·BƒIƒŠƒWƒiƒ‹ìÒ Yasuo Nakanishi
+ * SQLæƒ…å ±ã«é–¢ã™ã‚‹æ§‹é€ ã€‚SQLå®šç¾©æ›¸ã‚’æŠ½è±¡çš„ã«ã‚ã‚‰ã‚ã—ãŸã‚‚ã®ã«ã‚‚ç›¸å½“ã—ã¾ã™ã€‚ã‚ªãƒªã‚¸ãƒŠãƒ«ä½œè€… Yasuo Nakanishi
  */
 public class BlancoDbSqlInfoStructure {
     /**
-     * SQL’è‹`IDB
+     * SQLå®šç¾©IDã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [name]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [name]ã€‚
      */
     private String fName;
 
     /**
-     * Šî€ƒpƒbƒP[ƒWB
+     * åŸºæº–ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [package]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [package]ã€‚
      */
     private String fPackage;
 
     /**
-     * SQL‚Ìƒ^ƒCƒvBxml‚Ìquery-type‚É‘Š“–BBlancoDbSqlInfoTypeStringGroup‚Ì’†‚©‚çAITERATOR(ŒŸõŒ^), INVOKER(ÀsŒ^), CALLER(ŒÄoŒ^)‚Ì‚¢‚¸‚ê‚©‚Ì’l‚ğ‘I‚Ñ‚Ü‚·B
+     * SQLã®ã‚¿ã‚¤ãƒ—ã€‚xmlã®query-typeã«ç›¸å½“ã€‚BlancoDbSqlInfoTypeStringGroupã®ä¸­ã‹ã‚‰ã€ITERATOR(æ¤œç´¢å‹), INVOKER(å®Ÿè¡Œå‹), CALLER(å‘¼å‡ºå‹)ã®ã„ãšã‚Œã‹ã®å€¤ã‚’é¸ã³ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [type]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [type]ã€‚
      */
     private int fType;
 
     /**
-     * ‚±‚ÌƒNƒGƒŠ‚ÌÚ×B
+     * ã“ã®ã‚¯ã‚¨ãƒªã®è©³ç´°ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [description]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [description]ã€‚
      */
     private String fDescription;
 
     /**
-     * SQL’è‹`‚ÌSQL•¶‚»‚Ì‚à‚ÌB
+     * SQLå®šç¾©ã®SQLæ–‡ãã®ã‚‚ã®ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [query]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [query]ã€‚
      */
     private String fQuery;
 
     /**
-     * SQL“ü—Íƒpƒ‰ƒ[ƒ^‚ÌƒŠƒXƒgB
+     * SQLå…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®ãƒªã‚¹ãƒˆã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [inParameterList]B
-     * ƒfƒtƒHƒ‹ƒg: [new java.util.ArrayList<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure>()]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [inParameterList]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [new java.util.ArrayList<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure>()]ã€‚
      */
     private List<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure> fInParameterList = new java.util.ArrayList<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure>();
 
     /**
-     * (caller)ŒÄoŒ^SQL‚ÌSQLo—Íƒpƒ‰ƒ[ƒ^‚ÌƒŠƒXƒgBCaller‚Ìê‡‚É‚Ì‚İ—˜—p‚³‚ê‚Ü‚·B
+     * (caller)å‘¼å‡ºå‹SQLã®SQLå‡ºåŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®ãƒªã‚¹ãƒˆã€‚Callerã®å ´åˆã«ã®ã¿åˆ©ç”¨ã•ã‚Œã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [outParameterList]B
-     * ƒfƒtƒHƒ‹ƒg: [new java.util.ArrayList<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure>()]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [outParameterList]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [new java.util.ArrayList<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure>()]ã€‚
      */
     private List<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure> fOutParameterList = new java.util.ArrayList<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure>();
 
     /**
-     * (iterator)ŒŸõŒ^SQL‚ÌŒŸõŒ‹‰Ê‚Ì—ñƒŠƒXƒgBIterator‚Ìê‡‚É‚Ì‚İ—˜—p‚³‚ê‚Ü‚·B
+     * (iterator)æ¤œç´¢å‹SQLã®æ¤œç´¢çµæœã®åˆ—ãƒªã‚¹ãƒˆã€‚Iteratorã®å ´åˆã«ã®ã¿åˆ©ç”¨ã•ã‚Œã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [resultSetColumnList]B
-     * ƒfƒtƒHƒ‹ƒg: [new java.util.ArrayList<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure>()]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [resultSetColumnList]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [new java.util.ArrayList<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure>()]ã€‚
      */
     private List<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure> fResultSetColumnList = new java.util.ArrayList<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure>();
 
     /**
-     * ˆês§–ñ‚ª‚ ‚é‚©‚Ç‚¤‚©Bxml‚Ìsingle‚É‘Š“–B
+     * ä¸€è¡Œåˆ¶ç´„ãŒã‚ã‚‹ã‹ã©ã†ã‹ã€‚xmlã®singleã«ç›¸å½“ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [single]B
-     * ƒfƒtƒHƒ‹ƒg: [false]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [single]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [false]ã€‚
      */
     private boolean fSingle = false;
 
     /**
-     * (iterator)ŒŸõŒ^SQL‚ÌƒJ[ƒ\ƒ‹ƒXƒNƒ[ƒ‹‚Ì‘®«Bxml‚Ìscroll‚É‘Š“–Bforward_only‚È‚Ç‚ªŠi”[‚³‚ê‚éB
+     * (iterator)æ¤œç´¢å‹SQLã®ã‚«ãƒ¼ã‚½ãƒ«ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã®å±æ€§ã€‚xmlã®scrollã«ç›¸å½“ã€‚forward_onlyãªã©ãŒæ ¼ç´ã•ã‚Œã‚‹ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [scroll]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [scroll]ã€‚
      */
     private int fScroll;
 
     /**
-     * (iterator)ŒŸõŒ^SQL‚ÌXV‰Â”\‘®«Bxml‚Ìupdatable‚É‘Š“–B
+     * (iterator)æ¤œç´¢å‹SQLã®æ›´æ–°å¯èƒ½å±æ€§ã€‚xmlã®updatableã«ç›¸å½“ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [updatable]B
-     * ƒfƒtƒHƒ‹ƒg: [false]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [updatable]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [false]ã€‚
      */
     private boolean fUpdatable = false;
 
     /**
-     * “®“ISQL‚©‚Ç‚¤‚©B
+     * å‹•çš„SQLã‹ã©ã†ã‹ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [dynamic-sql]B
-     * ƒfƒtƒHƒ‹ƒg: [false]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [dynamic-sql]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [false]ã€‚
      */
     private boolean fDynamicSql = false;
 
     /**
-     * ƒpƒ‰ƒ[ƒ^‚ÉBean‚ğ—˜—p‚·‚é‚©‚Ç‚¤‚©B
+     * ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã«Beanã‚’åˆ©ç”¨ã™ã‚‹ã‹ã©ã†ã‹ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [use-bean-parameter]B
-     * ƒfƒtƒHƒ‹ƒg: [false]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [use-bean-parameter]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [false]ã€‚
      */
     private boolean fUseBeanParameter = false;
 
     /**
-     * ƒXƒe[ƒgƒƒ“ƒgEƒ^ƒCƒ€ƒAƒEƒg (•b)
+     * ã‚¹ãƒ†ãƒ¼ãƒˆãƒ¡ãƒ³ãƒˆãƒ»ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆ (ç§’)
      *
-     * ƒtƒB[ƒ‹ƒh: [statementTimeout]B
-     * ƒfƒtƒHƒ‹ƒg: [-1]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [statementTimeout]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [-1]ã€‚
      */
     private int fStatementTimeout = -1;
 
     /**
-     * ƒtƒB[ƒ‹ƒh [name] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [name] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [SQL’è‹`IDB]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [SQLå®šç¾©IDã€‚]ã€‚
      *
-     * @param argName ƒtƒB[ƒ‹ƒh[name]‚Éİ’è‚·‚é’lB
+     * @param argName ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[name]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setName(final String argName) {
         fName = argName;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [name] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [name] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [SQL’è‹`IDB]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [SQLå®šç¾©IDã€‚]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[name]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[name]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public String getName() {
         return fName;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [package] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [package] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [Šî€ƒpƒbƒP[ƒWB]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [åŸºæº–ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã€‚]ã€‚
      *
-     * @param argPackage ƒtƒB[ƒ‹ƒh[package]‚Éİ’è‚·‚é’lB
+     * @param argPackage ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[package]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setPackage(final String argPackage) {
         fPackage = argPackage;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [package] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [package] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [Šî€ƒpƒbƒP[ƒWB]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [åŸºæº–ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã€‚]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[package]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[package]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public String getPackage() {
         return fPackage;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [type] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [type] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [SQL‚Ìƒ^ƒCƒvBxml‚Ìquery-type‚É‘Š“–BBlancoDbSqlInfoTypeStringGroup‚Ì’†‚©‚çAITERATOR(ŒŸõŒ^), INVOKER(ÀsŒ^), CALLER(ŒÄoŒ^)‚Ì‚¢‚¸‚ê‚©‚Ì’l‚ğ‘I‚Ñ‚Ü‚·B]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [SQLã®ã‚¿ã‚¤ãƒ—ã€‚xmlã®query-typeã«ç›¸å½“ã€‚BlancoDbSqlInfoTypeStringGroupã®ä¸­ã‹ã‚‰ã€ITERATOR(æ¤œç´¢å‹), INVOKER(å®Ÿè¡Œå‹), CALLER(å‘¼å‡ºå‹)ã®ã„ãšã‚Œã‹ã®å€¤ã‚’é¸ã³ã¾ã™ã€‚]ã€‚
      *
-     * @param argType ƒtƒB[ƒ‹ƒh[type]‚Éİ’è‚·‚é’lB
+     * @param argType ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[type]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setType(final int argType) {
         fType = argType;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [type] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [type] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [SQL‚Ìƒ^ƒCƒvBxml‚Ìquery-type‚É‘Š“–BBlancoDbSqlInfoTypeStringGroup‚Ì’†‚©‚çAITERATOR(ŒŸõŒ^), INVOKER(ÀsŒ^), CALLER(ŒÄoŒ^)‚Ì‚¢‚¸‚ê‚©‚Ì’l‚ğ‘I‚Ñ‚Ü‚·B]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [SQLã®ã‚¿ã‚¤ãƒ—ã€‚xmlã®query-typeã«ç›¸å½“ã€‚BlancoDbSqlInfoTypeStringGroupã®ä¸­ã‹ã‚‰ã€ITERATOR(æ¤œç´¢å‹), INVOKER(å®Ÿè¡Œå‹), CALLER(å‘¼å‡ºå‹)ã®ã„ãšã‚Œã‹ã®å€¤ã‚’é¸ã³ã¾ã™ã€‚]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[type]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[type]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public int getType() {
         return fType;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [description] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [description] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [‚±‚ÌƒNƒGƒŠ‚ÌÚ×B]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [ã“ã®ã‚¯ã‚¨ãƒªã®è©³ç´°ã€‚]ã€‚
      *
-     * @param argDescription ƒtƒB[ƒ‹ƒh[description]‚Éİ’è‚·‚é’lB
+     * @param argDescription ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[description]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setDescription(final String argDescription) {
         fDescription = argDescription;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [description] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [description] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [‚±‚ÌƒNƒGƒŠ‚ÌÚ×B]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [ã“ã®ã‚¯ã‚¨ãƒªã®è©³ç´°ã€‚]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[description]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[description]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public String getDescription() {
         return fDescription;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [query] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [query] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [SQL’è‹`‚ÌSQL•¶‚»‚Ì‚à‚ÌB]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [SQLå®šç¾©ã®SQLæ–‡ãã®ã‚‚ã®ã€‚]ã€‚
      *
-     * @param argQuery ƒtƒB[ƒ‹ƒh[query]‚Éİ’è‚·‚é’lB
+     * @param argQuery ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[query]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setQuery(final String argQuery) {
         fQuery = argQuery;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [query] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [query] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [SQL’è‹`‚ÌSQL•¶‚»‚Ì‚à‚ÌB]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [SQLå®šç¾©ã®SQLæ–‡ãã®ã‚‚ã®ã€‚]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[query]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[query]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public String getQuery() {
         return fQuery;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [inParameterList] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [inParameterList] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [SQL“ü—Íƒpƒ‰ƒ[ƒ^‚ÌƒŠƒXƒgB]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [SQLå…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®ãƒªã‚¹ãƒˆã€‚]ã€‚
      *
-     * @param argInParameterList ƒtƒB[ƒ‹ƒh[inParameterList]‚Éİ’è‚·‚é’lB
+     * @param argInParameterList ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[inParameterList]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setInParameterList(final List<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure> argInParameterList) {
         fInParameterList = argInParameterList;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [inParameterList] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [inParameterList] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [SQL“ü—Íƒpƒ‰ƒ[ƒ^‚ÌƒŠƒXƒgB]B
-     * ƒfƒtƒHƒ‹ƒg: [new java.util.ArrayList<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure>()]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [SQLå…¥åŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®ãƒªã‚¹ãƒˆã€‚]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [new java.util.ArrayList<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure>()]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[inParameterList]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[inParameterList]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public List<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure> getInParameterList() {
         return fInParameterList;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [outParameterList] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [outParameterList] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [(caller)ŒÄoŒ^SQL‚ÌSQLo—Íƒpƒ‰ƒ[ƒ^‚ÌƒŠƒXƒgBCaller‚Ìê‡‚É‚Ì‚İ—˜—p‚³‚ê‚Ü‚·B]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [(caller)å‘¼å‡ºå‹SQLã®SQLå‡ºåŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®ãƒªã‚¹ãƒˆã€‚Callerã®å ´åˆã«ã®ã¿åˆ©ç”¨ã•ã‚Œã¾ã™ã€‚]ã€‚
      *
-     * @param argOutParameterList ƒtƒB[ƒ‹ƒh[outParameterList]‚Éİ’è‚·‚é’lB
+     * @param argOutParameterList ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[outParameterList]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setOutParameterList(final List<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure> argOutParameterList) {
         fOutParameterList = argOutParameterList;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [outParameterList] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [outParameterList] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [(caller)ŒÄoŒ^SQL‚ÌSQLo—Íƒpƒ‰ƒ[ƒ^‚ÌƒŠƒXƒgBCaller‚Ìê‡‚É‚Ì‚İ—˜—p‚³‚ê‚Ü‚·B]B
-     * ƒfƒtƒHƒ‹ƒg: [new java.util.ArrayList<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure>()]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [(caller)å‘¼å‡ºå‹SQLã®SQLå‡ºåŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®ãƒªã‚¹ãƒˆã€‚Callerã®å ´åˆã«ã®ã¿åˆ©ç”¨ã•ã‚Œã¾ã™ã€‚]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [new java.util.ArrayList<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure>()]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[outParameterList]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[outParameterList]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public List<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure> getOutParameterList() {
         return fOutParameterList;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [resultSetColumnList] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [resultSetColumnList] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [(iterator)ŒŸõŒ^SQL‚ÌŒŸõŒ‹‰Ê‚Ì—ñƒŠƒXƒgBIterator‚Ìê‡‚É‚Ì‚İ—˜—p‚³‚ê‚Ü‚·B]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [(iterator)æ¤œç´¢å‹SQLã®æ¤œç´¢çµæœã®åˆ—ãƒªã‚¹ãƒˆã€‚Iteratorã®å ´åˆã«ã®ã¿åˆ©ç”¨ã•ã‚Œã¾ã™ã€‚]ã€‚
      *
-     * @param argResultSetColumnList ƒtƒB[ƒ‹ƒh[resultSetColumnList]‚Éİ’è‚·‚é’lB
+     * @param argResultSetColumnList ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[resultSetColumnList]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setResultSetColumnList(final List<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure> argResultSetColumnList) {
         fResultSetColumnList = argResultSetColumnList;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [resultSetColumnList] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [resultSetColumnList] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [(iterator)ŒŸõŒ^SQL‚ÌŒŸõŒ‹‰Ê‚Ì—ñƒŠƒXƒgBIterator‚Ìê‡‚É‚Ì‚İ—˜—p‚³‚ê‚Ü‚·B]B
-     * ƒfƒtƒHƒ‹ƒg: [new java.util.ArrayList<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure>()]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [(iterator)æ¤œç´¢å‹SQLã®æ¤œç´¢çµæœã®åˆ—ãƒªã‚¹ãƒˆã€‚Iteratorã®å ´åˆã«ã®ã¿åˆ©ç”¨ã•ã‚Œã¾ã™ã€‚]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [new java.util.ArrayList<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure>()]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[resultSetColumnList]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[resultSetColumnList]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public List<blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure> getResultSetColumnList() {
         return fResultSetColumnList;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [single] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [single] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [ˆês§–ñ‚ª‚ ‚é‚©‚Ç‚¤‚©Bxml‚Ìsingle‚É‘Š“–B]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [ä¸€è¡Œåˆ¶ç´„ãŒã‚ã‚‹ã‹ã©ã†ã‹ã€‚xmlã®singleã«ç›¸å½“ã€‚]ã€‚
      *
-     * @param argSingle ƒtƒB[ƒ‹ƒh[single]‚Éİ’è‚·‚é’lB
+     * @param argSingle ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[single]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setSingle(final boolean argSingle) {
         fSingle = argSingle;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [single] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [single] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [ˆês§–ñ‚ª‚ ‚é‚©‚Ç‚¤‚©Bxml‚Ìsingle‚É‘Š“–B]B
-     * ƒfƒtƒHƒ‹ƒg: [false]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [ä¸€è¡Œåˆ¶ç´„ãŒã‚ã‚‹ã‹ã©ã†ã‹ã€‚xmlã®singleã«ç›¸å½“ã€‚]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [false]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[single]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[single]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public boolean getSingle() {
         return fSingle;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [scroll] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [scroll] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [(iterator)ŒŸõŒ^SQL‚ÌƒJ[ƒ\ƒ‹ƒXƒNƒ[ƒ‹‚Ì‘®«Bxml‚Ìscroll‚É‘Š“–Bforward_only‚È‚Ç‚ªŠi”[‚³‚ê‚éB]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [(iterator)æ¤œç´¢å‹SQLã®ã‚«ãƒ¼ã‚½ãƒ«ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã®å±æ€§ã€‚xmlã®scrollã«ç›¸å½“ã€‚forward_onlyãªã©ãŒæ ¼ç´ã•ã‚Œã‚‹ã€‚]ã€‚
      *
-     * @param argScroll ƒtƒB[ƒ‹ƒh[scroll]‚Éİ’è‚·‚é’lB
+     * @param argScroll ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[scroll]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setScroll(final int argScroll) {
         fScroll = argScroll;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [scroll] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [scroll] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [(iterator)ŒŸõŒ^SQL‚ÌƒJ[ƒ\ƒ‹ƒXƒNƒ[ƒ‹‚Ì‘®«Bxml‚Ìscroll‚É‘Š“–Bforward_only‚È‚Ç‚ªŠi”[‚³‚ê‚éB]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [(iterator)æ¤œç´¢å‹SQLã®ã‚«ãƒ¼ã‚½ãƒ«ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã®å±æ€§ã€‚xmlã®scrollã«ç›¸å½“ã€‚forward_onlyãªã©ãŒæ ¼ç´ã•ã‚Œã‚‹ã€‚]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[scroll]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[scroll]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public int getScroll() {
         return fScroll;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [updatable] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [updatable] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [(iterator)ŒŸõŒ^SQL‚ÌXV‰Â”\‘®«Bxml‚Ìupdatable‚É‘Š“–B]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [(iterator)æ¤œç´¢å‹SQLã®æ›´æ–°å¯èƒ½å±æ€§ã€‚xmlã®updatableã«ç›¸å½“ã€‚]ã€‚
      *
-     * @param argUpdatable ƒtƒB[ƒ‹ƒh[updatable]‚Éİ’è‚·‚é’lB
+     * @param argUpdatable ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[updatable]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setUpdatable(final boolean argUpdatable) {
         fUpdatable = argUpdatable;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [updatable] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [updatable] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [(iterator)ŒŸõŒ^SQL‚ÌXV‰Â”\‘®«Bxml‚Ìupdatable‚É‘Š“–B]B
-     * ƒfƒtƒHƒ‹ƒg: [false]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [(iterator)æ¤œç´¢å‹SQLã®æ›´æ–°å¯èƒ½å±æ€§ã€‚xmlã®updatableã«ç›¸å½“ã€‚]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [false]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[updatable]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[updatable]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public boolean getUpdatable() {
         return fUpdatable;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [dynamic-sql] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [dynamic-sql] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [“®“ISQL‚©‚Ç‚¤‚©B]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [å‹•çš„SQLã‹ã©ã†ã‹ã€‚]ã€‚
      *
-     * @param argDynamicSql ƒtƒB[ƒ‹ƒh[dynamic-sql]‚Éİ’è‚·‚é’lB
+     * @param argDynamicSql ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[dynamic-sql]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setDynamicSql(final boolean argDynamicSql) {
         fDynamicSql = argDynamicSql;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [dynamic-sql] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [dynamic-sql] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [“®“ISQL‚©‚Ç‚¤‚©B]B
-     * ƒfƒtƒHƒ‹ƒg: [false]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [å‹•çš„SQLã‹ã©ã†ã‹ã€‚]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [false]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[dynamic-sql]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[dynamic-sql]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public boolean getDynamicSql() {
         return fDynamicSql;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [use-bean-parameter] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [use-bean-parameter] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [ƒpƒ‰ƒ[ƒ^‚ÉBean‚ğ—˜—p‚·‚é‚©‚Ç‚¤‚©B]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã«Beanã‚’åˆ©ç”¨ã™ã‚‹ã‹ã©ã†ã‹ã€‚]ã€‚
      *
-     * @param argUseBeanParameter ƒtƒB[ƒ‹ƒh[use-bean-parameter]‚Éİ’è‚·‚é’lB
+     * @param argUseBeanParameter ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[use-bean-parameter]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setUseBeanParameter(final boolean argUseBeanParameter) {
         fUseBeanParameter = argUseBeanParameter;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [use-bean-parameter] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [use-bean-parameter] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [ƒpƒ‰ƒ[ƒ^‚ÉBean‚ğ—˜—p‚·‚é‚©‚Ç‚¤‚©B]B
-     * ƒfƒtƒHƒ‹ƒg: [false]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã«Beanã‚’åˆ©ç”¨ã™ã‚‹ã‹ã©ã†ã‹ã€‚]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [false]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[use-bean-parameter]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[use-bean-parameter]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public boolean getUseBeanParameter() {
         return fUseBeanParameter;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [statementTimeout] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [statementTimeout] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [ƒXƒe[ƒgƒƒ“ƒgEƒ^ƒCƒ€ƒAƒEƒg (•b)]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [ã‚¹ãƒ†ãƒ¼ãƒˆãƒ¡ãƒ³ãƒˆãƒ»ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆ (ç§’)]ã€‚
      *
-     * @param argStatementTimeout ƒtƒB[ƒ‹ƒh[statementTimeout]‚Éİ’è‚·‚é’lB
+     * @param argStatementTimeout ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[statementTimeout]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setStatementTimeout(final int argStatementTimeout) {
         fStatementTimeout = argStatementTimeout;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [statementTimeout] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [statementTimeout] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [ƒXƒe[ƒgƒƒ“ƒgEƒ^ƒCƒ€ƒAƒEƒg (•b)]B
-     * ƒfƒtƒHƒ‹ƒg: [-1]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [ã‚¹ãƒ†ãƒ¼ãƒˆãƒ¡ãƒ³ãƒˆãƒ»ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆ (ç§’)]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [-1]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[statementTimeout]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[statementTimeout]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public int getStatementTimeout() {
         return fStatementTimeout;
     }
 
     /**
-     * ‚±‚ÌƒoƒŠƒ…[ƒIƒuƒWƒFƒNƒg‚Ì•¶š—ñ•\Œ»‚ğæ“¾‚µ‚Ü‚·B
+     * ã“ã®ãƒãƒªãƒ¥ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æ–‡å­—åˆ—è¡¨ç¾ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * <P>g—pã‚Ì’ˆÓ</P>
+     * <P>ä½¿ç”¨ä¸Šã®æ³¨æ„</P>
      * <UL>
-     * <LI>ƒIƒuƒWƒFƒNƒg‚ÌƒVƒƒƒ[”ÍˆÍ‚Ì‚İ•¶š—ñ‰»‚Ìˆ—‘ÎÛ‚Æ‚È‚è‚Ü‚·B
-     * <LI>ƒIƒuƒWƒFƒNƒg‚ªzŠÂQÆ‚µ‚Ä‚¢‚éê‡‚É‚ÍA‚±‚Ìƒƒ\ƒbƒh‚Íg‚í‚È‚¢‚Å‚­‚¾‚³‚¢B
+     * <LI>ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã‚·ãƒ£ãƒ­ãƒ¼ç¯„å›²ã®ã¿æ–‡å­—åˆ—åŒ–ã®å‡¦ç†å¯¾è±¡ã¨ãªã‚Šã¾ã™ã€‚
+     * <LI>ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒå¾ªç’°å‚ç…§ã—ã¦ã„ã‚‹å ´åˆã«ã¯ã€ã“ã®ãƒ¡ã‚½ãƒƒãƒ‰ã¯ä½¿ã‚ãªã„ã§ãã ã•ã„ã€‚
      * </UL>
      *
-     * @return ƒoƒŠƒ…[ƒIƒuƒWƒFƒNƒg‚Ì•¶š—ñ•\Œ»B
+     * @return ãƒãƒªãƒ¥ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æ–‡å­—åˆ—è¡¨ç¾ã€‚
      */
     @Override
     public String toString() {

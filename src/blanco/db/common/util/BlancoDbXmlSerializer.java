@@ -39,13 +39,13 @@ import blanco.dbmetadata.BlancoDbMetaDataUtil;
 import blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure;
 
 /**
- * blancoDb‚ÌSQLî•ñƒŠƒXƒg‚ğXMLƒtƒ@ƒCƒ‹‚É‘‚«o‚µ‚Ü‚·B
+ * blancoDbã®SQLæƒ…å ±ãƒªã‚¹ãƒˆã‚’XMLãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãå‡ºã—ã¾ã™ã€‚
  * 
  * @author IGA Tosiki
  */
 public class BlancoDbXmlSerializer {
     /**
-     * blancoDb‚ÌSQLî•ñƒŠƒXƒg‚ğXMLƒtƒ@ƒCƒ‹‚É‘‚«o‚µ‚Ü‚·B
+     * blancoDbã®SQLæƒ…å ±ãƒªã‚¹ãƒˆã‚’XMLãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãå‡ºã—ã¾ã™ã€‚
      * 
      * @param resultList
      * @param fileOutput
@@ -55,7 +55,7 @@ public class BlancoDbXmlSerializer {
             final File fileOutput) {
         if (resultList == null) {
             throw new IllegalArgumentException(
-                    "XML‚Ö‚Ì•ÏŠ·ˆ—‚ÉAˆø”(resultList)‚Æ‚µ‚Änull‚ª—^‚¦‚ç‚ê‚Ü‚µ‚½B");
+                    "XMLã¸ã®å¤‰æ›å‡¦ç†ã«ã€å¼•æ•°(resultList)ã¨ã—ã¦nullãŒä¸ãˆã‚‰ã‚Œã¾ã—ãŸã€‚");
         }
 
         final DocumentBuilderFactory documentFactory = DocumentBuilderFactory
@@ -64,7 +64,7 @@ public class BlancoDbXmlSerializer {
         try {
             documentBuilder = documentFactory.newDocumentBuilder();
         } catch (ParserConfigurationException ex1) {
-            System.out.println("ƒhƒLƒ…ƒƒ“ƒgì¬‚É—áŠO‚ª”­¶‚µ‚Ü‚µ‚½.:" + ex1.toString());
+            System.out.println("ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆä½œæˆæ™‚ã«ä¾‹å¤–ãŒç™ºç”Ÿã—ã¾ã—ãŸ.:" + ex1.toString());
             ex1.printStackTrace();
             return;
         }
@@ -95,11 +95,11 @@ public class BlancoDbXmlSerializer {
             outStream.close();
             outStream = null;
         } catch (TransformerException ex) {
-            System.out.println("XMLƒhƒLƒ…ƒƒ“ƒg•Û‘¶‚É•ÏŠ·—áŠO‚ª”­¶‚µ‚Ü‚µ‚½.:" + ex.toString());
+            System.out.println("XMLãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆä¿å­˜æ™‚ã«å¤‰æ›ä¾‹å¤–ãŒç™ºç”Ÿã—ã¾ã—ãŸ.:" + ex.toString());
             ex.printStackTrace();
             return;
         } catch (IOException ex3) {
-            System.out.println("XMLƒhƒLƒ…ƒƒ“ƒg•Û‘¶‚É“üo—Í—áŠO‚ª”­¶‚µ‚Ü‚µ‚½.:" + ex3.toString());
+            System.out.println("XMLãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆä¿å­˜æ™‚ã«å…¥å‡ºåŠ›ä¾‹å¤–ãŒç™ºç”Ÿã—ã¾ã—ãŸ.:" + ex3.toString());
             ex3.printStackTrace();
             return;
         } finally {
@@ -114,7 +114,7 @@ public class BlancoDbXmlSerializer {
     }
 
     /**
-     * —^‚¦‚ç‚ê‚½SQLî•ñ‚ğXMLƒGƒŒƒƒ“ƒg‚É’Ç‰Á‚µ‚Ü‚·B
+     * ä¸ãˆã‚‰ã‚ŒãŸSQLæƒ…å ±ã‚’XMLã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã«è¿½åŠ ã—ã¾ã™ã€‚
      * 
      * @param sqlInfo
      * @param document
@@ -140,7 +140,7 @@ public class BlancoDbXmlSerializer {
                 .getSingle() ? "true" : "false");
 
         if (sqlInfo.getType() == BlancoDbSqlInfoTypeStringGroup.ITERATOR) {
-            // ŒŸõŒ^‚Ìê‡‚É‚Ì‚İscroll‘®«‚Æupdatable‘®«‚ğ’Ç‰Á‚µ‚Ü‚·B
+            // æ¤œç´¢å‹ã®å ´åˆã«ã®ã¿scrollå±æ€§ã¨updatableå±æ€§ã‚’è¿½åŠ ã—ã¾ã™ã€‚
             if (sqlInfo.getScroll() != BlancoDbSqlInfoScrollStringGroup.NOT_DEFINED) {
                 appendElementWithText(document, eleCommon, "scroll",
                         new BlancoDbSqlInfoScrollStringGroup()
@@ -189,21 +189,21 @@ public class BlancoDbXmlSerializer {
             parameters.appendChild(parameter);
         }
 
-        // TODO o—Íƒpƒ‰ƒ[ƒ^“WŠJ‚ÍAŒ»İ ‚Ü‚¾À‘•‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB
+        // TODO å‡ºåŠ›ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å±•é–‹ã¯ã€ç¾åœ¨ ã¾ã å®Ÿè£…ã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚
 
         if (sqlInfo.getQuery() == null) {
-            throw new IllegalArgumentException("“à•”ƒGƒ‰[BSQLî•ñ‚ÉSQL•¶‚ª”²‚¯‚Ä‚¢‚Ü‚·B");
+            throw new IllegalArgumentException("å†…éƒ¨ã‚¨ãƒ©ãƒ¼ã€‚SQLæƒ…å ±ã«SQLæ–‡ãŒæŠœã‘ã¦ã„ã¾ã™ã€‚");
         }
         final CDATASection cdata = document.createCDATASection(sqlInfo
                 .getQuery());
         queryLine.appendChild(cdata);
 
-        // ÅŒã‚ÌÅŒã‚Åƒ‹[ƒgƒm[ƒh‚É’Ç‰Á‚µ‚Ü‚·B
+        // æœ€å¾Œã®æœ€å¾Œã§ãƒ«ãƒ¼ãƒˆãƒãƒ¼ãƒ‰ã«è¿½åŠ ã—ã¾ã™ã€‚
         eleRoot.appendChild(eleQuery);
     }
 
     /**
-     * ƒGƒŒƒƒ“ƒg‚ÉƒeƒLƒXƒg•t‚«‚ÅƒGƒŒƒƒ“ƒg‚ğ’Ç‰Á‚µ‚Ü‚·B
+     * ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã«ãƒ†ã‚­ã‚¹ãƒˆä»˜ãã§ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã‚’è¿½åŠ ã—ã¾ã™ã€‚
      * 
      * @param document
      * @param eleTarget
@@ -215,19 +215,19 @@ public class BlancoDbXmlSerializer {
             final String elementData) {
         if (document == null) {
             throw new IllegalArgumentException(
-                    "“à•”ƒGƒ‰[: appendElementWithText: document‚Énull‚ª—^‚¦‚ç‚ê‚Ü‚µ‚½B");
+                    "å†…éƒ¨ã‚¨ãƒ©ãƒ¼: appendElementWithText: documentã«nullãŒä¸ãˆã‚‰ã‚Œã¾ã—ãŸã€‚");
         }
         if (eleTarget == null) {
             throw new IllegalArgumentException(
-                    "“à•”ƒGƒ‰[: appendElementWithText: eleTarget‚Énull‚ª—^‚¦‚ç‚ê‚Ü‚µ‚½B");
+                    "å†…éƒ¨ã‚¨ãƒ©ãƒ¼: appendElementWithText: eleTargetã«nullãŒä¸ãˆã‚‰ã‚Œã¾ã—ãŸã€‚");
         }
         if (tagName == null) {
             throw new IllegalArgumentException(
-                    "“à•”ƒGƒ‰[: appendElementWithText: tagName‚Énull‚ª—^‚¦‚ç‚ê‚Ü‚µ‚½B");
+                    "å†…éƒ¨ã‚¨ãƒ©ãƒ¼: appendElementWithText: tagNameã«nullãŒä¸ãˆã‚‰ã‚Œã¾ã—ãŸã€‚");
         }
         if (elementData == null) {
             throw new IllegalArgumentException(
-                    "“à•”ƒGƒ‰[: appendElementWithText: elementData‚Énull‚ª—^‚¦‚ç‚ê‚Ü‚µ‚½B");
+                    "å†…éƒ¨ã‚¨ãƒ©ãƒ¼: appendElementWithText: elementDataã«nullãŒä¸ãˆã‚‰ã‚Œã¾ã—ãŸã€‚");
         }
 
         final Element eleWork = document.createElement(tagName);
